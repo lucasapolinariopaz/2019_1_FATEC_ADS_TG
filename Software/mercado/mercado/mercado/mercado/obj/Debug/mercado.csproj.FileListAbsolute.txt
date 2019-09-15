@@ -1,0 +1,12 @@
+C:\Users\cesar\Desktop\mercado\mercado\mercado\bin\Debug\mercado.exe.config
+C:\Users\cesar\Desktop\mercado\mercado\mercado\bin\Debug\mercado.exe
+C:\Users\cesar\Desktop\mercado\mercado\mercado\bin\Debug\mercado.pdb
+C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.csprojResolveAssemblyReference.cache
+C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.Form1.resources
+C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.Properties.Resources.resources
+C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.csproj.GenerateResource.Cache
+C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.exe
+C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.pdb
+C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.cadastro_de_produtos.resources
+C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.cadastroAcesso.resources
+C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.lembretesenha.resources

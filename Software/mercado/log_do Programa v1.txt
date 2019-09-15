@@ -1,0 +1,8 @@
+cadastro de acesso
+verificaçao de cpf( falha ainda quando se coloca numeros iguais)
+checagem se ja existe cpf cadastrado
+acesso ao sistema
+lembrete de senha
+
+
+nome banco mercado_tg script
