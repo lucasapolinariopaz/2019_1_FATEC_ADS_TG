@@ -12,3 +12,4 @@ C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.cadastroAcesso.
 C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.lembretesenha.resources
 C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.cadastrodecategoria.resources
 C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.cadastromarcas.resources
+C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.cadastrodefornecedor.resources

@@ -87,5 +87,11 @@ namespace mercado
             cadastromarcas novo = new cadastromarcas();
             novo.Show();
         }
+
+        private void cADASTROToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            cadastrodefornecedor novo = new cadastrodefornecedor();
+            novo.Show();
+        }
     }
 }

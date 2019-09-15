@@ -63,8 +63,8 @@ namespace mercado
             }
             else
             {
-                
-
+                if (txtcadcateg.Text.Length == 0) { MessageBox.Show("Campo marca vazio"); }
+                else { 
                 string sql = "INSERT INTO categoria (categ)  VALUES (@nome)";
                 SqlConnection conn = conexao.obterConexao();
                 SqlCommand cmd = new SqlCommand(sql, conn);
@@ -86,6 +86,7 @@ namespace mercado
                 finally
                 {
                     conexao.fecharConexao();
+                }
                 }
             }
         }

@@ -36,7 +36,13 @@
             this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pRODUTOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cADASTROToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pRODUTOSToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cATEGORIAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mARCASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cONSULTAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pRODUTOSToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cATEGORIAToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mARCASToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.gERENCIARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fORNECEDORESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cLIENTESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,12 +57,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtlogcpf = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pRODUTOSToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.cATEGORIAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mARCASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pRODUTOSToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.cATEGORIAToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mARCASToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cADASTROToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cONSULTAToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -125,6 +127,26 @@
             this.cADASTROToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cADASTROToolStripMenuItem.Text = "CADASTRO";
             // 
+            // pRODUTOSToolStripMenuItem1
+            // 
+            this.pRODUTOSToolStripMenuItem1.Name = "pRODUTOSToolStripMenuItem1";
+            this.pRODUTOSToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.pRODUTOSToolStripMenuItem1.Text = "PRODUTOS";
+            // 
+            // cATEGORIAToolStripMenuItem
+            // 
+            this.cATEGORIAToolStripMenuItem.Name = "cATEGORIAToolStripMenuItem";
+            this.cATEGORIAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cATEGORIAToolStripMenuItem.Text = "CATEGORIA";
+            this.cATEGORIAToolStripMenuItem.Click += new System.EventHandler(this.cATEGORIAToolStripMenuItem_Click);
+            // 
+            // mARCASToolStripMenuItem
+            // 
+            this.mARCASToolStripMenuItem.Name = "mARCASToolStripMenuItem";
+            this.mARCASToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.mARCASToolStripMenuItem.Text = "MARCAS";
+            this.mARCASToolStripMenuItem.Click += new System.EventHandler(this.mARCASToolStripMenuItem_Click);
+            // 
             // cONSULTAToolStripMenuItem
             // 
             this.cONSULTAToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -135,6 +157,24 @@
             this.cONSULTAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cONSULTAToolStripMenuItem.Text = "CONSULTA";
             // 
+            // pRODUTOSToolStripMenuItem2
+            // 
+            this.pRODUTOSToolStripMenuItem2.Name = "pRODUTOSToolStripMenuItem2";
+            this.pRODUTOSToolStripMenuItem2.Size = new System.Drawing.Size(136, 22);
+            this.pRODUTOSToolStripMenuItem2.Text = "PRODUTOS";
+            // 
+            // cATEGORIAToolStripMenuItem1
+            // 
+            this.cATEGORIAToolStripMenuItem1.Name = "cATEGORIAToolStripMenuItem1";
+            this.cATEGORIAToolStripMenuItem1.Size = new System.Drawing.Size(136, 22);
+            this.cATEGORIAToolStripMenuItem1.Text = "CATEGORIA";
+            // 
+            // mARCASToolStripMenuItem1
+            // 
+            this.mARCASToolStripMenuItem1.Name = "mARCASToolStripMenuItem1";
+            this.mARCASToolStripMenuItem1.Size = new System.Drawing.Size(136, 22);
+            this.mARCASToolStripMenuItem1.Text = "MARCAS";
+            // 
             // gERENCIARToolStripMenuItem
             // 
             this.gERENCIARToolStripMenuItem.Name = "gERENCIARToolStripMenuItem";
@@ -143,6 +183,9 @@
             // 
             // fORNECEDORESToolStripMenuItem
             // 
+            this.fORNECEDORESToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cADASTROToolStripMenuItem1,
+            this.cONSULTAToolStripMenuItem1});
             this.fORNECEDORESToolStripMenuItem.Name = "fORNECEDORESToolStripMenuItem";
             this.fORNECEDORESToolStripMenuItem.Size = new System.Drawing.Size(107, 20);
             this.fORNECEDORESToolStripMenuItem.Text = "FORNECEDORES";
@@ -264,43 +307,18 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "CPF";
             // 
-            // pRODUTOSToolStripMenuItem1
+            // cADASTROToolStripMenuItem1
             // 
-            this.pRODUTOSToolStripMenuItem1.Name = "pRODUTOSToolStripMenuItem1";
-            this.pRODUTOSToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.pRODUTOSToolStripMenuItem1.Text = "PRODUTOS";
+            this.cADASTROToolStripMenuItem1.Name = "cADASTROToolStripMenuItem1";
+            this.cADASTROToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.cADASTROToolStripMenuItem1.Text = "CADASTRO";
+            this.cADASTROToolStripMenuItem1.Click += new System.EventHandler(this.cADASTROToolStripMenuItem1_Click);
             // 
-            // cATEGORIAToolStripMenuItem
+            // cONSULTAToolStripMenuItem1
             // 
-            this.cATEGORIAToolStripMenuItem.Name = "cATEGORIAToolStripMenuItem";
-            this.cATEGORIAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.cATEGORIAToolStripMenuItem.Text = "CATEGORIA";
-            this.cATEGORIAToolStripMenuItem.Click += new System.EventHandler(this.cATEGORIAToolStripMenuItem_Click);
-            // 
-            // mARCASToolStripMenuItem
-            // 
-            this.mARCASToolStripMenuItem.Name = "mARCASToolStripMenuItem";
-            this.mARCASToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.mARCASToolStripMenuItem.Text = "MARCAS";
-            this.mARCASToolStripMenuItem.Click += new System.EventHandler(this.mARCASToolStripMenuItem_Click);
-            // 
-            // pRODUTOSToolStripMenuItem2
-            // 
-            this.pRODUTOSToolStripMenuItem2.Name = "pRODUTOSToolStripMenuItem2";
-            this.pRODUTOSToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
-            this.pRODUTOSToolStripMenuItem2.Text = "PRODUTOS";
-            // 
-            // cATEGORIAToolStripMenuItem1
-            // 
-            this.cATEGORIAToolStripMenuItem1.Name = "cATEGORIAToolStripMenuItem1";
-            this.cATEGORIAToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.cATEGORIAToolStripMenuItem1.Text = "CATEGORIA";
-            // 
-            // mARCASToolStripMenuItem1
-            // 
-            this.mARCASToolStripMenuItem1.Name = "mARCASToolStripMenuItem1";
-            this.mARCASToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.mARCASToolStripMenuItem1.Text = "MARCAS";
+            this.cONSULTAToolStripMenuItem1.Name = "cONSULTAToolStripMenuItem1";
+            this.cONSULTAToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.cONSULTAToolStripMenuItem1.Text = "CONSULTA";
             // 
             // Form1
             // 
@@ -354,6 +372,8 @@
         private System.Windows.Forms.ToolStripMenuItem pRODUTOSToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem cATEGORIAToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem mARCASToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem cADASTROToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem cONSULTAToolStripMenuItem1;
     }
 }
 
