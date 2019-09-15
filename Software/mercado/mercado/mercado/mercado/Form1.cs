@@ -75,5 +75,17 @@ namespace mercado
             lembretesenha novo = new lembretesenha();
             novo.Show();
         }
+
+        private void cATEGORIAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cadastrodecategoria novo = new cadastrodecategoria();
+            novo.Show();
+        }
+
+        private void mARCASToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cadastromarcas novo = new cadastromarcas();
+            novo.Show();
+        }
     }
 }

@@ -58,6 +58,18 @@
     <Compile Include="cadastroAcesso.Designer.cs">
       <DependentUpon>cadastroAcesso.cs</DependentUpon>
     </Compile>
+    <Compile Include="cadastrodecategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastrodecategoria.Designer.cs">
+      <DependentUpon>cadastrodecategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cadastromarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastromarcas.Designer.cs">
+      <DependentUpon>cadastromarcas.cs</DependentUpon>
+    </Compile>
     <Compile Include="conexao.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -71,6 +83,21 @@
     <Compile Include="lembretesenha.Designer.cs">
       <DependentUpon>lembretesenha.cs</DependentUpon>
     </Compile>
+    <Compile Include="mercado_tgDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mercado_tgDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="mercado_tgDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mercado_tgDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="mercado_tgDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mercado_tgDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="cadastro de produtos.resx">
@@ -78,6 +105,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="cadastroAcesso.resx">
       <DependentUpon>cadastroAcesso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadastrodecategoria.resx">
+      <DependentUpon>cadastrodecategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadastromarcas.resx">
+      <DependentUpon>cadastromarcas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -94,6 +127,39 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="mercado_tgDataSet.xsc">
+      <DependentUpon>mercado_tgDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mercado_tgDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mercado_tgDataSet.xss">
+      <DependentUpon>mercado_tgDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet1.xsc">
+      <DependentUpon>mercado_tgDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mercado_tgDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mercado_tgDataSet1.xss">
+      <DependentUpon>mercado_tgDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet2.xsc">
+      <DependentUpon>mercado_tgDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mercado_tgDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mercado_tgDataSet2.xss">
+      <DependentUpon>mercado_tgDataSet2.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

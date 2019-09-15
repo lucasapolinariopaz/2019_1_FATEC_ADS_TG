@@ -10,3 +10,5 @@ C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.pdb
 C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.cadastro_de_produtos.resources
 C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.cadastroAcesso.resources
 C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.lembretesenha.resources
+C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.cadastrodecategoria.resources
+C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.cadastromarcas.resources
