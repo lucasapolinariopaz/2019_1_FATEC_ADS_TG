@@ -66,7 +66,7 @@ namespace mercado
             {
 
                 // MessageBox.Show("Seja bem vindo!");
-                MessageBox.Show(nomefunc, "AVISO");
+                MessageBox.Show(nomefunc, "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (hierarquia == "ADMINISTRADOR") { aDMINUSTRAÇAOToolStripMenuItem.Visible = true; }
                 menuStrip1.Visible = true;
                 groupBox1.Visible = false;
@@ -74,7 +74,7 @@ namespace mercado
             }
             else
             {
-                MessageBox.Show("Usuário ou senha incorreto!", "AVISO");
+                MessageBox.Show("Usuário ou senha incorreto!", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

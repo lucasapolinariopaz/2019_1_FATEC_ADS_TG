@@ -138,7 +138,7 @@ namespace mercado
                 {
                     int i = cmd.ExecuteNonQuery();
                     if (i > 0)
-                        MessageBox.Show("Caixa Fechado com sucesso!","AVISO");
+                        MessageBox.Show("Caixa Fechado com sucesso!", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     atua();
                     this.Close();
                 }
@@ -202,7 +202,7 @@ namespace mercado
             }
             else
             {
-                MessageBox.Show(" Não há Abertura de caixa no momento!!");
+                MessageBox.Show(" Não há Abertura de caixa no momento!!", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
 

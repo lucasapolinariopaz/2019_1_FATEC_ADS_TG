@@ -41,8 +41,6 @@
             this.mARCASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cONSULTAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pRODUTOSToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.cATEGORIAToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mARCASToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.gERENCIARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fORNECEDORESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cADASTROToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -140,7 +138,7 @@
             this.cATEGORIAToolStripMenuItem,
             this.mARCASToolStripMenuItem});
             this.cADASTROToolStripMenuItem.Name = "cADASTROToolStripMenuItem";
-            this.cADASTROToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.cADASTROToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cADASTROToolStripMenuItem.Text = "CADASTRO";
             // 
             // pRODUTOSToolStripMenuItem1
@@ -167,36 +165,22 @@
             // cONSULTAToolStripMenuItem
             // 
             this.cONSULTAToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pRODUTOSToolStripMenuItem2,
-            this.cATEGORIAToolStripMenuItem1,
-            this.mARCASToolStripMenuItem1});
+            this.pRODUTOSToolStripMenuItem2});
             this.cONSULTAToolStripMenuItem.Name = "cONSULTAToolStripMenuItem";
-            this.cONSULTAToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.cONSULTAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cONSULTAToolStripMenuItem.Text = "CONSULTAR";
             // 
             // pRODUTOSToolStripMenuItem2
             // 
             this.pRODUTOSToolStripMenuItem2.Name = "pRODUTOSToolStripMenuItem2";
-            this.pRODUTOSToolStripMenuItem2.Size = new System.Drawing.Size(136, 22);
+            this.pRODUTOSToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.pRODUTOSToolStripMenuItem2.Text = "PRODUTOS";
             this.pRODUTOSToolStripMenuItem2.Click += new System.EventHandler(this.pRODUTOSToolStripMenuItem2_Click);
-            // 
-            // cATEGORIAToolStripMenuItem1
-            // 
-            this.cATEGORIAToolStripMenuItem1.Name = "cATEGORIAToolStripMenuItem1";
-            this.cATEGORIAToolStripMenuItem1.Size = new System.Drawing.Size(136, 22);
-            this.cATEGORIAToolStripMenuItem1.Text = "CATEGORIA";
-            // 
-            // mARCASToolStripMenuItem1
-            // 
-            this.mARCASToolStripMenuItem1.Name = "mARCASToolStripMenuItem1";
-            this.mARCASToolStripMenuItem1.Size = new System.Drawing.Size(136, 22);
-            this.mARCASToolStripMenuItem1.Text = "MARCAS";
             // 
             // gERENCIARToolStripMenuItem
             // 
             this.gERENCIARToolStripMenuItem.Name = "gERENCIARToolStripMenuItem";
-            this.gERENCIARToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.gERENCIARToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.gERENCIARToolStripMenuItem.Text = "GERENCIAR";
             this.gERENCIARToolStripMenuItem.Click += new System.EventHandler(this.gERENCIARToolStripMenuItem_Click);
             // 
@@ -487,8 +471,6 @@
         private System.Windows.Forms.ToolStripMenuItem cATEGORIAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mARCASToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pRODUTOSToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem cATEGORIAToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem mARCASToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem cADASTROToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem cONSULTAToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem cADASTROToolStripMenuItem2;
