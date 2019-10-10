@@ -14,3 +14,6 @@ C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.cadastrodecateg
 C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.cadastromarcas.resources
 C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.cadastrodefornecedor.resources
 C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.CONSULTAPRODUTOS.resources
+C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.caixapdv.resources
+C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.abertura.resources
+C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.fechamentodecaixa.resources
