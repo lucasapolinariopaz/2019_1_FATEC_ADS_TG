@@ -29,40 +29,29 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dependentes));
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.btn_Pesquisar = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_DependenteNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_DependenteParentesco = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txt_ClienteCod = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Fechar = new System.Windows.Forms.Button();
+            this.btn_Cancelar = new System.Windows.Forms.Button();
+            this.btn_Salvar = new System.Windows.Forms.Button();
+            this.masktxt_PesquisarCPF = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
-            // button4
+            // btn_Pesquisar
             // 
-            this.button4.Location = new System.Drawing.Point(284, 11);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(78, 23);
-            this.button4.TabIndex = 165;
-            this.button4.Text = "PESQUISAR";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // textBox3
-            // 
-            this.textBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.textBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(156, 12);
-            this.textBox3.MaxLength = 13;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(117, 22);
-            this.textBox3.TabIndex = 164;
+            this.btn_Pesquisar.Location = new System.Drawing.Point(241, 14);
+            this.btn_Pesquisar.Name = "btn_Pesquisar";
+            this.btn_Pesquisar.Size = new System.Drawing.Size(78, 23);
+            this.btn_Pesquisar.TabIndex = 165;
+            this.btn_Pesquisar.Text = "PESQUISAR";
+            this.btn_Pesquisar.UseVisualStyleBackColor = true;
+            this.btn_Pesquisar.Click += new System.EventHandler(this.btn_Pesquisar_Click);
             // 
             // label11
             // 
@@ -76,17 +65,17 @@
             this.label11.TabIndex = 163;
             this.label11.Text = "CPF DO CLIENTE";
             // 
-            // textBox1
+            // txt_DependenteNome
             // 
-            this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.textBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(64, 86);
-            this.textBox1.MaxLength = 13;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(240, 22);
-            this.textBox1.TabIndex = 167;
+            this.txt_DependenteNome.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txt_DependenteNome.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txt_DependenteNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_DependenteNome.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_DependenteNome.Location = new System.Drawing.Point(64, 86);
+            this.txt_DependenteNome.MaxLength = 13;
+            this.txt_DependenteNome.Name = "txt_DependenteNome";
+            this.txt_DependenteNome.Size = new System.Drawing.Size(240, 22);
+            this.txt_DependenteNome.TabIndex = 167;
             // 
             // label1
             // 
@@ -100,17 +89,17 @@
             this.label1.TabIndex = 166;
             this.label1.Text = "NOME";
             // 
-            // textBox2
+            // txt_DependenteParentesco
             // 
-            this.textBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.textBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(433, 86);
-            this.textBox2.MaxLength = 13;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(240, 22);
-            this.textBox2.TabIndex = 169;
+            this.txt_DependenteParentesco.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txt_DependenteParentesco.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txt_DependenteParentesco.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_DependenteParentesco.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_DependenteParentesco.Location = new System.Drawing.Point(433, 86);
+            this.txt_DependenteParentesco.MaxLength = 13;
+            this.txt_DependenteParentesco.Name = "txt_DependenteParentesco";
+            this.txt_DependenteParentesco.Size = new System.Drawing.Size(240, 22);
+            this.txt_DependenteParentesco.TabIndex = 169;
             // 
             // label2
             // 
@@ -124,17 +113,18 @@
             this.label2.TabIndex = 168;
             this.label2.Text = "PARENTESCO";
             // 
-            // textBox4
+            // txt_ClienteCod
             // 
-            this.textBox4.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.textBox4.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBox4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(187, 58);
-            this.textBox4.MaxLength = 13;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(117, 22);
-            this.textBox4.TabIndex = 171;
+            this.txt_ClienteCod.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txt_ClienteCod.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txt_ClienteCod.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_ClienteCod.Enabled = false;
+            this.txt_ClienteCod.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_ClienteCod.Location = new System.Drawing.Point(187, 58);
+            this.txt_ClienteCod.MaxLength = 13;
+            this.txt_ClienteCod.Name = "txt_ClienteCod";
+            this.txt_ClienteCod.Size = new System.Drawing.Size(117, 22);
+            this.txt_ClienteCod.TabIndex = 171;
             // 
             // label3
             // 
@@ -148,32 +138,43 @@
             this.label3.TabIndex = 170;
             this.label3.Text = "CÓDIGO DO CLIENTE";
             // 
-            // button3
+            // btn_Fechar
             // 
-            this.button3.Location = new System.Drawing.Point(421, 137);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 174;
-            this.button3.Text = "FECHAR";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_Fechar.Location = new System.Drawing.Point(421, 137);
+            this.btn_Fechar.Name = "btn_Fechar";
+            this.btn_Fechar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Fechar.TabIndex = 174;
+            this.btn_Fechar.Text = "FECHAR";
+            this.btn_Fechar.UseVisualStyleBackColor = true;
+            this.btn_Fechar.Click += new System.EventHandler(this.btn_Fechar_Click);
             // 
-            // button2
+            // btn_Cancelar
             // 
-            this.button2.Location = new System.Drawing.Point(297, 137);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 173;
-            this.button2.Text = "CANCELAR";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_Cancelar.Location = new System.Drawing.Point(297, 137);
+            this.btn_Cancelar.Name = "btn_Cancelar";
+            this.btn_Cancelar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Cancelar.TabIndex = 173;
+            this.btn_Cancelar.Text = "CANCELAR";
+            this.btn_Cancelar.UseVisualStyleBackColor = true;
+            this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
             // 
-            // button1
+            // btn_Salvar
             // 
-            this.button1.Location = new System.Drawing.Point(177, 137);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 172;
-            this.button1.Text = "SALVAR";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_Salvar.Location = new System.Drawing.Point(177, 137);
+            this.btn_Salvar.Name = "btn_Salvar";
+            this.btn_Salvar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Salvar.TabIndex = 172;
+            this.btn_Salvar.Text = "SALVAR";
+            this.btn_Salvar.UseVisualStyleBackColor = true;
+            this.btn_Salvar.Click += new System.EventHandler(this.btn_Salvar_Click);
+            // 
+            // masktxt_PesquisarCPF
+            // 
+            this.masktxt_PesquisarCPF.Location = new System.Drawing.Point(150, 16);
+            this.masktxt_PesquisarCPF.Mask = "000.000.000-00";
+            this.masktxt_PesquisarCPF.Name = "masktxt_PesquisarCPF";
+            this.masktxt_PesquisarCPF.Size = new System.Drawing.Size(85, 20);
+            this.masktxt_PesquisarCPF.TabIndex = 175;
             // 
             // Dependentes
             // 
@@ -181,17 +182,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(677, 184);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.masktxt_PesquisarCPF);
+            this.Controls.Add(this.btn_Fechar);
+            this.Controls.Add(this.btn_Cancelar);
+            this.Controls.Add(this.btn_Salvar);
+            this.Controls.Add(this.txt_ClienteCod);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txt_DependenteParentesco);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_DependenteNome);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.btn_Pesquisar);
             this.Controls.Add(this.label11);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -205,17 +206,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button4;
-        internal System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button btn_Pesquisar;
         internal System.Windows.Forms.Label label11;
-        internal System.Windows.Forms.TextBox textBox1;
+        internal System.Windows.Forms.TextBox txt_DependenteNome;
         internal System.Windows.Forms.Label label1;
-        internal System.Windows.Forms.TextBox textBox2;
+        internal System.Windows.Forms.TextBox txt_DependenteParentesco;
         internal System.Windows.Forms.Label label2;
-        internal System.Windows.Forms.TextBox textBox4;
+        internal System.Windows.Forms.TextBox txt_ClienteCod;
         internal System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Fechar;
+        private System.Windows.Forms.Button btn_Cancelar;
+        private System.Windows.Forms.Button btn_Salvar;
+        private System.Windows.Forms.MaskedTextBox masktxt_PesquisarCPF;
     }
 }

@@ -29,39 +29,29 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultarDependentes));
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.btn_Pesquisar = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btn_Excluir = new System.Windows.Forms.Button();
+            this.btn_Alterar = new System.Windows.Forms.Button();
+            this.btn_Fechar = new System.Windows.Forms.Button();
+            this.masktxt_PesquisarCPF = new System.Windows.Forms.MaskedTextBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_Limpar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button4
+            // btn_Pesquisar
             // 
-            this.button4.Location = new System.Drawing.Point(280, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(78, 23);
-            this.button4.TabIndex = 168;
-            this.button4.Text = "PESQUISAR";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // textBox3
-            // 
-            this.textBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.textBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(152, 5);
-            this.textBox3.MaxLength = 13;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(117, 22);
-            this.textBox3.TabIndex = 167;
+            this.btn_Pesquisar.Location = new System.Drawing.Point(237, 7);
+            this.btn_Pesquisar.Name = "btn_Pesquisar";
+            this.btn_Pesquisar.Size = new System.Drawing.Size(78, 23);
+            this.btn_Pesquisar.TabIndex = 168;
+            this.btn_Pesquisar.Text = "PESQUISAR";
+            this.btn_Pesquisar.UseVisualStyleBackColor = true;
+            this.btn_Pesquisar.Click += new System.EventHandler(this.btn_Pesquisar_Click);
             // 
             // label11
             // 
@@ -77,6 +67,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -88,16 +80,58 @@
             this.dataGridView1.Size = new System.Drawing.Size(508, 150);
             this.dataGridView1.TabIndex = 169;
             // 
+            // btn_Excluir
+            // 
+            this.btn_Excluir.Enabled = false;
+            this.btn_Excluir.Location = new System.Drawing.Point(51, 205);
+            this.btn_Excluir.Name = "btn_Excluir";
+            this.btn_Excluir.Size = new System.Drawing.Size(75, 23);
+            this.btn_Excluir.TabIndex = 170;
+            this.btn_Excluir.Text = "EXCLUIR";
+            this.btn_Excluir.UseVisualStyleBackColor = true;
+            this.btn_Excluir.Click += new System.EventHandler(this.btn_Excluir_Click);
+            // 
+            // btn_Alterar
+            // 
+            this.btn_Alterar.Enabled = false;
+            this.btn_Alterar.Location = new System.Drawing.Point(156, 206);
+            this.btn_Alterar.Name = "btn_Alterar";
+            this.btn_Alterar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Alterar.TabIndex = 171;
+            this.btn_Alterar.Text = "ALTERAR";
+            this.btn_Alterar.UseVisualStyleBackColor = true;
+            this.btn_Alterar.Click += new System.EventHandler(this.btn_Alterar_Click);
+            // 
+            // btn_Fechar
+            // 
+            this.btn_Fechar.Location = new System.Drawing.Point(359, 205);
+            this.btn_Fechar.Name = "btn_Fechar";
+            this.btn_Fechar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Fechar.TabIndex = 172;
+            this.btn_Fechar.Text = "FECHAR";
+            this.btn_Fechar.UseVisualStyleBackColor = true;
+            this.btn_Fechar.Click += new System.EventHandler(this.btn_Fechar_Click);
+            // 
+            // masktxt_PesquisarCPF
+            // 
+            this.masktxt_PesquisarCPF.Location = new System.Drawing.Point(146, 9);
+            this.masktxt_PesquisarCPF.Mask = "000.000.000-00";
+            this.masktxt_PesquisarCPF.Name = "masktxt_PesquisarCPF";
+            this.masktxt_PesquisarCPF.Size = new System.Drawing.Size(85, 20);
+            this.masktxt_PesquisarCPF.TabIndex = 176;
+            // 
             // Column1
             // 
             this.Column1.HeaderText = "NOME DO DEPENDENTE";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             this.Column1.Width = 180;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "GRAU DE PARENTESCO";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
@@ -105,32 +139,15 @@
             this.Column3.Name = "Column3";
             this.Column3.Width = 180;
             // 
-            // button1
+            // btn_Limpar
             // 
-            this.button1.Location = new System.Drawing.Point(114, 206);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 170;
-            this.button1.Text = "EXCLUIR";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(209, 205);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 171;
-            this.button2.Text = "ALTERAR";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(308, 205);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 172;
-            this.button3.Text = "FECHAR";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_Limpar.Location = new System.Drawing.Point(259, 205);
+            this.btn_Limpar.Name = "btn_Limpar";
+            this.btn_Limpar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Limpar.TabIndex = 177;
+            this.btn_Limpar.Text = "LIMPAR";
+            this.btn_Limpar.UseVisualStyleBackColor = true;
+            this.btn_Limpar.Click += new System.EventHandler(this.btn_Limpar_Click);
             // 
             // ConsultarDependentes
             // 
@@ -138,12 +155,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(515, 241);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_Limpar);
+            this.Controls.Add(this.masktxt_PesquisarCPF);
+            this.Controls.Add(this.btn_Fechar);
+            this.Controls.Add(this.btn_Alterar);
+            this.Controls.Add(this.btn_Excluir);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.btn_Pesquisar);
             this.Controls.Add(this.label11);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -159,15 +177,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button4;
-        internal System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button btn_Pesquisar;
         internal System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btn_Excluir;
+        private System.Windows.Forms.Button btn_Alterar;
+        private System.Windows.Forms.Button btn_Fechar;
+        private System.Windows.Forms.MaskedTextBox masktxt_PesquisarCPF;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_Limpar;
     }
 }
