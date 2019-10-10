@@ -31,6 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalvarNotas));
             this.gdvImagens = new System.Windows.Forms.DataGridView();
+            this.idnotaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datanotaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imagemnotaDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.notasfiscaisBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.mercado_tgDataSet13 = new mercado.mercado_tgDataSet13();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDescricaoImagem = new System.Windows.Forms.TextBox();
@@ -47,19 +53,13 @@
             this.mercado_tgDataSet12 = new mercado.mercado_tgDataSet12();
             this.notasfiscaisBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.notasfiscaisTableAdapter = new mercado.mercado_tgDataSet12TableAdapters.notasfiscaisTableAdapter();
-            this.mercado_tgDataSet13 = new mercado.mercado_tgDataSet13();
-            this.notasfiscaisBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.notasfiscaisTableAdapter1 = new mercado.mercado_tgDataSet13TableAdapters.notasfiscaisTableAdapter();
-            this.idnotaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datanotaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imagemnotaDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gdvImagens)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.notasfiscaisBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mercado_tgDataSet13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImagem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mercado_tgDataSet12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.notasfiscaisBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mercado_tgDataSet13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.notasfiscaisBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // gdvImagens
@@ -82,6 +82,45 @@
             this.gdvImagens.RowTemplate.Height = 24;
             this.gdvImagens.Size = new System.Drawing.Size(432, 131);
             this.gdvImagens.TabIndex = 20;
+            this.gdvImagens.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdvImagens_CellClick_1);
+            // 
+            // idnotaDataGridViewTextBoxColumn
+            // 
+            this.idnotaDataGridViewTextBoxColumn.DataPropertyName = "idnota";
+            this.idnotaDataGridViewTextBoxColumn.HeaderText = "idnota";
+            this.idnotaDataGridViewTextBoxColumn.Name = "idnotaDataGridViewTextBoxColumn";
+            this.idnotaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // datanotaDataGridViewTextBoxColumn
+            // 
+            this.datanotaDataGridViewTextBoxColumn.DataPropertyName = "datanota";
+            this.datanotaDataGridViewTextBoxColumn.HeaderText = "datanota";
+            this.datanotaDataGridViewTextBoxColumn.Name = "datanotaDataGridViewTextBoxColumn";
+            this.datanotaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descricaoDataGridViewTextBoxColumn
+            // 
+            this.descricaoDataGridViewTextBoxColumn.DataPropertyName = "descricao";
+            this.descricaoDataGridViewTextBoxColumn.HeaderText = "descricao";
+            this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
+            this.descricaoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // imagemnotaDataGridViewImageColumn
+            // 
+            this.imagemnotaDataGridViewImageColumn.DataPropertyName = "imagemnota";
+            this.imagemnotaDataGridViewImageColumn.HeaderText = "imagemnota";
+            this.imagemnotaDataGridViewImageColumn.Name = "imagemnotaDataGridViewImageColumn";
+            this.imagemnotaDataGridViewImageColumn.ReadOnly = true;
+            // 
+            // notasfiscaisBindingSource1
+            // 
+            this.notasfiscaisBindingSource1.DataMember = "notasfiscais";
+            this.notasfiscaisBindingSource1.DataSource = this.mercado_tgDataSet13;
+            // 
+            // mercado_tgDataSet13
+            // 
+            this.mercado_tgDataSet13.DataSetName = "mercado_tgDataSet13";
+            this.mercado_tgDataSet13.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label3
             // 
@@ -133,6 +172,7 @@
             this.btnRetornarImagemBD.TabIndex = 15;
             this.btnRetornarImagemBD.Text = "Obter Imagem do Banco de dados";
             this.btnRetornarImagemBD.UseVisualStyleBackColor = true;
+            this.btnRetornarImagemBD.Click += new System.EventHandler(this.btnRetornarImagemBD_Click_1);
             // 
             // btnSalvarImagemBD
             // 
@@ -143,6 +183,7 @@
             this.btnSalvarImagemBD.TabIndex = 14;
             this.btnSalvarImagemBD.Text = "Salvar Imagem no Banco de dados";
             this.btnSalvarImagemBD.UseVisualStyleBackColor = true;
+            this.btnSalvarImagemBD.Click += new System.EventHandler(this.btnSalvarImagemBD_Click_1);
             // 
             // btnCarregarImagem
             // 
@@ -168,7 +209,6 @@
             // 
             // button1
             // 
-            this.button1.Enabled = false;
             this.button1.Location = new System.Drawing.Point(72, 456);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
@@ -176,6 +216,7 @@
             this.button1.TabIndex = 21;
             this.button1.Text = "Deletar Imagem ";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // openFileDialog1
             // 
@@ -183,7 +224,6 @@
             // 
             // button2
             // 
-            this.button2.Enabled = false;
             this.button2.Location = new System.Drawing.Point(316, 456);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
@@ -191,6 +231,7 @@
             this.button2.TabIndex = 22;
             this.button2.Text = "Imprimir Imagem ";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // printDialog1
             // 
@@ -210,47 +251,9 @@
             // 
             this.notasfiscaisTableAdapter.ClearBeforeFill = true;
             // 
-            // mercado_tgDataSet13
-            // 
-            this.mercado_tgDataSet13.DataSetName = "mercado_tgDataSet13";
-            this.mercado_tgDataSet13.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // notasfiscaisBindingSource1
-            // 
-            this.notasfiscaisBindingSource1.DataMember = "notasfiscais";
-            this.notasfiscaisBindingSource1.DataSource = this.mercado_tgDataSet13;
-            // 
             // notasfiscaisTableAdapter1
             // 
             this.notasfiscaisTableAdapter1.ClearBeforeFill = true;
-            // 
-            // idnotaDataGridViewTextBoxColumn
-            // 
-            this.idnotaDataGridViewTextBoxColumn.DataPropertyName = "idnota";
-            this.idnotaDataGridViewTextBoxColumn.HeaderText = "idnota";
-            this.idnotaDataGridViewTextBoxColumn.Name = "idnotaDataGridViewTextBoxColumn";
-            this.idnotaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // datanotaDataGridViewTextBoxColumn
-            // 
-            this.datanotaDataGridViewTextBoxColumn.DataPropertyName = "datanota";
-            this.datanotaDataGridViewTextBoxColumn.HeaderText = "datanota";
-            this.datanotaDataGridViewTextBoxColumn.Name = "datanotaDataGridViewTextBoxColumn";
-            this.datanotaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descricaoDataGridViewTextBoxColumn
-            // 
-            this.descricaoDataGridViewTextBoxColumn.DataPropertyName = "descricao";
-            this.descricaoDataGridViewTextBoxColumn.HeaderText = "descricao";
-            this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
-            this.descricaoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // imagemnotaDataGridViewImageColumn
-            // 
-            this.imagemnotaDataGridViewImageColumn.DataPropertyName = "imagemnota";
-            this.imagemnotaDataGridViewImageColumn.HeaderText = "imagemnota";
-            this.imagemnotaDataGridViewImageColumn.Name = "imagemnotaDataGridViewImageColumn";
-            this.imagemnotaDataGridViewImageColumn.ReadOnly = true;
             // 
             // SalvarNotas
             // 
@@ -277,11 +280,11 @@
             this.Text = "Salvar Notas";
             this.Load += new System.EventHandler(this.SalvarNotas_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.gdvImagens)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.notasfiscaisBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mercado_tgDataSet13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImagem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mercado_tgDataSet12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.notasfiscaisBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mercado_tgDataSet13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.notasfiscaisBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

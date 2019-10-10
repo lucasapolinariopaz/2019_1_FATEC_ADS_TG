@@ -114,7 +114,6 @@
             // 
             // btnsalvaracesso
             // 
-            this.btnsalvaracesso.Enabled = false;
             this.btnsalvaracesso.Location = new System.Drawing.Point(123, 205);
             this.btnsalvaracesso.Name = "btnsalvaracesso";
             this.btnsalvaracesso.Size = new System.Drawing.Size(75, 23);
@@ -148,15 +147,14 @@
             // 
             // txtcadsenhaacesso
             // 
-            this.txtcadsenhaacesso.Enabled = false;
             this.txtcadsenhaacesso.Location = new System.Drawing.Point(113, 152);
             this.txtcadsenhaacesso.Name = "txtcadsenhaacesso";
+            this.txtcadsenhaacesso.PasswordChar = '*';
             this.txtcadsenhaacesso.Size = new System.Drawing.Size(149, 20);
             this.txtcadsenhaacesso.TabIndex = 21;
             // 
             // txtcadacesso
             // 
-            this.txtcadacesso.Enabled = false;
             this.txtcadacesso.Location = new System.Drawing.Point(113, 101);
             this.txtcadacesso.Name = "txtcadacesso";
             this.txtcadacesso.Size = new System.Drawing.Size(227, 20);
@@ -222,6 +220,7 @@
             this.button1.TabIndex = 33;
             this.button1.Text = "PESQUISAR";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -231,6 +230,7 @@
             this.button2.TabIndex = 34;
             this.button2.Text = "EXCLUIR";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // consultaracesso
             // 

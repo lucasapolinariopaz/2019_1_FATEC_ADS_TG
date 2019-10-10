@@ -150,6 +150,7 @@
             this.button2.Text = "FECHAR";
             this.button2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // lbl_txtTotal
             // 

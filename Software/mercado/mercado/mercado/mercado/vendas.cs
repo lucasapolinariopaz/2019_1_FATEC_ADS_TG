@@ -128,5 +128,10 @@ namespace mercado
 
             conexao.fecharConexao();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

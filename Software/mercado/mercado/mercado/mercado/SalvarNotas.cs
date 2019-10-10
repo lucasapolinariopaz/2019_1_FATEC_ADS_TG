@@ -52,8 +52,64 @@ namespace mercado
             CarregaImagem();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+     
+            
+
+
+        public void dtvgexibir()
+        { this.notasfiscaisTableAdapter1.Fill(this.mercado_tgDataSet13.notasfiscais); }
+
+
+       
+        private void SalvarNotas_Load_1(object sender, EventArgs e)
         {
+            DateTime dt = DateTime.Now;
+            dd = dt.ToString("dd/MM/yyy");
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string sql = "DELETE FROM notasfiscais WHERE idnota = @ID";
+            SqlConnection conn = conexao.obterConexao();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.Add("@ID", SqlDbType.Int, 4);
+            cmd.Parameters["@ID"].Value = this.txtCodigoImagem.Text;
+
+
+            cmd.CommandType = CommandType.Text;
+            conexao.obterConexao();
+            try
+            {
+                int i = cmd.ExecuteNonQuery();
+                if (i > 0)
+                    MessageBox.Show("Imagem excluída com sucesso!");
+                dtvgexibir();
+                txtCodigoImagem.Clear();
+                picImagem.Image = null;
+                txtCodigoImagem.Clear();
+               
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.ToString());
+            }
+            finally
+            {
+                conexao.fecharConexao();
+            }
+        }
+
+        private void gdvImagens_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            txtCodigoImagem.Text = (gdvImagens.Rows[e.RowIndex].Cells[0].Value).ToString();
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
             PrintDialog pd = new PrintDialog();
             PrintDocument doc = new PrintDocument();
             doc.PrintPage += Doc_PrintPage;
@@ -95,43 +151,7 @@ namespace mercado
 
         }
 
-        private void SalvarNotas_Load(object sender, EventArgs e)
-        {
-
-            DateTime dt = DateTime.Now;
-            dd = dt.ToString("dd/MM/yyy");
-
-
-        }
-        /*  void getImagensSQLServer(SqlConnection conexaoSQLServer)
-          {
-              try
-              {
-                  //Inicializar o SQL adapter.
-                  SqlDataAdapter ADAP = new SqlDataAdapter("Select Id,descricao,imagem from Imagens", conexaoSQLServer);
-
-                  //Inicializa o  Dataset.
-                  DataSet DS = new DataSet();
-
-                  //Preenche o dataset com a tabela Imagens
-                  ADAP.Fill(DS, "Imagens");
-
-                  //preenche o datagridviewe com o dataset.
-                  gdvImagens.DataSource = DS.Tables["Imagens"];
-              }
-              catch (Exception ex)
-              {
-                  MessageBox.Show(ex.ToString());
-              }
-          }
-  */
-
-
-        public void dtvgexibir()
-        { this.notasfiscaisTableAdapter1.Fill(this.mercado_tgDataSet13.notasfiscais); }
-
-
-        private void btnSalvarImagemBD_Click(object sender, EventArgs e)
+        private void btnSalvarImagemBD_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -151,6 +171,8 @@ namespace mercado
                     MessageBox.Show("Falha ao incluir imagem no banco de dados.");
                 dtvgexibir();
                 picImagem.Image = null;
+                txtCodigoImagem.Clear();
+                txtDescricaoImagem.Clear();
 
             }
             catch (Exception ex)
@@ -163,7 +185,7 @@ namespace mercado
             }
         }
 
-        private void btnRetornarImagemBD_Click(object sender, EventArgs e)
+        private void btnRetornarImagemBD_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -192,56 +214,6 @@ namespace mercado
                 conexao.fecharConexao();
 
             }
-        }
-
-        private void gdvImagens_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtCodigoImagem.Text = (gdvImagens.Rows[e.RowIndex].Cells["idnota"].Value).ToString();
-
-        }
-
-        private void btnfornecedor_Click(object sender, EventArgs e)
-        {
-            dtvgexibir();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string sql = "DELETE FROM notasfiscais WHERE idnota = @ID";
-            SqlConnection conn = conexao.obterConexao();
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            cmd.Parameters.Add("@ID", SqlDbType.Int, 4);
-            cmd.Parameters["@ID"].Value = this.txtCodigoImagem.Text;
-
-
-            cmd.CommandType = CommandType.Text;
-            conexao.obterConexao();
-            try
-            {
-                int i = cmd.ExecuteNonQuery();
-                if (i > 0)
-                    MessageBox.Show("Imagem excluída com sucesso!");
-                dtvgexibir();
-                txtCodigoImagem.Clear();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.ToString());
-            }
-            finally
-            {
-                conexao.fecharConexao();
-            }
-        }
-
-        private void SalvarNotas_Load_1(object sender, EventArgs e)
-        {
-            // TODO: esta linha de código carrega dados na tabela 'mercado_tgDataSet13.notasfiscais'. Você pode movê-la ou removê-la conforme necessário.
-            this.notasfiscaisTableAdapter1.Fill(this.mercado_tgDataSet13.notasfiscais);
-            // TODO: esta linha de código carrega dados na tabela 'mercado_tgDataSet12.notasfiscais'. Você pode movê-la ou removê-la conforme necessário.
-            this.notasfiscaisTableAdapter.Fill(this.mercado_tgDataSet12.notasfiscais);
-
         }
     }
 }

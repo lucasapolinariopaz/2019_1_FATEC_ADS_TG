@@ -25,6 +25,35 @@ namespace mercado
             this.Close();
         }
 
+        public void atua()
+        { string status = "OFF";
+            string sql = "UPDATE abertura SET estatus=@estatus";
+            SqlConnection conn = conexao.obterConexao();
+            SqlCommand comm = new SqlCommand(sql, conn);
+            comm.Parameters.Add(new SqlParameter("@estatus", status));
+
+
+            comm.CommandType = CommandType.Text;
+            conexao.obterConexao();
+            try
+            {
+                int i = comm.ExecuteNonQuery();
+                if (i > 0)
+                    txtpretirar.Clear();  
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.ToString());
+            }
+            finally
+            {
+                conexao.fecharConexao();
+            }
+        }
+
+
+
         private void txtretirada_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && e.KeyChar != Convert.ToChar(Keys.Back))
@@ -73,6 +102,7 @@ namespace mercado
                     int i = cmd.ExecuteNonQuery();
                     if (i > 0)
                         MessageBox.Show("Caixa Fechado com sucesso!","AVISO");
+                    atua();
                     this.Close();
                 }
                 catch (Exception ex)
@@ -134,13 +164,13 @@ namespace mercado
         {
             bool result = false;
             SqlConnection conn = conexao.obterConexao();
-            SqlCommand commn = new SqlCommand("select codAber,nomefunc,cpffunc,dataaber,valorabertura  from abertura where estatus='ON';", conn);
+            SqlCommand commn = new SqlCommand("select codAber,nomefunc,cpffunc,dataaber,valoraberturaf  from fechamento where estatus='ON';", conn);
             commn.CommandType = CommandType.Text;
             commn.Parameters.Add(new SqlParameter("@codAber", "codAber"));
             commn.Parameters.Add(new SqlParameter("@nomefunc", "nomefunc"));
             commn.Parameters.Add(new SqlParameter("@cpffunc", "cpffunc"));
             commn.Parameters.Add(new SqlParameter("@dataaber", "dataaber"));
-            commn.Parameters.Add(new SqlParameter("@valorabertura", "valorabertura"));
+            commn.Parameters.Add(new SqlParameter("@valorabertura", "valoraberturaf"));
             
            
             conexao.obterConexao();
@@ -157,7 +187,7 @@ namespace mercado
                     lbldata.Text = dr["dataaber"].ToString();
                     lblfunc.Text = dr["nomefunc"].ToString();
                     cpffech = dr["cpffunc"].ToString();
-                    lblvaloratual.Text = dr["valorabertura"].ToString();
+                    lblvaloratual.Text = dr["valoraberturaf"].ToString();
                     codaberfech = dr["codAber"].ToString();
 
                 }
