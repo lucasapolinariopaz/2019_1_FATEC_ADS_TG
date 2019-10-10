@@ -269,8 +269,10 @@ namespace mercado
             {
                 int i = cmd.ExecuteNonQuery();
                 if (i > 0)
+                {
                     MessageBox.Show("Cadastro realizado com sucesso!");
-                limpar();
+                    limpar();
+                }
             }
             catch (Exception ex)
             {

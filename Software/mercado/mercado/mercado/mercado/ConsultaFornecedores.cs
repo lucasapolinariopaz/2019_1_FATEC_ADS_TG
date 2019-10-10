@@ -22,7 +22,6 @@ namespace mercado
 
         public void limparCampos()
         {
-            masktxt_PesquisarCNPJ.Clear();
             txt_RazaoSocial.Clear();
             masktxt_CNPJ.Clear();
             txt_IE.Clear();
@@ -32,6 +31,7 @@ namespace mercado
             txt_UF.Clear();
             txt_Telefone.Clear();
             txt_Celular.Clear();
+            desabilitarCampos();
         }
 
         public bool validaCampos()
@@ -41,7 +41,7 @@ namespace mercado
             if (codigo_fornecedor == 0) { MessageBox.Show("Fornecedor não informado"); }
             else if (txt_RazaoSocial.Text.Length == 0) { MessageBox.Show("Campo Razão Social vazio!!"); }
             else if (masktxt_CNPJ.Text.Length == 0) { MessageBox.Show("Campo CNPJ vazio!!"); }
-            else if (verificaFornecedorUpdate(masktxt_CNPJ.Text, codigo_fornecedor)) { MessageBox.Show("Fornecedor já registrado no sistema!!"); }
+            else if (verificaFornecedorUpdate(masktxt_CNPJ.Text, codigo_fornecedor).Equals("false")) { MessageBox.Show("Fornecedor já registrado no sistema!!"); }
             else if (txt_IE.Text.Length == 0) { MessageBox.Show("Campo IE vazio!!"); }
             else if (txt_Endereco.Text.Length == 0) { MessageBox.Show("Campo Endereço vazio!!"); }
             else if (txt_Cidade.Text.Length == 0) { MessageBox.Show("Campo Cidade vazio!!"); }
@@ -56,30 +56,32 @@ namespace mercado
 
         public bool verificaFornecedorUpdate(string CNPJ, int codigo_fornec)
         {
-            bool result = false;
+            bool result = true;
             int cod;
 
+            /*
             CNPJ = CNPJ.Trim();
             CNPJ = CNPJ.Replace(".", "").Replace(",", "");
             CNPJ = CNPJ.Replace("/", "");
             CNPJ = CNPJ.Replace("-", "");
             CNPJ = CNPJ.Replace(" ", "");
+            */
 
             using (SqlConnection cn = conexao.obterConexao())
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("SELECT codigo_fornecdor, CNPJ FROM fornecedor WHERE CNPJ = '" + CNPJ + "';", cn);
+                    SqlCommand cmd = new SqlCommand("SELECT cod_fornecdor, CNPJ FROM fornecedor WHERE CNPJ = '" + CNPJ + "';", cn);
 
                     conexao.obterConexao();
                     SqlDataReader dados = cmd.ExecuteReader();
                     result = dados.HasRows;
                     if (dados.Read())
                     {
-                        cod = int.Parse(dados["codigo_fornecdor"].ToString());
+                        cod = int.Parse(dados["cod_fornecdor"].ToString());
 
                         //Para evitar duplicação de CNPJ
-                        if (cod == codigo_fornec)
+                        if (cod != codigo_fornec)
                         {
                             result = false;
                         }
@@ -95,19 +97,31 @@ namespace mercado
             return result;
         }
 
+        public void habilitarCampos()
+        {
+            btn_Salvar.Enabled = true;
+            btn_Excluir.Enabled = true;
+        }
+
+        public void desabilitarCampos()
+        {
+            btn_Salvar.Enabled = false;
+            btn_Excluir.Enabled = false;
+        }
+
         private void btn_PesquisarCNPJ_Click(object sender, EventArgs e)
         {
             bool result = false;
 
             limparCampos();
 
-            string consulta_sql = "SELECT codigo_fornecdor, nome_fornecedor, CNPJ, IE, endereco, cidade, bairro, estado, telefone_fornec, celular " +
+            string consulta_sql = "SELECT cod_fornecdor, nome_fornecedor, CNPJ, IE, endereco, cidade, bairro, estado, telefone_fornec, celular " +
                     "FROM fornecedor WHERE CNPJ = '" + masktxt_PesquisarCNPJ.Text + "';";
             SqlConnection conn = conexao.obterConexao();
             SqlCommand commn = new SqlCommand(consulta_sql, conn);
             commn.CommandType = CommandType.Text;
 
-            commn.Parameters.Add(new SqlParameter("@codigo_fornecdor", "codigo_fornecdor"));
+            commn.Parameters.Add(new SqlParameter("@cod_fornecdor", "cod_fornecdor"));
             commn.Parameters.Add(new SqlParameter("@nome_fornecedor", "nome_fornecedor"));
             commn.Parameters.Add(new SqlParameter("@CNPJ", "CNPJ"));
             commn.Parameters.Add(new SqlParameter("@IE", "IE"));
@@ -126,7 +140,7 @@ namespace mercado
             {
                 while (dr.Read())
                 {
-                    codigo_fornecedor = int.Parse(dr["codigo_fornecdor"].ToString());
+                    codigo_fornecedor = int.Parse(dr["cod_fornecdor"].ToString());
                     txt_RazaoSocial.Text = dr["nome_fornecedor"].ToString();
                     masktxt_CNPJ.Text = dr["CNPJ"].ToString();
                     txt_IE.Text = dr["IE"].ToString();
@@ -136,6 +150,8 @@ namespace mercado
                     txt_UF.Text = dr["estado"].ToString();
                     txt_Telefone.Text = dr["telefone_fornec"].ToString();
                     txt_Celular.Text = dr["celular"].ToString();
+
+                    habilitarCampos();
                 }
             }
             else
@@ -166,11 +182,11 @@ namespace mercado
             if(validaCampos())
             {
                 string sql = "UPDATE fornecedor SET nome_fornecedor = @nome_fornecedor, CNPJ = @CNPJ, IE = @IE, endereco = @endereco, cidade = @cidade, bairro = @bairro, estado = @estado, telefone_fornec = @telefone_fornec, celular = @celular " +
-                    "WHERE codigo_fornecdor = @codigo_fornecdor;";
+                    "WHERE cod_fornecdor = @cod_fornecdor;";
                 SqlConnection conn = conexao.obterConexao();
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
-                cmd.Parameters.Add(new SqlParameter("@codigo_fornecdor", codigo_fornecedor));
+                cmd.Parameters.Add(new SqlParameter("@cod_fornecdor", codigo_fornecedor));
                 cmd.Parameters.Add(new SqlParameter("@nome_fornecedor", txt_RazaoSocial.Text));
                 cmd.Parameters.Add(new SqlParameter("@CNPJ", masktxt_CNPJ.Text));
                 cmd.Parameters.Add(new SqlParameter("@IE", txt_IE.Text));
@@ -187,8 +203,10 @@ namespace mercado
                 {
                     int i = cmd.ExecuteNonQuery();
                     if (i > 0)
+                    {
                         MessageBox.Show("Cadastro de fornecedor alterado com sucesso!");
-                    limparCampos();
+                        limparCampos();
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -209,12 +227,12 @@ namespace mercado
             }
             else
             {
-                string sql = "DELETE FROM fornecedor WHERE codigo_fornecdor = @codigo_fornecdor AND CNPJ = @CNPJ;";
+                string sql = "DELETE FROM fornecedor WHERE cod_fornecdor = @cod_fornecdor AND CNPJ = @CNPJ;";
 
                 SqlConnection conn = conexao.obterConexao();
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
-                cmd.Parameters.Add(new SqlParameter("@codigo_fornecdor", codigo_fornecedor));
+                cmd.Parameters.Add(new SqlParameter("@cod_fornecdor", codigo_fornecedor));
                 cmd.Parameters.Add(new SqlParameter("@CNPJ", masktxt_CNPJ.Text));
 
                 cmd.CommandType = CommandType.Text;
@@ -223,7 +241,7 @@ namespace mercado
                 {
                     int i = cmd.ExecuteNonQuery();
                     if (i > 0)
-                        MessageBox.Show("Cadastro de cliente excluído com sucesso!");
+                        MessageBox.Show("Cadastro de fornecedor excluído com sucesso!");
                     limparCampos();
                 }
                 catch (Exception ex)

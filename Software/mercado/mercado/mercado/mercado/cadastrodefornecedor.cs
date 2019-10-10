@@ -13,29 +13,37 @@ namespace mercado
 {
     public partial class cadastrodefornecedor : Form
     {
-        string cnpj;
+        //string cnpj;
         
         public cadastrodefornecedor()
         {
             InitializeComponent();
         }
 
+        public string NoMaskCNPJ(string CNPJ)
+        {
+            string result;
+
+            result = CNPJ.Trim();
+            result = result.Replace(".", "").Replace(",", "");
+            result = result.Replace("/", "");
+            result = result.Replace("-", "");
+            result = result.Replace(" ", "");
+
+            return result;
+        }
+
         bool VerificaFornecedor()
         {
-            cnpj = txtcadcnpjfor.Text;
-            bool result = false;
+            //cnpj = NoMaskCNPJ(txtcadcnpjfor.Text);
 
-            cnpj = cnpj.Trim();
-            cnpj = cnpj.Replace(".", "").Replace(",", "");
-            cnpj = cnpj.Replace("/", "");
-            cnpj = cnpj.Replace("-", "");
-            cnpj = cnpj.Replace(" ", "");
+            bool result = false;
         
             using (SqlConnection cn = conexao.obterConexao())
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("SELECT CNPJ FROM fornecedor WHERE CNPJ = '" + cnpj + "';", cn);
+                    SqlCommand cmd = new SqlCommand("SELECT CNPJ FROM fornecedor WHERE CNPJ = '" + txtcadcnpjfor.Text + "';", cn);
 
                     conexao.obterConexao();
                     SqlDataReader dados = cmd.ExecuteReader();
@@ -63,8 +71,10 @@ namespace mercado
             txtcadcelfor.Clear();
         }
 
-        private void btnsalvarcadfor_Click(object sender, EventArgs e)
+        bool validarCampos()
         {
+            bool result = false;
+
             if (txtcadempfor.Text.Length == 0) { MessageBox.Show("Campo Razão Social não foi informado!!"); }
             else if (txtcadcnpjfor.Text.Length == 0) { MessageBox.Show("Campo CNPJ não foi informado!!"); }
             else if (txtcadiefor.Text.Length == 0) { MessageBox.Show("Campo IE não foi informado!!"); }
@@ -75,8 +85,17 @@ namespace mercado
             else if (txtcadtelfor.Text.Length == 0) { MessageBox.Show("Campo Telefone não foi informado!!"); }
             else if (txtcadcelfor.Text.Length == 0) { MessageBox.Show("Campo Celular não foi informado!!"); }
             else
-            {  
+            {
+                result = true;
+            }
 
+            return result;
+        }
+
+        private void btnsalvarcadfor_Click(object sender, EventArgs e)
+        {
+            if(validarCampos())
+            {  
                 bool Logado = false;
                 bool result = VerificaFornecedor();
 
@@ -84,16 +103,16 @@ namespace mercado
 
                 if (result)
                 {
-                    MessageBox.Show("ERRO!!Fornecedor ja registrado no sistema!!");
+                    MessageBox.Show("ERRO!!Fornecedor já registrado no sistema!!");
                 }
                 else
                 {
-                    string sql = "INSERT INTO fornecedor (nome_fornecedor ,CNPJ ,IE,endereco ,cidade ,bairro ,estado ,telefone_fornec ,celular) VALUES (@nome_fornecedor ,@CNPJ,@IE,@endereco,@cidade,@bairro,@estado,@telefone_fornec ,@celular)";
+                    string sql = "INSERT INTO fornecedor (nome_fornecedor , CNPJ, IE, endereco, cidade, bairro, estado, telefone_fornec, celular) VALUES (@nome_fornecedor, @CNPJ, @IE, @endereco, @cidade, @bairro, @estado, @telefone_fornec, @celular)";
                     SqlConnection conn = conexao.obterConexao();
                     SqlCommand cmdd = new SqlCommand(sql, conn);
 
                     cmdd.Parameters.Add(new SqlParameter("@nome_fornecedor", txtcadempfor.Text));
-                    cmdd.Parameters.Add(new SqlParameter("@CNPJ", cnpj));
+                    cmdd.Parameters.Add(new SqlParameter("@CNPJ", txtcadcnpjfor.Text));
                     cmdd.Parameters.Add(new SqlParameter("@IE", txtcadiefor.Text));
                     cmdd.Parameters.Add(new SqlParameter("@endereco", txtcadendfor.Text));
                     cmdd.Parameters.Add(new SqlParameter("@cidade", txtcadcidfor.Text));
@@ -108,8 +127,10 @@ namespace mercado
                     {
                         int i = cmdd.ExecuteNonQuery();
                         if (i > 0)
+                        {
                             MessageBox.Show("Cadastro realizado com sucesso!");
-                        limparCampos();
+                            limparCampos();
+                        }
                     }
                     catch (Exception ex)
                     {

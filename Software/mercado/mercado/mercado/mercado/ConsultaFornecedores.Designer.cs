@@ -89,6 +89,7 @@
             // 
             // btn_Salvar
             // 
+            this.btn_Salvar.Enabled = false;
             this.btn_Salvar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btn_Salvar.Location = new System.Drawing.Point(271, 189);
             this.btn_Salvar.Name = "btn_Salvar";
@@ -103,7 +104,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.Info;
-            this.label9.Location = new System.Drawing.Point(345, 138);
+            this.label9.Location = new System.Drawing.Point(343, 137);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(60, 15);
             this.label9.TabIndex = 46;
@@ -112,7 +113,7 @@
             // txt_Celular
             // 
             this.txt_Celular.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_Celular.Location = new System.Drawing.Point(408, 132);
+            this.txt_Celular.Location = new System.Drawing.Point(408, 135);
             this.txt_Celular.MaxLength = 15;
             this.txt_Celular.Name = "txt_Celular";
             this.txt_Celular.Size = new System.Drawing.Size(125, 20);
@@ -123,7 +124,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Info;
-            this.label2.Location = new System.Drawing.Point(95, 135);
+            this.label2.Location = new System.Drawing.Point(97, 137);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 15);
             this.label2.TabIndex = 44;
@@ -132,7 +133,7 @@
             // txt_Telefone
             // 
             this.txt_Telefone.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_Telefone.Location = new System.Drawing.Point(163, 129);
+            this.txt_Telefone.Location = new System.Drawing.Point(168, 135);
             this.txt_Telefone.MaxLength = 15;
             this.txt_Telefone.Name = "txt_Telefone";
             this.txt_Telefone.Size = new System.Drawing.Size(125, 20);
@@ -143,7 +144,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.Info;
-            this.label8.Location = new System.Drawing.Point(7, 139);
+            this.label8.Location = new System.Drawing.Point(19, 137);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(21, 15);
             this.label8.TabIndex = 42;
@@ -152,7 +153,7 @@
             // txt_UF
             // 
             this.txt_UF.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_UF.Location = new System.Drawing.Point(35, 134);
+            this.txt_UF.Location = new System.Drawing.Point(46, 135);
             this.txt_UF.MaxLength = 2;
             this.txt_UF.Name = "txt_UF";
             this.txt_UF.Size = new System.Drawing.Size(28, 20);
@@ -173,6 +174,7 @@
             // 
             this.txt_Bairro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_Bairro.Location = new System.Drawing.Point(596, 105);
+            this.txt_Bairro.MaxLength = 50;
             this.txt_Bairro.Name = "txt_Bairro";
             this.txt_Bairro.Size = new System.Drawing.Size(125, 20);
             this.txt_Bairro.TabIndex = 39;
@@ -192,6 +194,7 @@
             // 
             this.txt_Cidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_Cidade.Location = new System.Drawing.Point(409, 105);
+            this.txt_Cidade.MaxLength = 50;
             this.txt_Cidade.Name = "txt_Cidade";
             this.txt_Cidade.Size = new System.Drawing.Size(125, 20);
             this.txt_Cidade.TabIndex = 37;
@@ -211,6 +214,7 @@
             // 
             this.txt_Endereco.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_Endereco.Location = new System.Drawing.Point(100, 101);
+            this.txt_Endereco.MaxLength = 50;
             this.txt_Endereco.Name = "txt_Endereco";
             this.txt_Endereco.Size = new System.Drawing.Size(248, 20);
             this.txt_Endereco.TabIndex = 35;
@@ -230,6 +234,7 @@
             // 
             this.txt_IE.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_IE.Location = new System.Drawing.Point(596, 74);
+            this.txt_IE.MaxLength = 50;
             this.txt_IE.Name = "txt_IE";
             this.txt_IE.Size = new System.Drawing.Size(125, 20);
             this.txt_IE.TabIndex = 33;
@@ -260,6 +265,7 @@
             // 
             this.txt_RazaoSocial.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_RazaoSocial.Location = new System.Drawing.Point(100, 74);
+            this.txt_RazaoSocial.MaxLength = 50;
             this.txt_RazaoSocial.Name = "txt_RazaoSocial";
             this.txt_RazaoSocial.Size = new System.Drawing.Size(248, 20);
             this.txt_RazaoSocial.TabIndex = 30;
@@ -296,6 +302,7 @@
             // 
             // btn_Excluir
             // 
+            this.btn_Excluir.Enabled = false;
             this.btn_Excluir.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btn_Excluir.Location = new System.Drawing.Point(176, 189);
             this.btn_Excluir.Name = "btn_Excluir";

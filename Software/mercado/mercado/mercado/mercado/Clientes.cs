@@ -44,7 +44,7 @@ namespace mercado
             else if (txt_RG.Text.Length == 0) { MessageBox.Show("Campo RG vazio"); }
             else if (masktxt_CPF.Text.Length == 0) { MessageBox.Show("Campo CPF vazio"); }
             else if (contDigitosCPF(masktxt_CPF.Text) < 11) { MessageBox.Show("CPF informado não tem 11 dígitos"); }
-            else if (validarCPF(masktxt_CPF.Text).Equals("true")) { MessageBox.Show("CPF inválido"); }
+            else if (validarCPF(masktxt_CPF.Text).Equals("false")) { MessageBox.Show("CPF inválido"); }
             else if (VerificaCliente(masktxt_CPF.Text)) { MessageBox.Show("Cliente já registrado no sistema!!"); }
             else if (masktxt_dataNasc.Text.Length == 0) { MessageBox.Show("Campo Data de Nascimento vazio"); }
             else if (txt_Endereco.Text.Length == 0) { MessageBox.Show("Campo Endereço vazio"); }
@@ -199,7 +199,10 @@ namespace mercado
                 {
                     int i = cmd.ExecuteNonQuery();
                     if (i > 0)
+                    {
                         MessageBox.Show("Cadastro realizado com sucesso!");
+                        limparCampos();
+                    }
                 }
                 catch (Exception ex)
                 {

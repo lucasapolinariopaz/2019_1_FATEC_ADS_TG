@@ -28,7 +28,6 @@ namespace mercado
 
         void limparCampos()
         {
-            txtpesqprod.Clear();
             txtcaddescprod.Clear();
             maskedTextBox1.Clear();
             cbnfornecedor.SelectedIndex = -1;
@@ -382,12 +381,15 @@ namespace mercado
             {
                 int i = cmd.ExecuteNonQuery();
                 if (i > 0)
+                {
                     MessageBox.Show("Cadastro de produto excluído com sucesso!");
-                limparCampos();
+                    limparCampos();
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro: " + ex.ToString());
+                MessageBox.Show("Produto não pode ser excluído por estar contido em uma venda");
+                //MessageBox.Show("Erro: " + ex.ToString());
             }
             finally
             {

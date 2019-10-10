@@ -13,17 +13,15 @@ namespace mercado
 {
     public partial class ConsultaClientes : Form
     {
-        string envcpf;
-        bool result = false;
         int codigo_cli = 0;
+
         public ConsultaClientes()
         {
             InitializeComponent();
         }
 
-        void limparCampos()
+        public void limparCampos()
         {
-            masktxt_PesquisarCPF.Clear();
             txt_NomeCliente.Clear();
             txt_RG.Clear();
             masktxt_CPF.Clear();
@@ -35,9 +33,10 @@ namespace mercado
             txt_Telefone.Clear();
             txt_Celular.Clear();
             codigo_cli = 0;
+            lbl_CPF.Visible = false;
         }
 
-        bool validaCampos()
+        public bool validaCampos()
         {
             bool valida = false;
 
@@ -46,8 +45,8 @@ namespace mercado
             else if (txt_RG.Text.Length == 0) { MessageBox.Show("Campo RG vazio"); }
             else if (masktxt_CPF.Text.Length == 0) { MessageBox.Show("Campo CPF vazio"); }
             else if (contDigitosCPF(masktxt_CPF.Text) < 11) { MessageBox.Show("CPF informado não tem 11 dígitos"); }
-            else if (validarCPF(masktxt_CPF.Text).Equals("true")) { MessageBox.Show("CPF inválido"); }
-            else if (VerificaClienteUpdate(masktxt_CPF.Text, codigo_cli)) { MessageBox.Show("Cliente já registrado no sistema!!"); }
+            else if (validarCPF(masktxt_CPF.Text).Equals("false")) { MessageBox.Show("CPF inválido"); }
+            else if (VerificaClienteUpdate(masktxt_CPF.Text, codigo_cli).Equals("false")) { MessageBox.Show("Cliente já registrado no sistema!!"); }
             else if (masktxt_dataNasc.Text.Length == 0) { MessageBox.Show("Campo Data de Nascimento vazio"); }
             else if (txt_Endereco.Text.Length == 0) { MessageBox.Show("Campo Endereço vazio"); }
             else if (txt_Cidade.Text.Length == 0) { MessageBox.Show("Campo Cidade vazio"); }
@@ -60,20 +59,29 @@ namespace mercado
             return valida;
         }
 
-        int contDigitosCPF(string cpff)
+        public string NoMask_CPF(string Mask_CPF)
+        {
+            string NoMask_CPF;
+
+            NoMask_CPF = Mask_CPF.Trim();
+            NoMask_CPF = NoMask_CPF.Replace(".", "").Replace(",", "");
+            NoMask_CPF = NoMask_CPF.Replace("-", "");
+            NoMask_CPF = NoMask_CPF.Replace(" ", "");
+
+            return NoMask_CPF;
+        }
+
+        public int contDigitosCPF(string CPF)
         {
             int digitos;
 
-            cpff = cpff.Trim();
-            cpff = cpff.Replace(".", "").Replace(",", "");
-            cpff = cpff.Replace("-", "");
-            cpff = cpff.Replace(" ", "");
-            digitos = cpff.Length;
+            CPF = NoMask_CPF(CPF);
+            digitos = CPF.Length;
 
             return digitos;
         }
 
-        public static string validarCPF(string cpf)
+        public string validarCPF(string CPF)
         {
             int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
             int[] multiplicador2 = new int[10] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
@@ -83,12 +91,12 @@ namespace mercado
             int soma;
             int resto;
 
-            cpf = cpf.Trim();
-            cpf = cpf.Replace(".", "").Replace(",", "");
-            cpf = cpf.Replace("-", "");
-            cpf = cpf.Replace(" ", "");
+            CPF = CPF.Trim();
+            CPF = CPF.Replace(".", "").Replace(",", "");
+            CPF = CPF.Replace("-", "");
+            CPF = CPF.Replace(" ", "");
 
-            tempCpf = cpf.Substring(0, 9);
+            tempCpf = CPF.Substring(0, 9);
             soma = 0;
 
             for (int i = 0; i < 9; i++)
@@ -125,8 +133,10 @@ namespace mercado
             {
                 resto = 11 - resto;
             }
+
             tempCpf = tempCpf + resto;
-            if (cpf == tempCpf)
+
+            if (CPF == tempCpf)
             {
                 verific = "true";
             }
@@ -138,9 +148,9 @@ namespace mercado
             return verific;
         }
 
-        bool VerificaClienteUpdate(string CPF, int codigo_cliente)
+        public bool VerificaClienteUpdate(string CPF, int codigo_cliente)
         {
-            bool result = false;
+            bool result = true;
             int cod;
 
             using (SqlConnection cn = conexao.obterConexao())
@@ -156,7 +166,7 @@ namespace mercado
                         cod = int.Parse(dados["codigo_cli"].ToString());
 
                         //Para evitar duplicação de CPF de cliente
-                        if (cod == codigo_cliente)
+                        if (cod != codigo_cliente)
                         {
                             result = false;
                         }
@@ -174,34 +184,32 @@ namespace mercado
 
         public void statusCPF()
         {
-            string cpff = masktxt_CPF.Text;
-
-            if (contDigitosCPF(cpff) < 11)
+            if (contDigitosCPF(masktxt_CPF.Text) < 11)
             {
                 lbl_CPF.Visible = false;
             }
-            else if (contDigitosCPF(cpff) == 11)
+            else if (contDigitosCPF(masktxt_CPF.Text) == 11)
             {
-                if (validarCPF(cpff).Equals("true"))
+                if (validarCPF(masktxt_CPF.Text).Equals("true"))
                 {
                     lbl_CPF.Visible = true;
                     lbl_CPF.ForeColor = Color.Green;
                     lbl_CPF.Text = "Válido!";
-                    envcpf = cpff;
-                    bool result = VerificaClienteUpdate(envcpf, codigo_cli);
 
+                    /*
+                    bool result = VerificaClienteUpdate(envcpf, codigo_cli);
                     if (result)
                     {
                         masktxt_CPF.Focus();
                         MessageBox.Show("CPF já cadastrado no sistema");
                     }
+                    */
                 }
                 else
                 {
                     lbl_CPF.Visible = true;
                     lbl_CPF.ForeColor = Color.Red;
                     lbl_CPF.Text = "Inválido!";
-                    masktxt_CPF.Focus();
                 }
             }
         }
@@ -243,9 +251,10 @@ namespace mercado
                 {
                     int i = cmd.ExecuteNonQuery();
                     if (i > 0)
+                    {
                         MessageBox.Show("Cadastro de cliente alterado com sucesso!");
-                    limparCampos();
-                    statusCPF();
+                        limparCampos();
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -280,9 +289,10 @@ namespace mercado
                 {
                     int i = cmd.ExecuteNonQuery();
                     if (i > 0)
+                    {
                         MessageBox.Show("Cadastro de cliente excluído com sucesso!");
-                    limparCampos();
-                    statusCPF();
+                        limparCampos();
+                    } 
                 }
                 catch (Exception ex)
                 {
@@ -299,7 +309,7 @@ namespace mercado
         {
             if (masktxt_PesquisarCPF.Text.Length == 0) { MessageBox.Show("Informar CPF para consultar cliente"); }
             else if (contDigitosCPF(masktxt_PesquisarCPF.Text) < 11) { MessageBox.Show("CPF informado para consulta não tem 11 dígitos"); }
-            else if (validarCPF(masktxt_PesquisarCPF.Text).Equals("true")) { MessageBox.Show("CPF informado para consulta é inválido"); }
+            else if (validarCPF(masktxt_PesquisarCPF.Text).Equals("false")) { MessageBox.Show("CPF informado para consulta é inválido"); }
             else
             {
                 limparCampos();
@@ -324,7 +334,7 @@ namespace mercado
 
                 conexao.obterConexao();
                 SqlDataReader dr = commn.ExecuteReader();
-                result = dr.HasRows;
+                bool result = dr.HasRows;
 
                 if (result == true)
                 {

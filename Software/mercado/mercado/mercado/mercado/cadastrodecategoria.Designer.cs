@@ -49,6 +49,7 @@
             // 
             this.txtcadcateg.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtcadcateg.Location = new System.Drawing.Point(122, 30);
+            this.txtcadcateg.MaxLength = 50;
             this.txtcadcateg.Name = "txtcadcateg";
             this.txtcadcateg.Size = new System.Drawing.Size(180, 20);
             this.txtcadcateg.TabIndex = 6;

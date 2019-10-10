@@ -56,6 +56,7 @@
             // 
             this.txtcadempfor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtcadempfor.Location = new System.Drawing.Point(95, 20);
+            this.txtcadempfor.MaxLength = 50;
             this.txtcadempfor.Name = "txtcadempfor";
             this.txtcadempfor.Size = new System.Drawing.Size(248, 21);
             this.txtcadempfor.TabIndex = 1;
@@ -97,6 +98,7 @@
             // 
             this.txtcadiefor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtcadiefor.Location = new System.Drawing.Point(591, 20);
+            this.txtcadiefor.MaxLength = 50;
             this.txtcadiefor.Name = "txtcadiefor";
             this.txtcadiefor.Size = new System.Drawing.Size(125, 21);
             this.txtcadiefor.TabIndex = 12;
@@ -116,6 +118,7 @@
             // 
             this.txtcadendfor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtcadendfor.Location = new System.Drawing.Point(95, 47);
+            this.txtcadendfor.MaxLength = 50;
             this.txtcadendfor.Name = "txtcadendfor";
             this.txtcadendfor.Size = new System.Drawing.Size(248, 21);
             this.txtcadendfor.TabIndex = 14;
@@ -135,6 +138,7 @@
             // 
             this.txtcadcidfor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtcadcidfor.Location = new System.Drawing.Point(404, 51);
+            this.txtcadcidfor.MaxLength = 50;
             this.txtcadcidfor.Name = "txtcadcidfor";
             this.txtcadcidfor.Size = new System.Drawing.Size(125, 21);
             this.txtcadcidfor.TabIndex = 16;
@@ -154,6 +158,7 @@
             // 
             this.txtcadbarfor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtcadbarfor.Location = new System.Drawing.Point(591, 51);
+            this.txtcadbarfor.MaxLength = 50;
             this.txtcadbarfor.Name = "txtcadbarfor";
             this.txtcadbarfor.Size = new System.Drawing.Size(125, 21);
             this.txtcadbarfor.TabIndex = 18;
@@ -163,7 +168,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.Info;
-            this.label8.Location = new System.Drawing.Point(2, 85);
+            this.label8.Location = new System.Drawing.Point(39, 82);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(21, 15);
             this.label8.TabIndex = 21;
@@ -172,7 +177,7 @@
             // txtcaduffor
             // 
             this.txtcaduffor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtcaduffor.Location = new System.Drawing.Point(30, 80);
+            this.txtcaduffor.Location = new System.Drawing.Point(66, 79);
             this.txtcaduffor.MaxLength = 2;
             this.txtcaduffor.Name = "txtcaduffor";
             this.txtcaduffor.Size = new System.Drawing.Size(28, 21);
@@ -183,7 +188,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Info;
-            this.label2.Location = new System.Drawing.Point(90, 81);
+            this.label2.Location = new System.Drawing.Point(107, 82);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 15);
             this.label2.TabIndex = 23;
@@ -192,7 +197,7 @@
             // txtcadtelfor
             // 
             this.txtcadtelfor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtcadtelfor.Location = new System.Drawing.Point(158, 75);
+            this.txtcadtelfor.Location = new System.Drawing.Point(178, 78);
             this.txtcadtelfor.MaxLength = 15;
             this.txtcadtelfor.Name = "txtcadtelfor";
             this.txtcadtelfor.Size = new System.Drawing.Size(125, 21);
@@ -203,7 +208,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.Info;
-            this.label9.Location = new System.Drawing.Point(340, 84);
+            this.label9.Location = new System.Drawing.Point(338, 82);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(60, 15);
             this.label9.TabIndex = 25;

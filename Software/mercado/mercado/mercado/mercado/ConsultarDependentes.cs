@@ -14,7 +14,7 @@ namespace mercado
     public partial class ConsultarDependentes : Form
     {
         int codigo_cliente = 0;
-        List<int> lista_codigo_dependentes;
+        List<int> lista_codigo_dependentes = new List<int>();
 
         public ConsultarDependentes()
         {
@@ -104,12 +104,6 @@ namespace mercado
             codigo_cliente = 0;
             lista_codigo_dependentes.Clear();
             dataGridView1.Rows.Clear();
-        }
-
-        public void limpezaCompletaCampos()
-        {
-            limparCampos();
-            masktxt_PesquisarCPF.Clear();
             desabilitarCampos();
         }
 
@@ -128,32 +122,30 @@ namespace mercado
         public bool validaCamposDataGrid()
         {
             bool valida = false;
-            int i;
+            int i, contador_verificador = 0;
 
-            for (i = 0; i <= dataGridView1.Rows.Count - 1; i++)
+            for (i = 0; i < dataGridView1.Rows.Count; i++)
             {
-                string nome_dependente = dataGridView1.Rows[i].Cells[0].Value.ToString();
-
-                if (nome_dependente.Length == 0)
+                if (dataGridView1.Rows[i].Cells[0].Value == null)
                 {
+                    MessageBox.Show("Informe todos os campos dos dependentes");
                     break;
                 }
                 else
                 {
-                    string grau_parentesco = dataGridView1.Rows[i].Cells[1].Value.ToString();
-
-                    if (grau_parentesco.Length == 0)
+                    if (dataGridView1.Rows[i].Cells[1].Value == null)
                     {
+                        MessageBox.Show("Informe todos os campos dos dependentes");
                         break;
+                    }
+                    else
+                    {
+                        contador_verificador++;
                     }
                 }
             }
 
-            if(i+1 < dataGridView1.Rows.Count)
-            {
-                MessageBox.Show("Informe todos os campos dos dependentes");
-            }
-            else
+            if(contador_verificador == dataGridView1.Rows.Count)
             {
                 valida = true;
             }
@@ -165,7 +157,7 @@ namespace mercado
         {
             if (masktxt_PesquisarCPF.Text.Length == 0) { MessageBox.Show("Informar CPF para consultar cliente"); }
             else if (contDigitosCPF(masktxt_PesquisarCPF.Text) < 11) { MessageBox.Show("CPF informado para consulta não tem 11 dígitos"); }
-            else if (validarCPF(masktxt_PesquisarCPF.Text).Equals("true")) { MessageBox.Show("CPF informado para consulta é inválido"); }
+            else if (validarCPF(masktxt_PesquisarCPF.Text).Equals("false")) { MessageBox.Show("CPF informado para consulta é inválido"); }
             else
             {
                 bool result = false;
@@ -173,7 +165,7 @@ namespace mercado
                 limparCampos();
 
                 string consulta_sql = "SELECT d.cod_dependentes, d.nome AS nome_dependente, d.parentesco, c.nome_cli AS nome_cliente, c.codigo_cli " +
-                    "FROM clientes c, dependentes d WHERE c.codigo_cli = d.cod_dependentes " +
+                    "FROM clientes c, dependentes d WHERE c.codigo_cli = d.cod_clidp " +
                     "AND c.CPF_cli = '" + masktxt_PesquisarCPF.Text + "';";
                 SqlConnection conn = conexao.obterConexao();
                 SqlCommand commn = new SqlCommand(consulta_sql, conn);
@@ -223,20 +215,19 @@ namespace mercado
         {
             if(validaCamposDataGrid())
             {
-                for (int i = 0; i <= dataGridView1.Rows.Count - 1; i++)
-                {
-                    string nome_dependente = dataGridView1.Rows[i].Cells[0].Value.ToString();
-                    string grau_parentesco = dataGridView1.Rows[i].Cells[1].Value.ToString();
+                int contagem_registros = 0;
 
-                    string sql = "UPDATE dependentes SET nome = @nome, parentesco = @parentesco, cod_clidp = @cod_clidp, " +
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    string sql = "UPDATE dependentes SET nome = @nome, parentesco = @parentesco, cod_clidp = @cod_clidp " +
                             "WHERE cod_dependentes = @cod_dependentes;";
                     SqlConnection conn = conexao.obterConexao();
                     SqlCommand cmd = new SqlCommand(sql, conn);
 
-                    cmd.Parameters.Add(new SqlParameter("@nome", nome_dependente));
-                    cmd.Parameters.Add(new SqlParameter("@parentesco", grau_parentesco));
+                    cmd.Parameters.Add(new SqlParameter("@nome", Convert.ToString(dataGridView1.Rows[i].Cells[0].Value).ToUpper()));
+                    cmd.Parameters.Add(new SqlParameter("@parentesco", Convert.ToString(dataGridView1.Rows[i].Cells[1].Value).ToUpper()));
                     cmd.Parameters.Add(new SqlParameter("@cod_clidp", codigo_cliente));
-                    cmd.Parameters.Add(new SqlParameter("@cod_dependentes", lista_codigo_dependentes.ElementAt(i)));
+                    cmd.Parameters.Add(new SqlParameter("@cod_dependentes", lista_codigo_dependentes[i]));
 
                     cmd.CommandType = CommandType.Text;
                     conexao.obterConexao();
@@ -244,8 +235,7 @@ namespace mercado
                     {
                         int j = cmd.ExecuteNonQuery();
                         if (j > 0)
-                            MessageBox.Show("Dependentes alterados com sucesso!");
-                        limpezaCompletaCampos();
+                            contagem_registros++;
                     }
                     catch (Exception ex)
                     {
@@ -255,6 +245,12 @@ namespace mercado
                     {
                         conexao.fecharConexao();
                     }
+                }
+
+                if (contagem_registros == dataGridView1.Rows.Count)
+                {
+                    MessageBox.Show("Dependentes alterados com sucesso!");
+                    limparCampos();
                 }
             }
         }
@@ -269,12 +265,12 @@ namespace mercado
             {
                 int indice = dataGridView1.CurrentRow.Index;
 
-                string sql = "DELETE FROM dependentes WHERE codigo_dependentes = @codigo_dependentes;";
+                string sql = "DELETE FROM dependentes WHERE cod_dependentes = @cod_dependentes;";
 
                 SqlConnection conn = conexao.obterConexao();
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
-                cmd.Parameters.Add(new SqlParameter("@codigo_dependentes", lista_codigo_dependentes.ElementAt(indice)));
+                cmd.Parameters.Add(new SqlParameter("@cod_dependentes", lista_codigo_dependentes[indice]));
 
                 cmd.CommandType = CommandType.Text;
                 conexao.obterConexao();
@@ -282,8 +278,10 @@ namespace mercado
                 {
                     int i = cmd.ExecuteNonQuery();
                     if (i > 0)
+                    {
                         MessageBox.Show("Dependente excluído com sucesso!");
-                    limpezaCompletaCampos();
+                        limparCampos();
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -298,7 +296,7 @@ namespace mercado
 
         private void btn_Limpar_Click(object sender, EventArgs e)
         {
-            limpezaCompletaCampos();
+            limparCampos();
         }
     }
 }

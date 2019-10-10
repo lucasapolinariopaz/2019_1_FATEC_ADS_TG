@@ -62,7 +62,7 @@
             this.txt_NomeCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_NomeCliente.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_NomeCliente.Location = new System.Drawing.Point(162, 18);
-            this.txt_NomeCliente.MaxLength = 13;
+            this.txt_NomeCliente.MaxLength = 50;
             this.txt_NomeCliente.Name = "txt_NomeCliente";
             this.txt_NomeCliente.Size = new System.Drawing.Size(457, 22);
             this.txt_NomeCliente.TabIndex = 116;
@@ -86,7 +86,7 @@
             this.txt_RG.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_RG.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_RG.Location = new System.Drawing.Point(42, 48);
-            this.txt_RG.MaxLength = 13;
+            this.txt_RG.MaxLength = 20;
             this.txt_RG.Name = "txt_RG";
             this.txt_RG.Size = new System.Drawing.Size(117, 22);
             this.txt_RG.TabIndex = 118;
@@ -134,7 +134,7 @@
             this.txt_Endereco.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_Endereco.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Endereco.Location = new System.Drawing.Point(104, 76);
-            this.txt_Endereco.MaxLength = 13;
+            this.txt_Endereco.MaxLength = 50;
             this.txt_Endereco.Name = "txt_Endereco";
             this.txt_Endereco.Size = new System.Drawing.Size(295, 22);
             this.txt_Endereco.TabIndex = 124;
@@ -158,7 +158,7 @@
             this.txt_Cidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_Cidade.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Cidade.Location = new System.Drawing.Point(500, 75);
-            this.txt_Cidade.MaxLength = 13;
+            this.txt_Cidade.MaxLength = 20;
             this.txt_Cidade.Name = "txt_Cidade";
             this.txt_Cidade.Size = new System.Drawing.Size(200, 22);
             this.txt_Cidade.TabIndex = 126;
@@ -182,7 +182,7 @@
             this.txt_Bairro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_Bairro.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Bairro.Location = new System.Drawing.Point(104, 104);
-            this.txt_Bairro.MaxLength = 13;
+            this.txt_Bairro.MaxLength = 20;
             this.txt_Bairro.Name = "txt_Bairro";
             this.txt_Bairro.Size = new System.Drawing.Size(143, 22);
             this.txt_Bairro.TabIndex = 128;
@@ -206,7 +206,7 @@
             this.txt_Numero.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_Numero.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Numero.Location = new System.Drawing.Point(500, 104);
-            this.txt_Numero.MaxLength = 13;
+            this.txt_Numero.MaxLength = 4;
             this.txt_Numero.Name = "txt_Numero";
             this.txt_Numero.Size = new System.Drawing.Size(79, 22);
             this.txt_Numero.TabIndex = 130;
@@ -230,7 +230,7 @@
             this.txt_Telefone.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_Telefone.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Telefone.Location = new System.Drawing.Point(104, 133);
-            this.txt_Telefone.MaxLength = 13;
+            this.txt_Telefone.MaxLength = 20;
             this.txt_Telefone.Name = "txt_Telefone";
             this.txt_Telefone.Size = new System.Drawing.Size(117, 22);
             this.txt_Telefone.TabIndex = 132;
@@ -254,7 +254,7 @@
             this.txt_Celular.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_Celular.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Celular.Location = new System.Drawing.Point(500, 136);
-            this.txt_Celular.MaxLength = 13;
+            this.txt_Celular.MaxLength = 20;
             this.txt_Celular.Name = "txt_Celular";
             this.txt_Celular.Size = new System.Drawing.Size(117, 22);
             this.txt_Celular.TabIndex = 134;
