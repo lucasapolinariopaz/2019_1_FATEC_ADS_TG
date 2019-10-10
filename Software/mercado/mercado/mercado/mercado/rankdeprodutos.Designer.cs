@@ -31,13 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rankdeprodutos));
             this.btn_Consultar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cb_Outros = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cb_marca = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cb_cat = new System.Windows.Forms.ComboBox();
-            this.btn_Fechar = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +38,11 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cb_marca = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cb_cat = new System.Windows.Forms.ComboBox();
+            this.btn_Fechar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,74 +76,6 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(746, 227);
             this.dataGridView1.TabIndex = 21;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Info;
-            this.label2.Location = new System.Drawing.Point(509, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 15);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "OUTROS";
-            // 
-            // cb_Outros
-            // 
-            this.cb_Outros.FormattingEnabled = true;
-            this.cb_Outros.Location = new System.Drawing.Point(571, 8);
-            this.cb_Outros.Name = "cb_Outros";
-            this.cb_Outros.Size = new System.Drawing.Size(152, 21);
-            this.cb_Outros.TabIndex = 19;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Info;
-            this.label1.Location = new System.Drawing.Point(269, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 15);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "MARCA";
-            // 
-            // cb_marca
-            // 
-            this.cb_marca.FormattingEnabled = true;
-            this.cb_marca.Location = new System.Drawing.Point(324, 8);
-            this.cb_marca.Name = "cb_marca";
-            this.cb_marca.Size = new System.Drawing.Size(152, 21);
-            this.cb_marca.TabIndex = 17;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Info;
-            this.label4.Location = new System.Drawing.Point(12, 10);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 15);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "CATEGORIA ";
-            // 
-            // cb_cat
-            // 
-            this.cb_cat.FormattingEnabled = true;
-            this.cb_cat.Location = new System.Drawing.Point(93, 8);
-            this.cb_cat.Name = "cb_cat";
-            this.cb_cat.Size = new System.Drawing.Size(152, 21);
-            this.cb_cat.TabIndex = 15;
-            // 
-            // btn_Fechar
-            // 
-            this.btn_Fechar.Location = new System.Drawing.Point(324, 320);
-            this.btn_Fechar.Name = "btn_Fechar";
-            this.btn_Fechar.Size = new System.Drawing.Size(148, 23);
-            this.btn_Fechar.TabIndex = 23;
-            this.btn_Fechar.Text = "FECHAR";
-            this.btn_Fechar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_Fechar.UseVisualStyleBackColor = true;
-            this.btn_Fechar.Click += new System.EventHandler(this.btn_Fechar_Click);
             // 
             // Column1
             // 
@@ -194,6 +124,55 @@
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Info;
+            this.label1.Location = new System.Drawing.Point(412, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 15);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "MARCA";
+            // 
+            // cb_marca
+            // 
+            this.cb_marca.FormattingEnabled = true;
+            this.cb_marca.Location = new System.Drawing.Point(467, 12);
+            this.cb_marca.Name = "cb_marca";
+            this.cb_marca.Size = new System.Drawing.Size(152, 21);
+            this.cb_marca.TabIndex = 17;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Info;
+            this.label4.Location = new System.Drawing.Point(155, 14);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(75, 15);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "CATEGORIA ";
+            // 
+            // cb_cat
+            // 
+            this.cb_cat.FormattingEnabled = true;
+            this.cb_cat.Location = new System.Drawing.Point(236, 12);
+            this.cb_cat.Name = "cb_cat";
+            this.cb_cat.Size = new System.Drawing.Size(152, 21);
+            this.cb_cat.TabIndex = 15;
+            // 
+            // btn_Fechar
+            // 
+            this.btn_Fechar.Location = new System.Drawing.Point(324, 320);
+            this.btn_Fechar.Name = "btn_Fechar";
+            this.btn_Fechar.Size = new System.Drawing.Size(148, 23);
+            this.btn_Fechar.TabIndex = 23;
+            this.btn_Fechar.Text = "FECHAR";
+            this.btn_Fechar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_Fechar.UseVisualStyleBackColor = true;
+            this.btn_Fechar.Click += new System.EventHandler(this.btn_Fechar_Click);
+            // 
             // rankdeprodutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,8 +182,6 @@
             this.Controls.Add(this.btn_Fechar);
             this.Controls.Add(this.btn_Consultar);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.cb_Outros);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cb_marca);
             this.Controls.Add(this.label4);
@@ -226,8 +203,6 @@
 
         private System.Windows.Forms.Button btn_Consultar;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cb_Outros;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cb_marca;
         private System.Windows.Forms.Label label4;

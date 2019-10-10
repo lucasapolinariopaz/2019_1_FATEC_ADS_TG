@@ -23,7 +23,7 @@ namespace mercado
             //Carregamento dos Combobox
             bool result;
 
-            cb_Outros.Items.Insert(0, "");
+            //cb_Outros.Items.Insert(0, "");
 
             cb_cat.Items.Add("");
             string consulta_sql = "SELECT c.categ FROM categoria c GROUP BY c.categ;";
@@ -83,10 +83,10 @@ namespace mercado
 
             dataGridView1.Rows.Clear();
 
-            string consulta_sql = "SELECT e.codigo_prod, e.codigo_barra, e.descricao_prod, e.categoria_prod, e.marca_prod, e.preco_custo, e.preco_venda, e.estoque_atualprod, e.validade_prod, e.codprod_fornec, e.data_entrada, e.codprodentrada, COUNT(d.codProdV) as rank " +
+            string consulta_sql = "SELECT e.codigo_prod, e.codigo_barra, e.descricao_prod, e.categoria_prod, e.marca_prod, e.preco_custo, e.preco_venda, e.estoque_atualprod, e.validade_prod, e.codprod_fornec, e.data_entrada, e.codprodentrada, COUNT(d.codProdV) AS rank " +
                 "FROM estoque e, detalheVenda d WHERE d.codProdV = e.codigo_prod";
 
-            //lógica para definir os flitros na string da consulta sql
+            //lógica para definir os filtros na string da consulta sql
             if (cb_cat.Text.Length != 0)
             {
                 consulta_sql = consulta_sql + " AND e.categoria_prod = '" + cb_cat.Text + "'";
@@ -98,8 +98,8 @@ namespace mercado
             }
 
             //enfim fecha a consulta sql
-            consulta_sql = consulta_sql + "GROUP BY e.codigo_prod, e.codigo_barra, e.descricao_prod, e.categoria_prod, e.marca_prod, e.preco_custo, e.preco_venda, e.estoque_atualprod, e.validade_prod, e.codprod_fornec, e.data_entrada, e.codprodentrada " +
-                "ORDER BY d.codProdV ASC;";
+            consulta_sql = consulta_sql + " GROUP BY e.codigo_prod, e.codigo_barra, e.descricao_prod, e.categoria_prod, e.marca_prod, e.preco_custo, e.preco_venda, e.estoque_atualprod, e.validade_prod, e.codprod_fornec, e.data_entrada, e.codprodentrada " +
+                "ORDER BY rank DESC;";
 
             SqlConnection conn = conexao.obterConexao();
             SqlCommand commn = new SqlCommand(consulta_sql, conn);

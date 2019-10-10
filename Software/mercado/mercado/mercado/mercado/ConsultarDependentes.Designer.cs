@@ -36,10 +36,10 @@
             this.btn_Alterar = new System.Windows.Forms.Button();
             this.btn_Fechar = new System.Windows.Forms.Button();
             this.masktxt_PesquisarCPF = new System.Windows.Forms.MaskedTextBox();
+            this.btn_Limpar = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_Limpar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,25 +120,6 @@
             this.masktxt_PesquisarCPF.Size = new System.Drawing.Size(85, 20);
             this.masktxt_PesquisarCPF.TabIndex = 176;
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "NOME DO DEPENDENTE";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 180;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "GRAU DE PARENTESCO";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "NOME DO CLIENTE";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 180;
-            // 
             // btn_Limpar
             // 
             this.btn_Limpar.Location = new System.Drawing.Point(259, 205);
@@ -148,6 +129,24 @@
             this.btn_Limpar.Text = "LIMPAR";
             this.btn_Limpar.UseVisualStyleBackColor = true;
             this.btn_Limpar.Click += new System.EventHandler(this.btn_Limpar_Click);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "NOME DO DEPENDENTE";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 180;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "GRAU DE PARENTESCO";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "NOME DO CLIENTE";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 180;
             // 
             // ConsultarDependentes
             // 
@@ -184,9 +183,9 @@
         private System.Windows.Forms.Button btn_Alterar;
         private System.Windows.Forms.Button btn_Fechar;
         private System.Windows.Forms.MaskedTextBox masktxt_PesquisarCPF;
+        private System.Windows.Forms.Button btn_Limpar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.Button btn_Limpar;
     }
 }

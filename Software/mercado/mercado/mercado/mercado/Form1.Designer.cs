@@ -243,7 +243,7 @@
             // 
             this.cONSULTAToolStripMenuItem2.Name = "cONSULTAToolStripMenuItem2";
             this.cONSULTAToolStripMenuItem2.Size = new System.Drawing.Size(229, 22);
-            this.cONSULTAToolStripMenuItem2.Text = "CONSULTAR DE CLIENTES";
+            this.cONSULTAToolStripMenuItem2.Text = "CONSULTAR CLIENTES";
             this.cONSULTAToolStripMenuItem2.Click += new System.EventHandler(this.cONSULTAToolStripMenuItem2_Click);
             // 
             // cADASTRAODEDEPENDENTESToolStripMenuItem

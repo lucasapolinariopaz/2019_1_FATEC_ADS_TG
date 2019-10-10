@@ -20,7 +20,6 @@ namespace mercado
 
         public void limparCampos()
         {
-            masktxt_PesquisarCPF.Clear();
             txt_ClienteCod.Clear();
             txt_DependenteNome.Clear();
             txt_DependenteParentesco.Clear();
@@ -120,7 +119,7 @@ namespace mercado
         {
             if (masktxt_PesquisarCPF.Text.Length == 0) { MessageBox.Show("Informar CPF para consultar cliente"); }
             else if (contDigitosCPF(masktxt_PesquisarCPF.Text) < 11) { MessageBox.Show("CPF informado para consulta não tem 11 dígitos"); }
-            else if (validarCPF(masktxt_PesquisarCPF.Text).Equals("true")) { MessageBox.Show("CPF informado para consulta é inválido"); }
+            else if (validarCPF(masktxt_PesquisarCPF.Text).Equals("false")) { MessageBox.Show("CPF informado para consulta é inválido"); }
             else
             {
                 bool result = false;
@@ -182,7 +181,10 @@ namespace mercado
                 {
                     int i = cmd.ExecuteNonQuery();
                     if (i > 0)
+                    {
                         MessageBox.Show("Cadastro realizado com sucesso!");
+                        limparCampos();
+                    }
                 }
                 catch (Exception ex)
                 {

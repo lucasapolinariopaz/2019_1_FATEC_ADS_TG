@@ -72,7 +72,7 @@
             this.txt_DependenteNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_DependenteNome.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_DependenteNome.Location = new System.Drawing.Point(64, 86);
-            this.txt_DependenteNome.MaxLength = 13;
+            this.txt_DependenteNome.MaxLength = 50;
             this.txt_DependenteNome.Name = "txt_DependenteNome";
             this.txt_DependenteNome.Size = new System.Drawing.Size(240, 22);
             this.txt_DependenteNome.TabIndex = 167;
@@ -96,7 +96,7 @@
             this.txt_DependenteParentesco.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_DependenteParentesco.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_DependenteParentesco.Location = new System.Drawing.Point(433, 86);
-            this.txt_DependenteParentesco.MaxLength = 13;
+            this.txt_DependenteParentesco.MaxLength = 50;
             this.txt_DependenteParentesco.Name = "txt_DependenteParentesco";
             this.txt_DependenteParentesco.Size = new System.Drawing.Size(240, 22);
             this.txt_DependenteParentesco.TabIndex = 169;
