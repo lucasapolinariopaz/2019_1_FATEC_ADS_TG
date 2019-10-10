@@ -29,8 +29,43 @@ namespace mercado
             InitializeComponent();
         }
 
+        public void carrega()
+        {
 
-public void esconderCampos()
+            bool result = false;
+            SqlConnection conn = conexao.obterConexao();
+            SqlCommand commn = new SqlCommand("select codAber,nomefunc,cpffunc,dataaber,valoraberturaf  from fechamento where estatus='ON';", conn);
+            commn.CommandType = CommandType.Text;
+            commn.Parameters.Add(new SqlParameter("@codAber", "codAber"));
+            commn.Parameters.Add(new SqlParameter("@nomefunc", "nomefunc"));
+            commn.Parameters.Add(new SqlParameter("@cpffunc", "cpffunc"));
+            commn.Parameters.Add(new SqlParameter("@dataaber", "dataaber"));
+            commn.Parameters.Add(new SqlParameter("@valorabertura", "valoraberturaf"));
+
+
+            conexao.obterConexao();
+            SqlDataReader dr = commn.ExecuteReader();
+            result = dr.HasRows;
+            if (result == true)
+            {
+                while (dr.Read())
+                {
+
+                
+
+                }
+             
+            }
+            else
+            {
+                MessageBox.Show(" Não há Abertura de caixa no momento!!");
+                this.Close();
+            }
+
+            conexao.fecharConexao();
+
+        }
+        public void esconderCampos()
         {
             Label1.Visible = false;
             Label2.Visible = false;
@@ -148,19 +183,23 @@ public void esconderCampos()
                 List1.Items.Add(("0000") + cl1 + "   " + cl3+" "+cl2);
                 List1.Items.Add("R$"+cl4 + "  " + cl5 + "Un x  ");
             }
-            List1.Items.Add("CLiENTE " + txtcli.Text);
+            List1.Items.Add("CLIENTE " + txtcli.Text);
             List1.Items.Add("VALOR TOTAL "+ txtvalortotal.Text);
             List1.Items.Add("VALOR PAGO " + "R$ " + TextBox6.Text);
-            List1.Items.Add("TROCO " + "R$ " + TextBox7.Text);
+            decimal trrr = Convert.ToDecimal(TextBox7.Text);
+            if (trrr < 0) {
+                List1.Items.Add("TROCO " + "R$ " + "0,00"); }
+            else { List1.Items.Add("TROCO " + "R$ " + TextBox7.Text); }
             esconderCampos();
 
         }
         private void caixapdv_Load(object sender, EventArgs e)
         {
+            carrega();
+        
 
-           
-            // Create the ToolTip and associate with the Form container.
-            ToolTip toolTip1 = new ToolTip();
+                // Create the ToolTip and associate with the Form container.
+                ToolTip toolTip1 = new ToolTip();
 
             // Set up the delays for the ToolTip.
             toolTip1.AutoPopDelay = 5000;
@@ -173,6 +212,9 @@ public void esconderCampos()
           
           toolTip1.SetToolTip(this.button3,"Consulte Cliente");
           toolTip1.SetToolTip(this.button1, "Consulte Depedentes");
+
+
+
         }
 
 
@@ -406,8 +448,8 @@ public void esconderCampos()
                     {
                         int i = cmd.ExecuteNonQuery();
                         if (i > 0)
-                            MessageBox.Show("Venda realizada com sucesso!","AVISO");
-                            cupom();
+                            MessageBox.Show("Venda realizada com sucesso!", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cupom();
                             limpar();
 
                     }
@@ -468,7 +510,7 @@ public void esconderCampos()
                 {
                     int i = cmd.ExecuteNonQuery();
                     if (i > 0)
-                        MessageBox.Show("Venda realizada com sucesso!", "AVISO");
+                        MessageBox.Show("Venda realizada com sucesso!", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     cupom();
                     limpar();
 
@@ -538,7 +580,7 @@ public void esconderCampos()
                     {
                         int i = cmd.ExecuteNonQuery();
                         if (i > 0)
-                            MessageBox.Show("Venda realizada com sucesso!", "AVISO");
+                            MessageBox.Show("Venda realizada com sucesso!", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         cupom();
                         limpar();
 
@@ -608,7 +650,7 @@ public void esconderCampos()
                     codcc = dr["codigo_cli"].ToString();
                  
                 }
-                MessageBox.Show("Cliente encontrado!!","AVISO");
+                MessageBox.Show("Cliente encontrado!!", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             else

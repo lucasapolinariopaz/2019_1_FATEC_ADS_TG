@@ -124,7 +124,6 @@
             // 
             this.cbnmarcas.DataSource = this.marcasBindingSource1;
             this.cbnmarcas.DisplayMember = "nome_marcas";
-            this.cbnmarcas.Enabled = false;
             this.cbnmarcas.FormattingEnabled = true;
             this.cbnmarcas.Location = new System.Drawing.Point(94, 122);
             this.cbnmarcas.Name = "cbnmarcas";
@@ -148,11 +147,10 @@
             // 
             this.cbncateg.DataSource = this.categoriaBindingSource;
             this.cbncateg.DisplayMember = "categ";
-            this.cbncateg.Enabled = false;
             this.cbncateg.FormattingEnabled = true;
             this.cbncateg.Location = new System.Drawing.Point(93, 95);
             this.cbncateg.Name = "cbncateg";
-            this.cbncateg.Size = new System.Drawing.Size(147, 21);
+            this.cbncateg.Size = new System.Drawing.Size(148, 21);
             this.cbncateg.TabIndex = 15;
             this.cbncateg.ValueMember = "categ";
             this.cbncateg.TextChanged += new System.EventHandler(this.cbncateg_TextChanged);
@@ -204,7 +202,6 @@
             // 
             this.cbnfornecedor.DataSource = this.fornecedorBindingSource1;
             this.cbnfornecedor.DisplayMember = "nome_fornecedor";
-            this.cbnfornecedor.Enabled = false;
             this.cbnfornecedor.FormattingEnabled = true;
             this.cbnfornecedor.Location = new System.Drawing.Point(93, 70);
             this.cbnfornecedor.Name = "cbnfornecedor";
@@ -292,7 +289,6 @@
             // txtunidades
             // 
             this.txtunidades.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtunidades.Enabled = false;
             this.txtunidades.Location = new System.Drawing.Point(109, 149);
             this.txtunidades.Name = "txtunidades";
             this.txtunidades.Size = new System.Drawing.Size(100, 20);
@@ -334,7 +330,6 @@
             // 
             // maskedTextBox4
             // 
-            this.maskedTextBox4.Enabled = false;
             this.maskedTextBox4.Location = new System.Drawing.Point(576, 151);
             this.maskedTextBox4.Mask = "00/00/0000";
             this.maskedTextBox4.Name = "maskedTextBox4";
@@ -461,7 +456,6 @@
             // 
             // textBox1
             // 
-            this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(109, 175);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
@@ -482,7 +476,6 @@
             // 
             // txtpdvenda
             // 
-            this.txtpdvenda.Enabled = false;
             this.txtpdvenda.Location = new System.Drawing.Point(576, 175);
             this.txtpdvenda.Name = "txtpdvenda";
             this.txtpdvenda.Size = new System.Drawing.Size(100, 20);

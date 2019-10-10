@@ -270,7 +270,7 @@ namespace mercado
                 int i = cmd.ExecuteNonQuery();
                 if (i > 0)
                 {
-                    MessageBox.Show("Cadastro realizado com sucesso!");
+                    MessageBox.Show("Cadastro realizado com sucesso!","AVISO",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     limpar();
                 }
             }
