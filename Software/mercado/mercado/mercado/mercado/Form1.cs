@@ -15,6 +15,7 @@ namespace mercado
 {
     public partial class Form1 : Form
     {
+        string nomefunc;
         public Form1()
         {
             InitializeComponent();
@@ -30,9 +31,18 @@ namespace mercado
                 {
 
                     SqlCommand cmd = new SqlCommand("Select CPF_usuario,senha_usuario,tipo,nome from acesso where CPF_usuario='" + txtlogcpf.Text + "'and senha_usuario='" + txtsenha.Text + "';", cn);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.Add(new SqlParameter("@nome", "nome"));
                     conexao.obterConexao();
                     SqlDataReader dados = cmd.ExecuteReader();
                     result = dados.HasRows;
+                    while (dados.Read())
+                    {
+                        nomefunc = dados["nome"].ToString();
+
+
+                    }
+
                 }
                 catch (Exception erro)
                 {
@@ -54,8 +64,8 @@ namespace mercado
             if (result)
             {
 
-                MessageBox.Show("Seja bem vindo!");
-
+               // MessageBox.Show("Seja bem vindo!");
+                MessageBox.Show(nomefunc);
                 groupBox1.Visible = false;
             }
             else
@@ -102,7 +112,27 @@ namespace mercado
 
         private void pRODUTOSToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            CONSULTAPRODUTOS novo = new CONSULTAPRODUTOS();
+            CONSULTAPRODUTOS novo = new CONSULTAPRODUTOS(txtlogcpf.Text);
+            novo.Show();
+        }
+
+        private void cAIXAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        caixapdv novo = new caixapdv();
+            novo.Show();
+        }
+
+        private void fECHAMENTOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            abertura novo = new abertura();
+            novo.login = nomefunc;
+            novo.cpfrecebido = txtlogcpf.Text;
+            novo.Show();
+        }
+
+        private void aToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fechamentodecaixa novo = new fechamentodecaixa();
             novo.Show();
         }
     }

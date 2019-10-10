@@ -19,7 +19,29 @@ namespace mercado
             
         }
 
-        
+        bool Verificacodbarras(string cp)
+        {
+
+            bool result = false;
+
+            using (SqlConnection cn = conexao.obterConexao())
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("Select codigo_barra from estoque where codigo_barra='" + cp + "';", cn);
+                    conexao.obterConexao();
+                    SqlDataReader dados = cmd.ExecuteReader();
+                    result = dados.HasRows;
+                   
+                }
+                catch (Exception erro)
+                {
+                    MessageBox.Show(erro.Message);
+                }
+                conexao.fecharConexao();
+            }
+            return result;
+        }
         private void cadastro_de_produtos_Load(object sender, EventArgs e)
         {
             
@@ -75,13 +97,13 @@ namespace mercado
        
        
 
-        private void txt_valorUni_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && e.KeyChar != Convert.ToChar(Keys.Back))
             {
                 if (e.KeyChar == ',')
                 {
-                    e.Handled = (txt_valorUni.Text.Contains(","));
+                    e.Handled = (textBox1.Text.Contains(","));
                 }
                 else
                     e.Handled = true;
@@ -89,45 +111,45 @@ namespace mercado
             
         }
 
-        private void txt_valorUni_Leave(object sender, EventArgs e)
+        private void textBox1_Leave(object sender, EventArgs e)
         {
-            valor = txt_valorUni.Text.Replace("R$", "");
-            txt_valorUni.Text = string.Format("{0:C}", Convert.ToDouble(valor));
+            valor = textBox1.Text.Replace("R$", "");
+            textBox1.Text = string.Format("{0:C}", Convert.ToDouble(valor));
         }
 
-        private void txt_valorUni_KeyUp(object sender, KeyEventArgs e)
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)
         {
-            valor = txt_valorUni.Text.Replace("R$", "").Replace(",", "").Replace(" ", "").Replace("00,", "");
+            valor = textBox1.Text.Replace("R$", "").Replace(",", "").Replace(" ", "").Replace("00,", "");
             if (valor.Length == 0)
             {
-                txt_valorUni.Text = "0,00" + valor;
+                textBox1.Text = "0,00" + valor;
             }
             if (valor.Length == 1)
             {
-                txt_valorUni.Text = "0,0" + valor;
+                textBox1.Text = "0,0" + valor;
             }
             if (valor.Length == 2)
             {
-                txt_valorUni.Text = "0," + valor;
+                textBox1.Text = "0," + valor;
             }
             else if (valor.Length >= 3)
             {
-                if (txt_valorUni.Text.StartsWith("0,"))
+                if (textBox1.Text.StartsWith("0,"))
                 {
-                    txt_valorUni.Text = valor.Insert(valor.Length - 2, ",").Replace("0,", "");
+                    textBox1.Text = valor.Insert(valor.Length - 2, ",").Replace("0,", "");
                 }
-                else if (txt_valorUni.Text.Contains("00,"))
+                else if (textBox1.Text.Contains("00,"))
                 {
-                    txt_valorUni.Text = valor.Insert(valor.Length - 2, ",").Replace("00,", "");
+                    textBox1.Text = valor.Insert(valor.Length - 2, ",").Replace("00,", "");
                 }
                 else
                 {
-                    txt_valorUni.Text = valor.Insert(valor.Length - 2, ",");
+                    textBox1.Text = valor.Insert(valor.Length - 2, ",");
                 }
             }
-            valor = txt_valorUni.Text;
-            txt_valorUni.Text = string.Format("{0:C}", Convert.ToDouble(valor));
-            txt_valorUni.Select(txt_valorUni.Text.Length, 0);
+            valor = textBox1.Text;
+            textBox1.Text = string.Format("{0:C}", Convert.ToDouble(valor));
+            textBox1.Select(textBox1.Text.Length, 0);
         }
 
         private void txtporcen_KeyPress(object sender, KeyPressEventArgs e)
@@ -187,8 +209,37 @@ namespace mercado
 
         private void maskedTextBox1_TextChanged(object sender, EventArgs e)
         {
-            cbnmarcas.Enabled = true;
-        }
+           
+            string codbarrasV = maskedTextBox1.Text;
+                bool Logado = false;
+                bool result = Verificacodbarras(codbarrasV);
+
+                Logado = result;
+
+                if (result)
+                {
+                cbnmarcas.Enabled = false;
+                cbnfornecedor.Enabled = false;
+                cbncateg.Enabled = false;
+                if (MessageBox.Show("Codigo de Barras ja cadastrado!! Deseja Atualizar", "Aviso", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+
+                    //  MessageBox.Show(" ok clicado");
+                    CONSULTAPRODUTOS novo = new CONSULTAPRODUTOS(maskedTextBox1.Text);
+                    novo.Show();
+
+                }
+            }
+                else {  cbnmarcas.Enabled = true;
+                cbnfornecedor.Enabled = true;
+                cbncateg.Enabled = true;
+            } 
+
+            
+                
+            }
+
+        
 
         private void cbnmarcas_TextChanged(object sender, EventArgs e)
         {
@@ -200,10 +251,7 @@ namespace mercado
             cbnfornecedor.Enabled = true;
         }
 
-        private void cbnfornecedor_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
+      
 
         private void btnsalvar_Click(object sender, EventArgs e)
 
@@ -211,7 +259,7 @@ namespace mercado
            
             //codf = Convert.ToInt32(Tcodf);
             codf = int.Parse(Tcodf);
-            string pccaracter = txt_valorUni.Text;
+            string pccaracter = textBox1.Text;
             pccaracter = pccaracter.Replace("R$", "");
             decimal pc = Convert.ToDecimal(pccaracter);
             decimal pv = Convert.ToDecimal(txtpdvenda.Text);
@@ -255,7 +303,7 @@ namespace mercado
             txtunidades.Enabled = true;
             txtunidadesatual.Enabled = false;
             maskedTextBox4.Enabled = true;
-            txt_valorUni.Enabled = true;
+            textBox1.Enabled = true;
             txtporcen.Enabled = true;
             txtpdvenda.Enabled = true;
         }
@@ -267,7 +315,7 @@ namespace mercado
             txtunidadesatual.Clear();
             maskedTextBox4.Clear();
             maskedTextBox1.Clear();
-            txt_valorUni.Clear();
+            textBox1.Clear();
             txtporcen.Text="0";
             txtpdvenda.Clear();
             cbncateg.SelectedIndex = -1;
@@ -277,11 +325,7 @@ namespace mercado
 
         }
 
-        private void txtunidades_Click(object sender, EventArgs e)
-        {
-            
-            
-        }
+      
 
         private void cbnmarcas_Click(object sender, EventArgs e)
         {

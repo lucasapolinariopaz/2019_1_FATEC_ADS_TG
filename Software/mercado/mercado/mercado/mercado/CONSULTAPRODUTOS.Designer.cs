@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CONSULTAPRODUTOS));
             this.txtpdvenda = new System.Windows.Forms.TextBox();
             this.txtporcen = new System.Windows.Forms.TextBox();
-            this.txt_valorUni = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -72,6 +72,8 @@
             this.categoriaTableAdapter = new mercado.mercado_tgDataSet10TableAdapters.categoriaTableAdapter();
             this.marcasTableAdapter = new mercado.mercado_tgDataSet11TableAdapters.marcasTableAdapter();
             this.btnalt = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mercado_tgDataSet9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
@@ -98,15 +100,15 @@
             this.txtporcen.TabIndex = 71;
             this.txtporcen.TextChanged += new System.EventHandler(this.txtporcen_TextChanged);
             // 
-            // txt_valorUni
+            // textBox1
             // 
-            this.txt_valorUni.Location = new System.Drawing.Point(109, 217);
-            this.txt_valorUni.Name = "txt_valorUni";
-            this.txt_valorUni.Size = new System.Drawing.Size(100, 20);
-            this.txt_valorUni.TabIndex = 70;
-            this.txt_valorUni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_valorUni_KeyPress);
-            this.txt_valorUni.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_valorUni_KeyUp);
-            this.txt_valorUni.Leave += new System.EventHandler(this.txt_valorUni_Leave);
+            this.textBox1.Location = new System.Drawing.Point(109, 217);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 70;
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
+            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // maskedTextBox4
             // 
@@ -285,6 +287,7 @@
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(89, 20);
             this.maskedTextBox1.TabIndex = 48;
+            this.maskedTextBox1.TextChanged += new System.EventHandler(this.maskedTextBox1_TextChanged);
             // 
             // label1
             // 
@@ -463,7 +466,7 @@
             // 
             // btnalt
             // 
-            this.btnalt.Location = new System.Drawing.Point(13, 297);
+            this.btnalt.Location = new System.Drawing.Point(183, 290);
             this.btnalt.Name = "btnalt";
             this.btnalt.Size = new System.Drawing.Size(75, 23);
             this.btnalt.TabIndex = 80;
@@ -471,12 +474,34 @@
             this.btnalt.UseVisualStyleBackColor = true;
             this.btnalt.Click += new System.EventHandler(this.btnalt_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(286, 290);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 81;
+            this.button2.Text = "CANCELAR";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(387, 290);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 82;
+            this.button4.Text = "SAIR";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // CONSULTAPRODUTOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(696, 348);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnalt);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.lbldata);
@@ -486,7 +511,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtpdvenda);
             this.Controls.Add(this.txtporcen);
-            this.Controls.Add(this.txt_valorUni);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnatucateg);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.btnfornecedor);
@@ -516,6 +541,7 @@
             this.Name = "CONSULTAPRODUTOS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CONSULTA PRODUTOS";
+            this.Load += new System.EventHandler(this.CONSULTAPRODUTOS_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mercado_tgDataSet9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
@@ -531,7 +557,7 @@
 
         private System.Windows.Forms.TextBox txtpdvenda;
         private System.Windows.Forms.TextBox txtporcen;
-        private System.Windows.Forms.TextBox txt_valorUni;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnatucateg;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnfornecedor;
@@ -571,5 +597,7 @@
         private System.Windows.Forms.BindingSource marcasBindingSource;
         private mercado_tgDataSet11TableAdapters.marcasTableAdapter marcasTableAdapter;
         private System.Windows.Forms.Button btnalt;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button4;
     }
 }

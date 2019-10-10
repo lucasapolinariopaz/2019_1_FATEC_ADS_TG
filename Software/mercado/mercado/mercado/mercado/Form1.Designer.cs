@@ -85,6 +85,7 @@
             this.cAIXAToolStripMenuItem.Name = "cAIXAToolStripMenuItem";
             this.cAIXAToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.cAIXAToolStripMenuItem.Text = "CAIXA";
+            this.cAIXAToolStripMenuItem.Click += new System.EventHandler(this.cAIXAToolStripMenuItem_Click);
             // 
             // aBERTURAToolStripMenuItem
             // 
@@ -100,12 +101,14 @@
             this.fECHAMENTOToolStripMenuItem.Name = "fECHAMENTOToolStripMenuItem";
             this.fECHAMENTOToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.fECHAMENTOToolStripMenuItem.Text = "ABERTURA DE CAIXA";
+            this.fECHAMENTOToolStripMenuItem.Click += new System.EventHandler(this.fECHAMENTOToolStripMenuItem_Click);
             // 
             // aToolStripMenuItem
             // 
             this.aToolStripMenuItem.Name = "aToolStripMenuItem";
             this.aToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.aToolStripMenuItem.Text = "FECHAMENTO DE CAIXA";
+            this.aToolStripMenuItem.Click += new System.EventHandler(this.aToolStripMenuItem_Click);
             // 
             // pRODUTOSToolStripMenuItem
             // 
@@ -124,7 +127,7 @@
             this.cATEGORIAToolStripMenuItem,
             this.mARCASToolStripMenuItem});
             this.cADASTROToolStripMenuItem.Name = "cADASTROToolStripMenuItem";
-            this.cADASTROToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cADASTROToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.cADASTROToolStripMenuItem.Text = "CADASTRO";
             // 
             // pRODUTOSToolStripMenuItem1
@@ -155,32 +158,32 @@
             this.cATEGORIAToolStripMenuItem1,
             this.mARCASToolStripMenuItem1});
             this.cONSULTAToolStripMenuItem.Name = "cONSULTAToolStripMenuItem";
-            this.cONSULTAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cONSULTAToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.cONSULTAToolStripMenuItem.Text = "CONSULTA";
             // 
             // pRODUTOSToolStripMenuItem2
             // 
             this.pRODUTOSToolStripMenuItem2.Name = "pRODUTOSToolStripMenuItem2";
-            this.pRODUTOSToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.pRODUTOSToolStripMenuItem2.Size = new System.Drawing.Size(136, 22);
             this.pRODUTOSToolStripMenuItem2.Text = "PRODUTOS";
             this.pRODUTOSToolStripMenuItem2.Click += new System.EventHandler(this.pRODUTOSToolStripMenuItem2_Click);
             // 
             // cATEGORIAToolStripMenuItem1
             // 
             this.cATEGORIAToolStripMenuItem1.Name = "cATEGORIAToolStripMenuItem1";
-            this.cATEGORIAToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.cATEGORIAToolStripMenuItem1.Size = new System.Drawing.Size(136, 22);
             this.cATEGORIAToolStripMenuItem1.Text = "CATEGORIA";
             // 
             // mARCASToolStripMenuItem1
             // 
             this.mARCASToolStripMenuItem1.Name = "mARCASToolStripMenuItem1";
-            this.mARCASToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.mARCASToolStripMenuItem1.Size = new System.Drawing.Size(136, 22);
             this.mARCASToolStripMenuItem1.Text = "MARCAS";
             // 
             // gERENCIARToolStripMenuItem
             // 
             this.gERENCIARToolStripMenuItem.Name = "gERENCIARToolStripMenuItem";
-            this.gERENCIARToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.gERENCIARToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.gERENCIARToolStripMenuItem.Text = "GERENCIAR";
             // 
             // fORNECEDORESToolStripMenuItem
@@ -292,6 +295,7 @@
             this.txtsenha.Name = "txtsenha";
             this.txtsenha.Size = new System.Drawing.Size(147, 20);
             this.txtsenha.TabIndex = 3;
+            this.txtsenha.Text = "123";
             // 
             // label2
             // 
@@ -310,6 +314,7 @@
             this.txtlogcpf.Name = "txtlogcpf";
             this.txtlogcpf.Size = new System.Drawing.Size(147, 20);
             this.txtlogcpf.TabIndex = 1;
+            this.txtlogcpf.Text = "22358867870";
             // 
             // label1
             // 

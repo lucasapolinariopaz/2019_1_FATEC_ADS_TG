@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="abertura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="abertura.Designer.cs">
+      <DependentUpon>abertura.cs</DependentUpon>
+    </Compile>
     <Compile Include="cadastro de produtos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,12 +82,24 @@
     <Compile Include="cadastromarcas.Designer.cs">
       <DependentUpon>cadastromarcas.cs</DependentUpon>
     </Compile>
+    <Compile Include="caixapdv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="caixapdv.Designer.cs">
+      <DependentUpon>caixapdv.cs</DependentUpon>
+    </Compile>
     <Compile Include="conexao.cs" />
     <Compile Include="CONSULTAPRODUTOS.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CONSULTAPRODUTOS.Designer.cs">
       <DependentUpon>CONSULTAPRODUTOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fechamentodecaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fechamentodecaixa.Designer.cs">
+      <DependentUpon>fechamentodecaixa.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -157,6 +175,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="abertura.resx">
+      <DependentUpon>abertura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="cadastro de produtos.resx">
       <DependentUpon>cadastro de produtos.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,8 +193,14 @@
     <EmbeddedResource Include="cadastromarcas.resx">
       <DependentUpon>cadastromarcas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="caixapdv.resx">
+      <DependentUpon>caixapdv.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CONSULTAPRODUTOS.resx">
       <DependentUpon>CONSULTAPRODUTOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fechamentodecaixa.resx">
+      <DependentUpon>fechamentodecaixa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

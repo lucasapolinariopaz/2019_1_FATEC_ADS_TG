@@ -72,7 +72,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.marcasTableAdapter1 = new mercado.mercado_tgDataSet7TableAdapters.marcasTableAdapter();
-            this.txt_valorUni = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtporcen = new System.Windows.Forms.TextBox();
             this.txtpdvenda = new System.Windows.Forms.TextBox();
             this.lbldata = new System.Windows.Forms.Label();
@@ -133,6 +133,7 @@
             // 
             this.cbnmarcas.DataSource = this.marcasBindingSource1;
             this.cbnmarcas.DisplayMember = "nome_marcas";
+            this.cbnmarcas.Enabled = false;
             this.cbnmarcas.FormattingEnabled = true;
             this.cbnmarcas.Location = new System.Drawing.Point(94, 122);
             this.cbnmarcas.Name = "cbnmarcas";
@@ -156,6 +157,7 @@
             // 
             this.cbncateg.DataSource = this.categoriaBindingSource;
             this.cbncateg.DisplayMember = "categ";
+            this.cbncateg.Enabled = false;
             this.cbncateg.FormattingEnabled = true;
             this.cbncateg.Location = new System.Drawing.Point(93, 95);
             this.cbncateg.Name = "cbncateg";
@@ -211,6 +213,7 @@
             // 
             this.cbnfornecedor.DataSource = this.fornecedorBindingSource1;
             this.cbnfornecedor.DisplayMember = "nome_fornecedor";
+            this.cbnfornecedor.Enabled = false;
             this.cbnfornecedor.FormattingEnabled = true;
             this.cbnfornecedor.Location = new System.Drawing.Point(93, 70);
             this.cbnfornecedor.Name = "cbnfornecedor";
@@ -304,7 +307,6 @@
             this.txtunidades.Size = new System.Drawing.Size(100, 20);
             this.txtunidades.TabIndex = 25;
             this.txtunidades.Text = "0";
-            this.txtunidades.Click += new System.EventHandler(this.txtunidades_Click);
             this.txtunidades.TextChanged += new System.EventHandler(this.txtunidades_TextChanged);
             // 
             // label10
@@ -466,16 +468,16 @@
             // 
             this.marcasTableAdapter1.ClearBeforeFill = true;
             // 
-            // txt_valorUni
+            // textBox1
             // 
-            this.txt_valorUni.Enabled = false;
-            this.txt_valorUni.Location = new System.Drawing.Point(109, 175);
-            this.txt_valorUni.Name = "txt_valorUni";
-            this.txt_valorUni.Size = new System.Drawing.Size(100, 20);
-            this.txt_valorUni.TabIndex = 42;
-            this.txt_valorUni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_valorUni_KeyPress);
-            this.txt_valorUni.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_valorUni_KeyUp);
-            this.txt_valorUni.Leave += new System.EventHandler(this.txt_valorUni_Leave);
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(109, 175);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 42;
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
+            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // txtporcen
             // 
@@ -522,7 +524,7 @@
             this.Controls.Add(this.lbldata);
             this.Controls.Add(this.txtpdvenda);
             this.Controls.Add(this.txtporcen);
-            this.Controls.Add(this.txt_valorUni);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnsalvar);
             this.Controls.Add(this.btnatucateg);
             this.Controls.Add(this.button5);
@@ -609,7 +611,7 @@
         private System.Windows.Forms.Button btnatucateg;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnsalvar;
-        private System.Windows.Forms.TextBox txt_valorUni;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox txtporcen;
         private System.Windows.Forms.TextBox txtpdvenda;
         private System.Windows.Forms.Label lbldata;
