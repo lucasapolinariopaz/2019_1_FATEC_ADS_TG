@@ -12,7 +12,7 @@ namespace mercado
 {
     class conexao
     {
-        private static string connString = "Data Source=LOCALHOST\\SQLEXPRESS;Initial Catalog=mercado_tg;Integrated Security=True";
+        private static string connString = "Data Source=LOCALHOST\\SQLEXPRESS;Initial Catalog=mercado_tg;Integrated Security=True;User Instance=False";
 
         // representa a conexão com o banco
         private static SqlConnection conn = null;

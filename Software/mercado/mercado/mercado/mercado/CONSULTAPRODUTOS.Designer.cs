@@ -503,6 +503,7 @@
             this.button6.TabIndex = 83;
             this.button6.Text = "EXCLUIR";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // CONSULTAPRODUTOS
             // 

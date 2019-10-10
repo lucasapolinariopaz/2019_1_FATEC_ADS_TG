@@ -80,7 +80,6 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -365,7 +364,7 @@
             this.Label9.BackColor = System.Drawing.Color.Transparent;
             this.Label9.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label9.ForeColor = System.Drawing.SystemColors.Info;
-            this.Label9.Location = new System.Drawing.Point(105, 429);
+            this.Label9.Location = new System.Drawing.Point(86, 429);
             this.Label9.Name = "Label9";
             this.Label9.Size = new System.Drawing.Size(72, 23);
             this.Label9.TabIndex = 112;
@@ -603,44 +602,30 @@
             // 
             // button1
             // 
-            this.button1.BackgroundImage = global::mercado.Properties.Resources.salvar__2_1;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Location = new System.Drawing.Point(541, 464);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(43, 37);
+            this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 146;
+            this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // button3
             // 
-            this.button3.BackgroundImage = global::mercado.Properties.Resources.salvar__2_1;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Location = new System.Drawing.Point(541, 421);
+            this.button3.Location = new System.Drawing.Point(538, 429);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(43, 37);
+            this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 147;
+            this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.SystemColors.Info;
-            this.label4.Location = new System.Drawing.Point(60, 462);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 23);
-            this.label4.TabIndex = 112;
-            this.label4.Text = "Dependente";
             // 
             // caixapdv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(886, 504);
+            this.ClientSize = new System.Drawing.Size(886, 497);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox2);
@@ -664,7 +649,6 @@
             this.Controls.Add(this.Btnbusca);
             this.Controls.Add(this.buscprods);
             this.Controls.Add(this.txtcli);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.Label9);
             this.Controls.Add(this.Label7);
             this.Controls.Add(this.Label6);
@@ -742,6 +726,5 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
-        internal System.Windows.Forms.Label label4;
     }
 }

@@ -53,7 +53,7 @@ namespace mercado
             txtporcen.Text = "0";
             // 
             // TODO: This line of code loads data into the 'mercado_tgDataSet8.fornecedor' table. You can move, or remove it, as needed.
-            this.fornecedorTableAdapter1.FillBy(this.mercado_tgDataSet8.fornecedor);
+            
             // TODO: This line of code loads data into the 'mercado_tgDataSet5.categoria' table. You can move, or remove it, as needed.
             this.categoriaTableAdapter.FillBy1(this.mercado_tgDataSet5.categoria);
             // TODO: This line of code loads data into the 'mercado_tgDataSet4.categoria' table. You can move, or remove it, as needed.

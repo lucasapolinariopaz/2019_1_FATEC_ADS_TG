@@ -408,6 +408,32 @@ namespace mercado
             }
         }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string sql = "DELETE FROM estoque WHERE codigo_prod = @codigo_prod";
+            SqlConnection conn = conexao.obterConexao();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            cmd.Parameters.Add(new SqlParameter("@codigo_prod", codestoque));
+
+            cmd.CommandType = CommandType.Text;
+            conexao.obterConexao();
+            try
+            {
+                int i = cmd.ExecuteNonQuery();
+                if (i > 0)
+                    MessageBox.Show("Registro excluído com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.ToString());
+            }
+            finally
+            {
+                conexao.fecharConexao();
+            }
+        }
+
         private void txtpdvenda_Leave(object sender, EventArgs e)
         {
             valor2 = txtpdvenda.Text.Replace("R$", "");
