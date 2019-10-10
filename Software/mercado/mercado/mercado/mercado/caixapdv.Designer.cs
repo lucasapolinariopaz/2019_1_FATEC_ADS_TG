@@ -136,6 +136,7 @@
             this.BtnSair.TabIndex = 128;
             this.BtnSair.Text = "Sair";
             this.BtnSair.UseVisualStyleBackColor = false;
+            this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
             // tnExcluir
             // 

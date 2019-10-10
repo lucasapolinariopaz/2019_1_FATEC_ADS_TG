@@ -112,11 +112,18 @@ namespace mercado
         private void btn_PesquisarCNPJ_Click(object sender, EventArgs e)
         {
             bool result = false;
+            string cpff = masktxt_PesquisarCNPJ.Text;
 
+
+            cpff = cpff.Trim();
+            cpff = cpff.Replace(".", "").Replace(",", "");
+            cpff = cpff.Replace("-", "");
+            cpff = cpff.Replace(" ", "");
+            cpff = cpff.Replace("/", "");
             limparCampos();
 
             string consulta_sql = "SELECT cod_fornecdor, nome_fornecedor, CNPJ, IE, endereco, cidade, bairro, estado, telefone_fornec, celular " +
-                    "FROM fornecedor WHERE CNPJ = '" + masktxt_PesquisarCNPJ.Text + "';";
+                    "FROM fornecedor WHERE CNPJ = '" + cpff + "';";
             SqlConnection conn = conexao.obterConexao();
             SqlCommand commn = new SqlCommand(consulta_sql, conn);
             commn.CommandType = CommandType.Text;
@@ -179,7 +186,15 @@ namespace mercado
 
         private void btn_Salvar_Click(object sender, EventArgs e)
         {
-            if(validaCampos())
+            string cpff = masktxt_CNPJ.Text;
+
+
+            cpff = cpff.Trim();
+            cpff = cpff.Replace(".", "").Replace(",", "");
+            cpff = cpff.Replace("-", "");
+            cpff = cpff.Replace(" ", "");
+            cpff = cpff.Replace("/", "");
+            if (validaCampos())
             {
                 string sql = "UPDATE fornecedor SET nome_fornecedor = @nome_fornecedor, CNPJ = @CNPJ, IE = @IE, endereco = @endereco, cidade = @cidade, bairro = @bairro, estado = @estado, telefone_fornec = @telefone_fornec, celular = @celular " +
                     "WHERE cod_fornecdor = @cod_fornecdor;";
@@ -188,7 +203,7 @@ namespace mercado
 
                 cmd.Parameters.Add(new SqlParameter("@cod_fornecdor", codigo_fornecedor));
                 cmd.Parameters.Add(new SqlParameter("@nome_fornecedor", txt_RazaoSocial.Text));
-                cmd.Parameters.Add(new SqlParameter("@CNPJ", masktxt_CNPJ.Text));
+                cmd.Parameters.Add(new SqlParameter("@CNPJ", cpff));
                 cmd.Parameters.Add(new SqlParameter("@IE", txt_IE.Text));
                 cmd.Parameters.Add(new SqlParameter("@endereco", txt_Endereco.Text));
                 cmd.Parameters.Add(new SqlParameter("@cidade", txt_Cidade.Text));
@@ -221,6 +236,14 @@ namespace mercado
 
         private void btn_Excluir_Click(object sender, EventArgs e)
         {
+            string cpff = masktxt_CNPJ.Text;
+
+
+            cpff = cpff.Trim();
+            cpff = cpff.Replace(".", "").Replace(",", "");
+            cpff = cpff.Replace("-", "");
+            cpff = cpff.Replace(" ", "");
+            cpff = cpff.Replace("/", "");
             if (codigo_fornecedor == 0)
             {
                 MessageBox.Show("Fornecedor não informado");
@@ -233,7 +256,7 @@ namespace mercado
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
                 cmd.Parameters.Add(new SqlParameter("@cod_fornecdor", codigo_fornecedor));
-                cmd.Parameters.Add(new SqlParameter("@CNPJ", masktxt_CNPJ.Text));
+                cmd.Parameters.Add(new SqlParameter("@CNPJ", cpff));
 
                 cmd.CommandType = CommandType.Text;
                 conexao.obterConexao();

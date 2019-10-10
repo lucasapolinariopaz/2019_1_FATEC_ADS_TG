@@ -226,6 +226,11 @@ namespace mercado
 
         private void btn_Salvar_Click(object sender, EventArgs e)
         {
+            string CPFf = masktxt_PesquisarCPF.Text;
+            CPFf = CPFf.Trim();
+            CPFf = CPFf.Replace(".", "").Replace(",", "");
+            CPFf = CPFf.Replace("-", "");
+            CPFf = CPFf.Replace(" ", "");
             if (validaCampos())
             {
                 string sql = "UPDATE clientes SET nome_cli = @nome_cli, RG_cli = @RG_cli, CPF_cli = @CPF_cli, datanasc_cli = @datanasc_cli, endereco_cli = @endereco_cli, cidade_cli = @cidade_cli, bairro_cli = @bairro_cli, numero_cli = @numero_cli, telefone_cli = @telefone_cli, celular_cli = @celular_cli " +
@@ -239,7 +244,7 @@ namespace mercado
                 cmd.Parameters.Add(new SqlParameter("@telefone_cli", txt_Telefone.Text));
                 cmd.Parameters.Add(new SqlParameter("@celular_cli", txt_Celular.Text));
                 cmd.Parameters.Add(new SqlParameter("@RG_cli", txt_RG.Text));
-                cmd.Parameters.Add(new SqlParameter("@CPF_cli", masktxt_CPF.Text));
+                cmd.Parameters.Add(new SqlParameter("@CPF_cli", CPFf));
                 cmd.Parameters.Add(new SqlParameter("@endereco_cli", txt_Endereco.Text));
                 cmd.Parameters.Add(new SqlParameter("@cidade_cli", txt_Cidade.Text));
                 cmd.Parameters.Add(new SqlParameter("@bairro_cli", txt_Bairro.Text));
@@ -269,7 +274,12 @@ namespace mercado
 
         private void btn_Excluir_Click(object sender, EventArgs e)
         {
-            if(codigo_cli == 0)
+            string CPFf = masktxt_PesquisarCPF.Text;
+            CPFf = CPFf.Trim();
+            CPFf = CPFf.Replace(".", "").Replace(",", "");
+            CPFf = CPFf.Replace("-", "");
+            CPFf = CPFf.Replace(" ", "");
+            if (codigo_cli == 0)
             {
                 MessageBox.Show("Cliente não informado");
             }
@@ -281,7 +291,7 @@ namespace mercado
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
                 cmd.Parameters.Add(new SqlParameter("@codigo_cli", codigo_cli));
-                cmd.Parameters.Add(new SqlParameter("@CPF_cli", masktxt_CPF.Text));
+                cmd.Parameters.Add(new SqlParameter("@CPF_cli", CPFf));
 
                 cmd.CommandType = CommandType.Text;
                 conexao.obterConexao();
@@ -307,15 +317,20 @@ namespace mercado
 
         private void btn_Pesquisar_Click(object sender, EventArgs e)
         {
-            if (masktxt_PesquisarCPF.Text.Length == 0) { MessageBox.Show("Informar CPF para consultar cliente"); }
-            else if (contDigitosCPF(masktxt_PesquisarCPF.Text) < 11) { MessageBox.Show("CPF informado para consulta não tem 11 dígitos"); }
-            else if (validarCPF(masktxt_PesquisarCPF.Text).Equals("false")) { MessageBox.Show("CPF informado para consulta é inválido"); }
+            string CPFf= masktxt_PesquisarCPF.Text;
+            CPFf = CPFf.Trim();
+            CPFf = CPFf.Replace(".", "").Replace(",", "");
+            CPFf = CPFf.Replace("-", "");
+            CPFf = CPFf.Replace(" ", "");
+            if (CPFf.Length == 0) { MessageBox.Show("Informar CPF para consultar cliente"); }
+            else if (contDigitosCPF(CPFf) < 11) { MessageBox.Show("CPF informado para consulta não tem 11 dígitos"); }
+            else if (validarCPF(CPFf).Equals("false")) { MessageBox.Show("CPF informado para consulta é inválido"); }
             else
             {
                 limparCampos();
 
                 string consulta_sql = "SELECT codigo_cli, nome_cli, datanasc_cli, telefone_cli, celular_cli, RG_cli, CPF_cli, endereco_cli, cidade_cli, bairro_cli, numero_cli " +
-                    "FROM clientes WHERE CPF_cli = '" + masktxt_PesquisarCPF.Text + "';";
+                    "FROM clientes WHERE CPF_cli = '" + CPFf + "';";
                 SqlConnection conn = conexao.obterConexao();
                 SqlCommand commn = new SqlCommand(consulta_sql, conn);
                 commn.CommandType = CommandType.Text;

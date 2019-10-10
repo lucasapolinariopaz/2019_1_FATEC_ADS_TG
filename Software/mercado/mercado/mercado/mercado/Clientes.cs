@@ -177,6 +177,14 @@ namespace mercado
         {
             if (validaCampos())
             {
+                string cpff = masktxt_CPF.Text;
+           
+
+                cpff = cpff.Trim();
+                cpff = cpff.Replace(".", "").Replace(",", "");
+                cpff = cpff.Replace("-", "");
+                cpff = cpff.Replace(" ", "");
+
                 string sql = "INSERT INTO clientes (nome_cli, datanasc_cli, telefone_cli, celular_cli, RG_cli, CPF_cli, endereco_cli, cidade_cli, bairro_cli, numero_cli)  " +
                     "VALUES (@nome_cli, @datanasc_cli, @telefone_cli, @celular_cli, @RG_cli, @CPF_cli, @endereco_cli, @cidade_cli, @bairro_cli, @numero_cli)";
                 SqlConnection conn = conexao.obterConexao();
@@ -187,7 +195,7 @@ namespace mercado
                 cmd.Parameters.Add(new SqlParameter("@telefone_cli", txt_Telefone.Text));
                 cmd.Parameters.Add(new SqlParameter("@celular_cli", txt_Celular.Text));
                 cmd.Parameters.Add(new SqlParameter("@RG_cli", txt_RG.Text));
-                cmd.Parameters.Add(new SqlParameter("@CPF_cli", masktxt_CPF.Text));
+                cmd.Parameters.Add(new SqlParameter("@CPF_cli", cpff));
                 cmd.Parameters.Add(new SqlParameter("@endereco_cli", txt_Endereco.Text));
                 cmd.Parameters.Add(new SqlParameter("@cidade_cli", txt_Cidade.Text));
                 cmd.Parameters.Add(new SqlParameter("@bairro_cli", txt_Bairro.Text));

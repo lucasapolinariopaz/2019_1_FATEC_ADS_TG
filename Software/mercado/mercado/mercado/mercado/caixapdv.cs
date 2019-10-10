@@ -304,6 +304,11 @@ public void esconderCampos()
             mostrarCampos();
         }
 
+        private void BtnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             datalistado.Rows.Clear();

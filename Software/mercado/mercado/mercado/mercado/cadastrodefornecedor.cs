@@ -94,7 +94,16 @@ namespace mercado
 
         private void btnsalvarcadfor_Click(object sender, EventArgs e)
         {
-            if(validarCampos())
+            string cpff = txtcadcnpjfor.Text;
+       
+
+            cpff = cpff.Trim();
+            cpff = cpff.Replace(".", "").Replace(",", "");
+            cpff = cpff.Replace("-", "");
+            cpff = cpff.Replace(" ", "");
+            cpff = cpff.Replace("/", "");
+
+            if (validarCampos())
             {  
                 bool Logado = false;
                 bool result = VerificaFornecedor();
@@ -112,7 +121,7 @@ namespace mercado
                     SqlCommand cmdd = new SqlCommand(sql, conn);
 
                     cmdd.Parameters.Add(new SqlParameter("@nome_fornecedor", txtcadempfor.Text));
-                    cmdd.Parameters.Add(new SqlParameter("@CNPJ", txtcadcnpjfor.Text));
+                    cmdd.Parameters.Add(new SqlParameter("@CNPJ", cpff));
                     cmdd.Parameters.Add(new SqlParameter("@IE", txtcadiefor.Text));
                     cmdd.Parameters.Add(new SqlParameter("@endereco", txtcadendfor.Text));
                     cmdd.Parameters.Add(new SqlParameter("@cidade", txtcadcidfor.Text));
