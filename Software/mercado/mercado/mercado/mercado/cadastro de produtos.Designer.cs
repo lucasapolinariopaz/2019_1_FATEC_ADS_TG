@@ -69,14 +69,14 @@
             this.btnatucateg = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.btnsalvar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.marcasTableAdapter1 = new mercado.mercado_tgDataSet7TableAdapters.marcasTableAdapter();
             this.txt_valorUni = new System.Windows.Forms.TextBox();
             this.txtporcen = new System.Windows.Forms.TextBox();
             this.txtpdvenda = new System.Windows.Forms.TextBox();
             this.lbldata = new System.Windows.Forms.Label();
             this.fornecedorTableAdapter1 = new mercado.mercado_tgDataSet8TableAdapters.fornecedorTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mercado_tgDataSet7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).BeginInit();
@@ -386,6 +386,7 @@
             this.btnfornecedor.TabIndex = 38;
             this.dicas.SetToolTip(this.btnfornecedor, "ATUALIZAR CAMPO DE FORNECEDOR");
             this.btnfornecedor.UseVisualStyleBackColor = false;
+            this.btnfornecedor.Click += new System.EventHandler(this.btnfornecedor_Click);
             // 
             // button3
             // 
@@ -398,6 +399,7 @@
             this.button3.TabIndex = 37;
             this.dicas.SetToolTip(this.button3, "CADASTRAR NOVO FORNECEDOR");
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnatucateg
             // 
@@ -410,6 +412,7 @@
             this.btnatucateg.TabIndex = 40;
             this.dicas.SetToolTip(this.btnatucateg, "ATUALIZAR CAMPO DE CATEGORIA");
             this.btnatucateg.UseVisualStyleBackColor = false;
+            this.btnatucateg.Click += new System.EventHandler(this.btnatucateg_Click);
             // 
             // button5
             // 
@@ -422,6 +425,7 @@
             this.button5.TabIndex = 39;
             this.dicas.SetToolTip(this.button5, "ADICONAR NOVA CATEGORIA");
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // btnsalvar
             // 
@@ -435,6 +439,28 @@
             this.dicas.SetToolTip(this.btnsalvar, "SALVAR DADOS");
             this.btnsalvar.UseVisualStyleBackColor = false;
             this.btnsalvar.Click += new System.EventHandler(this.btnsalvar_Click);
+            // 
+            // button1
+            // 
+            this.button1.Image = global::mercado.Properties.Resources.vassoura;
+            this.button1.Location = new System.Drawing.Point(318, 232);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(63, 54);
+            this.button1.TabIndex = 46;
+            this.dicas.SetToolTip(this.button1, "LIMPAR CAMPOS");
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Image = global::mercado.Properties.Resources.excluir1;
+            this.button2.Location = new System.Drawing.Point(409, 232);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(63, 54);
+            this.button2.TabIndex = 47;
+            this.dicas.SetToolTip(this.button2, "FECHAR");
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // marcasTableAdapter1
             // 
@@ -485,34 +511,12 @@
             // 
             this.fornecedorTableAdapter1.ClearBeforeFill = true;
             // 
-            // button1
-            // 
-            this.button1.Image = global::mercado.Properties.Resources.vassoura;
-            this.button1.Location = new System.Drawing.Point(321, 232);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(63, 54);
-            this.button1.TabIndex = 46;
-            this.dicas.SetToolTip(this.button1, "LIMPAR CAMPOS");
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Image = global::mercado.Properties.Resources.excluir1;
-            this.button2.Location = new System.Drawing.Point(409, 232);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(63, 54);
-            this.button2.TabIndex = 47;
-            this.dicas.SetToolTip(this.button2, "FECHAR");
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
-            // 
             // cadastro_de_produtos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(681, 295);
+            this.ClientSize = new System.Drawing.Size(696, 306);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lbldata);

@@ -29,7 +29,7 @@ namespace mercado
             txtporcen.Text = "0";
             // 
             // TODO: This line of code loads data into the 'mercado_tgDataSet8.fornecedor' table. You can move, or remove it, as needed.
-            this.fornecedorTableAdapter1.Fill(this.mercado_tgDataSet8.fornecedor);
+            this.fornecedorTableAdapter1.FillBy(this.mercado_tgDataSet8.fornecedor);
             // TODO: This line of code loads data into the 'mercado_tgDataSet5.categoria' table. You can move, or remove it, as needed.
             this.categoriaTableAdapter.FillBy1(this.mercado_tgDataSet5.categoria);
             // TODO: This line of code loads data into the 'mercado_tgDataSet4.categoria' table. You can move, or remove it, as needed.
@@ -307,5 +307,29 @@ namespace mercado
         {
             this.Close();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            cadastrodefornecedor novo = new cadastrodefornecedor();
+            novo.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            cadastrodecategoria novo = new cadastrodecategoria();
+            novo.Show();
+        }
+
+        private void btnfornecedor_Click(object sender, EventArgs e)
+        {
+            this.fornecedorTableAdapter1.FillBy(this.mercado_tgDataSet8.fornecedor);
+        }
+
+        private void btnatucateg_Click(object sender, EventArgs e)
+        {
+            this.categoriaTableAdapter.FillBy1(this.mercado_tgDataSet5.categoria);
+        }
+
+      
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CONSULTAPRODUTOS));
             this.txtpdvenda = new System.Windows.Forms.TextBox();
             this.txtporcen = new System.Windows.Forms.TextBox();
@@ -36,17 +37,21 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtunidadesatual = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtunidades = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cbnfornecedor = new System.Windows.Forms.ComboBox();
+            this.fornecedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mercado_tgDataSet9 = new mercado.mercado_tgDataSet9();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cbncateg = new System.Windows.Forms.ComboBox();
+            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mercado_tgDataSet10 = new mercado.mercado_tgDataSet10();
             this.cbnmarcas = new System.Windows.Forms.ComboBox();
+            this.marcasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mercado_tgDataSet11 = new mercado.mercado_tgDataSet11();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -62,36 +67,50 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.lbldata = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.fornecedorTableAdapter = new mercado.mercado_tgDataSet9TableAdapters.fornecedorTableAdapter();
+            this.categoriaTableAdapter = new mercado.mercado_tgDataSet10TableAdapters.categoriaTableAdapter();
+            this.marcasTableAdapter = new mercado.mercado_tgDataSet11TableAdapters.marcasTableAdapter();
+            this.btnalt = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mercado_tgDataSet9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mercado_tgDataSet10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mercado_tgDataSet11)).BeginInit();
             this.SuspendLayout();
             // 
             // txtpdvenda
             // 
-            this.txtpdvenda.Enabled = false;
             this.txtpdvenda.Location = new System.Drawing.Point(576, 217);
             this.txtpdvenda.Name = "txtpdvenda";
             this.txtpdvenda.Size = new System.Drawing.Size(100, 20);
             this.txtpdvenda.TabIndex = 72;
+            this.txtpdvenda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtpdvenda_KeyPress);
+            this.txtpdvenda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtpdvenda_KeyUp);
+            this.txtpdvenda.Leave += new System.EventHandler(this.txtpdvenda_Leave);
             // 
             // txtporcen
             // 
-            this.txtporcen.Enabled = false;
             this.txtporcen.Location = new System.Drawing.Point(387, 218);
             this.txtporcen.Name = "txtporcen";
             this.txtporcen.Size = new System.Drawing.Size(33, 20);
             this.txtporcen.TabIndex = 71;
+            this.txtporcen.TextChanged += new System.EventHandler(this.txtporcen_TextChanged);
             // 
             // txt_valorUni
             // 
-            this.txt_valorUni.Enabled = false;
             this.txt_valorUni.Location = new System.Drawing.Point(109, 217);
             this.txt_valorUni.Name = "txt_valorUni";
             this.txt_valorUni.Size = new System.Drawing.Size(100, 20);
             this.txt_valorUni.TabIndex = 70;
+            this.txt_valorUni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_valorUni_KeyPress);
+            this.txt_valorUni.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_valorUni_KeyUp);
+            this.txt_valorUni.Leave += new System.EventHandler(this.txt_valorUni_Leave);
             // 
             // maskedTextBox4
             // 
-            this.maskedTextBox4.Enabled = false;
-            this.maskedTextBox4.Location = new System.Drawing.Point(576, 193);
+            this.maskedTextBox4.Location = new System.Drawing.Point(364, 194);
             this.maskedTextBox4.Mask = "00/00/0000";
             this.maskedTextBox4.Name = "maskedTextBox4";
             this.maskedTextBox4.Size = new System.Drawing.Size(69, 20);
@@ -103,7 +122,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.Info;
-            this.label11.Location = new System.Drawing.Point(430, 197);
+            this.label11.Location = new System.Drawing.Point(218, 198);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(143, 15);
             this.label11.TabIndex = 62;
@@ -114,7 +133,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.Info;
-            this.label10.Location = new System.Drawing.Point(212, 197);
+            this.label10.Location = new System.Drawing.Point(0, 198);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(102, 15);
             this.label10.TabIndex = 61;
@@ -123,33 +142,11 @@
             // txtunidadesatual
             // 
             this.txtunidadesatual.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtunidadesatual.Enabled = false;
-            this.txtunidadesatual.Location = new System.Drawing.Point(316, 192);
+            this.txtunidadesatual.Location = new System.Drawing.Point(109, 193);
             this.txtunidadesatual.Name = "txtunidadesatual";
-            this.txtunidadesatual.Size = new System.Drawing.Size(105, 20);
+            this.txtunidadesatual.Size = new System.Drawing.Size(100, 20);
             this.txtunidadesatual.TabIndex = 60;
             this.txtunidadesatual.Text = "0";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.Info;
-            this.label9.Location = new System.Drawing.Point(0, 195);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 15);
-            this.label9.TabIndex = 59;
-            this.label9.Text = "UNIDADES";
-            // 
-            // txtunidades
-            // 
-            this.txtunidades.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtunidades.Enabled = false;
-            this.txtunidades.Location = new System.Drawing.Point(109, 191);
-            this.txtunidades.Name = "txtunidades";
-            this.txtunidades.Size = new System.Drawing.Size(100, 20);
-            this.txtunidades.TabIndex = 58;
-            this.txtunidades.Text = "0";
             // 
             // label8
             // 
@@ -197,6 +194,7 @@
             // 
             // cbnfornecedor
             // 
+            this.cbnfornecedor.DataSource = this.fornecedorBindingSource;
             this.cbnfornecedor.DisplayMember = "nome_fornecedor";
             this.cbnfornecedor.FormattingEnabled = true;
             this.cbnfornecedor.Location = new System.Drawing.Point(93, 112);
@@ -204,6 +202,17 @@
             this.cbnfornecedor.Size = new System.Drawing.Size(148, 21);
             this.cbnfornecedor.TabIndex = 53;
             this.cbnfornecedor.ValueMember = "cod_fornecdor";
+            this.cbnfornecedor.SelectedIndexChanged += new System.EventHandler(this.cbnfornecedor_SelectedIndexChanged);
+            // 
+            // fornecedorBindingSource
+            // 
+            this.fornecedorBindingSource.DataMember = "fornecedor";
+            this.fornecedorBindingSource.DataSource = this.mercado_tgDataSet9;
+            // 
+            // mercado_tgDataSet9
+            // 
+            this.mercado_tgDataSet9.DataSetName = "mercado_tgDataSet9";
+            this.mercado_tgDataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label3
             // 
@@ -229,16 +238,28 @@
             // 
             // cbncateg
             // 
+            this.cbncateg.DataSource = this.categoriaBindingSource;
             this.cbncateg.DisplayMember = "categ";
             this.cbncateg.FormattingEnabled = true;
             this.cbncateg.Location = new System.Drawing.Point(93, 137);
             this.cbncateg.Name = "cbncateg";
             this.cbncateg.Size = new System.Drawing.Size(147, 21);
             this.cbncateg.TabIndex = 50;
-            this.cbncateg.ValueMember = "categ";
+            this.cbncateg.ValueMember = "cod_categoria";
+            // 
+            // categoriaBindingSource
+            // 
+            this.categoriaBindingSource.DataMember = "categoria";
+            this.categoriaBindingSource.DataSource = this.mercado_tgDataSet10;
+            // 
+            // mercado_tgDataSet10
+            // 
+            this.mercado_tgDataSet10.DataSetName = "mercado_tgDataSet10";
+            this.mercado_tgDataSet10.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cbnmarcas
             // 
+            this.cbnmarcas.DataSource = this.marcasBindingSource;
             this.cbnmarcas.DisplayMember = "nome_marcas";
             this.cbnmarcas.FormattingEnabled = true;
             this.cbnmarcas.Location = new System.Drawing.Point(94, 164);
@@ -247,9 +268,18 @@
             this.cbnmarcas.TabIndex = 49;
             this.cbnmarcas.ValueMember = "cod_marca";
             // 
+            // marcasBindingSource
+            // 
+            this.marcasBindingSource.DataMember = "marcas";
+            this.marcasBindingSource.DataSource = this.mercado_tgDataSet11;
+            // 
+            // mercado_tgDataSet11
+            // 
+            this.mercado_tgDataSet11.DataSetName = "mercado_tgDataSet11";
+            this.mercado_tgDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // maskedTextBox1
             // 
-            this.maskedTextBox1.Enabled = false;
             this.maskedTextBox1.Location = new System.Drawing.Point(477, 89);
             this.maskedTextBox1.Mask = "0000000000000";
             this.maskedTextBox1.Name = "maskedTextBox1";
@@ -296,6 +326,7 @@
             this.btnatucateg.Size = new System.Drawing.Size(22, 22);
             this.btnatucateg.TabIndex = 69;
             this.btnatucateg.UseVisualStyleBackColor = false;
+            this.btnatucateg.Click += new System.EventHandler(this.btnatucateg_Click);
             // 
             // button5
             // 
@@ -307,6 +338,7 @@
             this.button5.Size = new System.Drawing.Size(22, 22);
             this.button5.TabIndex = 68;
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // btnfornecedor
             // 
@@ -318,6 +350,7 @@
             this.btnfornecedor.Size = new System.Drawing.Size(22, 22);
             this.btnfornecedor.TabIndex = 67;
             this.btnfornecedor.UseVisualStyleBackColor = false;
+            this.btnfornecedor.Click += new System.EventHandler(this.btnfornecedor_Click);
             // 
             // button3
             // 
@@ -329,6 +362,7 @@
             this.button3.Size = new System.Drawing.Size(22, 22);
             this.button3.TabIndex = 66;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnatumarcas
             // 
@@ -340,6 +374,7 @@
             this.btnatumarcas.Size = new System.Drawing.Size(22, 22);
             this.btnatumarcas.TabIndex = 65;
             this.btnatumarcas.UseVisualStyleBackColor = false;
+            this.btnatumarcas.Click += new System.EventHandler(this.btnatumarcas_Click);
             // 
             // btnaddmarca
             // 
@@ -351,10 +386,11 @@
             this.btnaddmarca.Size = new System.Drawing.Size(22, 22);
             this.btnaddmarca.TabIndex = 64;
             this.btnaddmarca.UseVisualStyleBackColor = false;
+            this.btnaddmarca.Click += new System.EventHandler(this.btnaddmarca_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(384, 26);
+            this.button1.Location = new System.Drawing.Point(218, 23);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 23);
             this.button1.TabIndex = 73;
@@ -365,8 +401,9 @@
             // txtpesqprod
             // 
             this.txtpesqprod.Location = new System.Drawing.Point(126, 26);
+            this.txtpesqprod.MaxLength = 13;
             this.txtpesqprod.Name = "txtpesqprod";
-            this.txtpesqprod.Size = new System.Drawing.Size(228, 20);
+            this.txtpesqprod.Size = new System.Drawing.Size(83, 20);
             this.txtpesqprod.TabIndex = 74;
             // 
             // label12
@@ -401,12 +438,47 @@
             this.lbldata.Size = new System.Drawing.Size(0, 15);
             this.lbldata.TabIndex = 77;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.Info;
+            this.label14.Location = new System.Drawing.Point(0, 169);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(57, 15);
+            this.label14.TabIndex = 78;
+            this.label14.Text = "MARCAS";
+            // 
+            // fornecedorTableAdapter
+            // 
+            this.fornecedorTableAdapter.ClearBeforeFill = true;
+            // 
+            // categoriaTableAdapter
+            // 
+            this.categoriaTableAdapter.ClearBeforeFill = true;
+            // 
+            // marcasTableAdapter
+            // 
+            this.marcasTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnalt
+            // 
+            this.btnalt.Location = new System.Drawing.Point(13, 297);
+            this.btnalt.Name = "btnalt";
+            this.btnalt.Size = new System.Drawing.Size(75, 23);
+            this.btnalt.TabIndex = 80;
+            this.btnalt.Text = "ALTERAR";
+            this.btnalt.UseVisualStyleBackColor = true;
+            this.btnalt.Click += new System.EventHandler(this.btnalt_Click);
+            // 
             // CONSULTAPRODUTOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(686, 348);
+            this.ClientSize = new System.Drawing.Size(696, 348);
+            this.Controls.Add(this.btnalt);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.lbldata);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
@@ -425,8 +497,6 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtunidadesatual);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.txtunidades);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -446,6 +516,12 @@
             this.Name = "CONSULTAPRODUTOS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CONSULTA PRODUTOS";
+            ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mercado_tgDataSet9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mercado_tgDataSet10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mercado_tgDataSet11)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -466,8 +542,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtunidadesatual;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtunidades;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -486,5 +560,16 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label lbldata;
+        private System.Windows.Forms.Label label14;
+        private mercado_tgDataSet9 mercado_tgDataSet9;
+        private System.Windows.Forms.BindingSource fornecedorBindingSource;
+        private mercado_tgDataSet9TableAdapters.fornecedorTableAdapter fornecedorTableAdapter;
+        private mercado_tgDataSet10 mercado_tgDataSet10;
+        private System.Windows.Forms.BindingSource categoriaBindingSource;
+        private mercado_tgDataSet10TableAdapters.categoriaTableAdapter categoriaTableAdapter;
+        private mercado_tgDataSet11 mercado_tgDataSet11;
+        private System.Windows.Forms.BindingSource marcasBindingSource;
+        private mercado_tgDataSet11TableAdapters.marcasTableAdapter marcasTableAdapter;
+        private System.Windows.Forms.Button btnalt;
     }
 }
