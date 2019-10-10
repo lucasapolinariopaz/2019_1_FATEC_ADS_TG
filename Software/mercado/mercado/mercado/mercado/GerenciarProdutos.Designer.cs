@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerenciarProdutos));
-            this.cb_cat = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cb_marca = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cb_data = new System.Windows.Forms.ComboBox();
-            this.dataGridView01 = new System.Windows.Forms.DataGridView();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,17 +43,17 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_Consultar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView01)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // cb_cat
+            // comboBox1
             // 
-            this.cb_cat.FormattingEnabled = true;
-            this.cb_cat.Location = new System.Drawing.Point(95, 9);
-            this.cb_cat.Name = "cb_cat";
-            this.cb_cat.Size = new System.Drawing.Size(152, 21);
-            this.cb_cat.TabIndex = 0;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(95, 9);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(152, 21);
+            this.comboBox1.TabIndex = 0;
             // 
             // label4
             // 
@@ -77,13 +77,13 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "MARCA";
             // 
-            // cb_marca
+            // comboBox2
             // 
-            this.cb_marca.FormattingEnabled = true;
-            this.cb_marca.Location = new System.Drawing.Point(329, 8);
-            this.cb_marca.Name = "cb_marca";
-            this.cb_marca.Size = new System.Drawing.Size(152, 21);
-            this.cb_marca.TabIndex = 9;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(329, 8);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(152, 21);
+            this.comboBox2.TabIndex = 9;
             // 
             // label2
             // 
@@ -96,24 +96,21 @@
             this.label2.TabIndex = 12;
             this.label2.Text = "OUTROS";
             // 
-            // cb_data
+            // comboBox3
             // 
-            this.cb_data.FormattingEnabled = true;
-            this.cb_data.Items.AddRange(new object[] {
-            "RECENTES",
-            "ANTIGOS"});
-            this.cb_data.Location = new System.Drawing.Point(563, 8);
-            this.cb_data.Name = "cb_data";
-            this.cb_data.Size = new System.Drawing.Size(152, 21);
-            this.cb_data.TabIndex = 11;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(563, 8);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(152, 21);
+            this.comboBox3.TabIndex = 11;
             // 
-            // dataGridView01
+            // dataGridView1
             // 
-            this.dataGridView01.AllowUserToAddRows = false;
-            this.dataGridView01.AllowUserToDeleteRows = false;
-            this.dataGridView01.BackgroundColor = System.Drawing.SystemColors.Info;
-            this.dataGridView01.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView01.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
@@ -121,11 +118,11 @@
             this.Column5,
             this.Column6,
             this.Column7});
-            this.dataGridView01.Location = new System.Drawing.Point(0, 94);
-            this.dataGridView01.Name = "dataGridView01";
-            this.dataGridView01.ReadOnly = true;
-            this.dataGridView01.Size = new System.Drawing.Size(743, 227);
-            this.dataGridView01.TabIndex = 13;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 94);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(743, 227);
+            this.dataGridView1.TabIndex = 13;
             // 
             // Column1
             // 
@@ -174,16 +171,15 @@
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             // 
-            // btn_Consultar
+            // button1
             // 
-            this.btn_Consultar.Location = new System.Drawing.Point(277, 56);
-            this.btn_Consultar.Name = "btn_Consultar";
-            this.btn_Consultar.Size = new System.Drawing.Size(148, 23);
-            this.btn_Consultar.TabIndex = 14;
-            this.btn_Consultar.Text = "CONSULTAR";
-            this.btn_Consultar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_Consultar.UseVisualStyleBackColor = true;
-            this.btn_Consultar.Click += new System.EventHandler(this.btn_Consultar_Click);
+            this.button1.Location = new System.Drawing.Point(277, 56);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(148, 23);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "CONSULTAR";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // GerenciarProdutos
             // 
@@ -191,22 +187,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(744, 333);
-            this.Controls.Add(this.btn_Consultar);
-            this.Controls.Add(this.dataGridView01);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.cb_data);
+            this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cb_marca);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.cb_cat);
+            this.Controls.Add(this.comboBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "GerenciarProdutos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GERENCIAR PRODUTOS";
-            this.Load += new System.EventHandler(this.carregarCombobox);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView01)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,13 +209,13 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox cb_cat;
+        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cb_marca;
+        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cb_data;
-        private System.Windows.Forms.DataGridView dataGridView01;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -228,6 +223,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.Button btn_Consultar;
+        private System.Windows.Forms.Button button1;
     }
 }

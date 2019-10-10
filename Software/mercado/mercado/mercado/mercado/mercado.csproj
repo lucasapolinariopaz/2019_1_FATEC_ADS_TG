@@ -181,6 +181,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>mercado_tgDataSet111.xsd</DependentUpon>
     </Compile>
+    <Compile Include="mercado_tgDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mercado_tgDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="mercado_tgDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mercado_tgDataSet13.xsd</DependentUpon>
+    </Compile>
     <Compile Include="mercado_tgDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -361,6 +371,28 @@
     <None Include="mercado_tgDataSet111.xss">
       <DependentUpon>mercado_tgDataSet111.xsd</DependentUpon>
     </None>
+    <None Include="mercado_tgDataSet12.xsc">
+      <DependentUpon>mercado_tgDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mercado_tgDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mercado_tgDataSet12.xss">
+      <DependentUpon>mercado_tgDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet13.xsc">
+      <DependentUpon>mercado_tgDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mercado_tgDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mercado_tgDataSet13.xss">
+      <DependentUpon>mercado_tgDataSet13.xsd</DependentUpon>
+    </None>
     <None Include="mercado_tgDataSet2.xsc">
       <DependentUpon>mercado_tgDataSet2.xsd</DependentUpon>
     </None>
@@ -479,9 +511,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\excluir1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\salvar %282%291.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
