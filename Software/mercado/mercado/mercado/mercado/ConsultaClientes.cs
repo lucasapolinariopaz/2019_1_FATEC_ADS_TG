@@ -226,7 +226,7 @@ namespace mercado
 
         private void btn_Salvar_Click(object sender, EventArgs e)
         {
-            string CPFf = masktxt_PesquisarCPF.Text;
+            string CPFf = masktxt_CPF.Text;
             CPFf = CPFf.Trim();
             CPFf = CPFf.Replace(".", "").Replace(",", "");
             CPFf = CPFf.Replace("-", "");
@@ -274,7 +274,7 @@ namespace mercado
 
         private void btn_Excluir_Click(object sender, EventArgs e)
         {
-            string CPFf = masktxt_PesquisarCPF.Text;
+            string CPFf = masktxt_CPF.Text;
             CPFf = CPFf.Trim();
             CPFf = CPFf.Replace(".", "").Replace(",", "");
             CPFf = CPFf.Replace("-", "");
