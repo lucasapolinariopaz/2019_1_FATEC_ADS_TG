@@ -18,7 +18,7 @@ namespace mercado
         bool result = false;
         string codprod,marca;
         decimal res1, troco;
-        string dd;
+        string dd,codcc, nomedec;
         int codcli;
         int codvendatemp=99999;
         decimal desconto;
@@ -70,7 +70,7 @@ namespace mercado
                 {
                     int col1 = Convert.ToInt32(datalistado.Rows[i].Cells[0].Value); //id
                     string col2 = datalistado.Rows[i].Cells[1].Value.ToString(); //marca 
-                    string col3 = datalistado.Rows[i].Cells[1].Value.ToString(); //Descricao 
+                    string col3 = datalistado.Rows[i].Cells[2].Value.ToString(); //Descricao 
                     decimal col4 = Convert.ToDecimal(datalistado.Rows[i].Cells[3].Value); //Preco 
                     int col5 = Convert.ToInt32(datalistado.Rows[i].Cells[4].Value); //Quantidade
                     decimal col6 = Convert.ToDecimal(datalistado.Rows[i].Cells[5].Value); //Total
@@ -90,8 +90,9 @@ namespace mercado
                     try
                     {
                         int ix = cmd.ExecuteNonQuery();
-                        if (ix > 0)
-                            MessageBox.Show("Cadastro realizado com sucesso!");
+                        if (ix > 0) {//  MessageBox.Show("Cadastro realizado com sucesso!");
+                        }
+                          
 
                     }
                     catch (Exception ex)
@@ -107,6 +108,13 @@ namespace mercado
                 }
            
             
+
+        }
+        private void limpar()
+        {
+            txtdescricao.Clear(); txtprecouni.Clear(); txtquant.Clear(); txttotal.Clear(); buscprods.Clear();
+            comboBox2.SelectedIndex = -1; txtcli.Clear(); cbmfmpg.SelectedIndex = -1; textBox3.Clear();
+            TextBox6.Clear(); TextBox7.Clear(); txtvalortotal.Clear();
 
         }
         private void BtnAcrescer_Click(object sender, EventArgs e)
@@ -229,13 +237,7 @@ namespace mercado
                     string data = dd;
                     decimal valenv = Convert.ToDecimal(txtvalortotal.Text);
                     string frmpg = cbmfmpg.Text;
-                    if (txtcli.Text.Length == 0)
-                    {
-                        txtcli.Text = "0";
-                        codcli = int.Parse(txtcli.Text);
-
-                    }
-                    else { codcli = int.Parse(txtcli.Text); }
+                     codcli = 1; 
                     string nomecli = comboBox2.Text;
                     decimal valpag = Convert.ToDecimal(TextBox6.Text);
                     decimal troco = Convert.ToDecimal(TextBox7.Text);
@@ -267,7 +269,8 @@ namespace mercado
                     {
                         int i = cmd.ExecuteNonQuery();
                         if (i > 0)
-                            MessageBox.Show("Cadastro realizado com sucesso!");
+                            MessageBox.Show("Venda realizada com sucesso!","AVISO");
+                            limpar();
 
                     }
                     catch (Exception ex)
@@ -294,11 +297,7 @@ namespace mercado
                 valorini = valorini.Replace("R$", "");
                 decimal valenv = Convert.ToDecimal(valorini);
                 string frmpg = cbmfmpg.Text;
-               if (txtcli.Text.Length == 0)
-                {
-                    txtcli.Text = "0";
-                    codcli = int.Parse(txtcli.Text);
-                }
+                codcli = 1;
                 string nomecli = comboBox2.Text;
 
                 decimal valpag = valenv;
@@ -331,7 +330,9 @@ namespace mercado
                 {
                     int i = cmd.ExecuteNonQuery();
                     if (i > 0)
-                        MessageBox.Show("Cadastro realizado com sucesso!");
+                        MessageBox.Show("Venda realizada com sucesso!", "AVISO");
+                    limpar();
+
 
                 }
                 catch (Exception ex)
@@ -345,7 +346,9 @@ namespace mercado
 
             }
             else if(cbmfmpg.Text == "A PRAZO")
+
             {
+                
                 if (txtcli.Text.Length == 0)
                 {
                     MessageBox.Show("Campo Cliente Não preenchido", "AVISO");
@@ -357,6 +360,7 @@ namespace mercado
                     dd = dt.ToString("dd/MM/yyy");
                     string data = dd;
                     decimal valenv = Convert.ToDecimal(txtvalortotal.Text);
+                    codcli = int.Parse(codcc);
                     string frmpg = cbmfmpg.Text;
                     string nomecli = comboBox2.Text;
                     decimal valpag = Convert.ToDecimal(txtvalortotal.Text);
@@ -395,7 +399,8 @@ namespace mercado
                     {
                         int i = cmd.ExecuteNonQuery();
                         if (i > 0)
-                            MessageBox.Show("Cadastro realizado com sucesso!");
+                            MessageBox.Show("Venda realizada com sucesso!", "AVISO");
+                        limpar();
 
                     }
                     catch (Exception ex)
@@ -418,34 +423,62 @@ namespace mercado
   //          Form2 novo = new Form2();
           //  novo.Show();
         }
+        private void preencherCBDescricao(string cod)
 
-        private void txtcli_TextChanged(object sender, EventArgs e)
+        {
+            
+            SqlConnection conn = conexao.obterConexao();
+            String scom = "Select c.nome_cli,c.codigo_cli,d.cod_dependentes,d.cod_clidp,d.nome from dependentes d,clientes c where d.cod_clidp=c.codigo_cli and c.nome_cli='" + cod + "' order by [nome] asc";
+            conexao.obterConexao();
+            SqlDataAdapter da = new SqlDataAdapter(scom, conn);
+            DataTable dtResultado = new DataTable();
+            dtResultado.Clear();//o ponto mais importante (limpa a table antes de preenche-la)
+            comboBox2.DataSource = null;
+            da.Fill(dtResultado);
+            comboBox2.DataSource = dtResultado;
+            comboBox2.ValueMember = "cod_dependentes";
+            comboBox2.DisplayMember = "nome";
+            comboBox2.SelectedItem = "";
+            comboBox2.Refresh(); //faz uma nova busca no BD para preencher os valores da cb de departamentos.
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string codclidepe = txtcli.Text;
+            if (txtcli.Text.Length > 3) { preencherCBDescricao(codclidepe); }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
         {
             SqlConnection conn = conexao.obterConexao();
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = conn;
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText =
-            "Select distinct [nome_cli]from [clientes]" +
-            " order by [nome_cli] asc";
+            SqlCommand commn = new SqlCommand(" Select [codigo_cli],[nome_cli] from[clientes] WHERE nome_cli='" + txtcli.Text + "'  order by [nome_cli] asc", conn);
+            commn.CommandType = CommandType.Text;
+            commn.Parameters.Add(new SqlParameter("@nome_cli", "nome_cli"));
+            commn.Parameters.Add(new SqlParameter("@codigo_cli", "codigo_cli"));
+
             conexao.obterConexao();
-            SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.HasRows == true)
+            SqlDataReader dr = commn.ExecuteReader();
+            result = dr.HasRows;
+            if (result == true)
             {
                 while (dr.Read())
-                    namesCollection.Add(dr["nome_cli"].ToString());
+                {
+                    nomedec = dr["nome_cli"].ToString();
+                    codcc = dr["codigo_cli"].ToString();
+                 
+                }
+              
 
             }
             else
             {
-                MessageBox.Show("Cliente não resgistrado","AVISO");
+                MessageBox.Show("nao encontrado");
             }
-            dr.Close();
 
-            txtcli.AutoCompleteMode = AutoCompleteMode.Suggest;
-            txtcli.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            txtcli.AutoCompleteCustomSource = namesCollection;
+            dr.Close();
         }
+
+       
 
         private void txtquant_TextChanged(object sender, EventArgs e)
         {
