@@ -21,6 +21,22 @@ namespace mercado
             
         }
 
+
+
+        public void limpar()
+        {
+
+            txtcaddescprod.Clear();
+            txt_CodBarras.Clear();
+            cbncateg.SelectedIndex = -1;
+            cbnfornecedor.SelectedIndex = -1;
+            cbnmarcas.SelectedIndex = -1;
+            txtunidades.Clear();
+            maskedTextBox4.Clear();
+            textBox1.Clear();
+            txtpdvenda.Clear();
+
+        }
         bool Verificacodbarras(string cp)
         {
 
@@ -81,9 +97,6 @@ namespace mercado
             SqlCommand comm = new SqlCommand("select estoque_atualprod,descricao_prod from estoque where   descricao_prod='" + txtcaddescprod.Text + "';", conn);
             comm.CommandType = CommandType.Text;
             comm.Parameters.Add(new SqlParameter("@estoque_atualprod", "estoque_atualprod"));
-
-
-
             conexao.obterConexao();
             SqlDataReader drr = comm.ExecuteReader();
             while (drr.Read())
@@ -257,6 +270,7 @@ namespace mercado
                 int i = cmd.ExecuteNonQuery();
                 if (i > 0)
                     MessageBox.Show("Cadastro realizado com sucesso!");
+                limpar();
             }
             catch (Exception ex)
             {

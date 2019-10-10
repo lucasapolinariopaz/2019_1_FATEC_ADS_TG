@@ -641,7 +641,7 @@
             // 
             this.List1.BackColor = System.Drawing.SystemColors.Info;
             this.List1.FormattingEnabled = true;
-            this.List1.Location = new System.Drawing.Point(622, 342);
+            this.List1.Location = new System.Drawing.Point(339, 180);
             this.List1.Name = "List1";
             this.List1.Size = new System.Drawing.Size(75, 56);
             this.List1.TabIndex = 148;
@@ -649,12 +649,13 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(703, 343);
+            this.button4.Location = new System.Drawing.Point(812, 484);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 149;
-            this.button4.Text = "button4";
+            this.button4.Text = "IMPRIMIR";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Visible = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // caixapdv

@@ -30,8 +30,91 @@ namespace mercado
         }
 
 
-
-
+public void esconderCampos()
+        {
+            Label1.Visible = false;
+            Label2.Visible = false;
+            label8.Visible = false;
+            label10.Visible = false;
+            Label12.Visible = false;
+            Label11.Visible = false;
+            Label13.Visible = false;
+            Label14.Visible = false;
+            Label15.Visible = false;
+            Label16.Visible = false;
+            label3.Visible = false;
+            label4.Visible = false;
+            Label6.Visible = false;
+            Label5.Visible = false;
+            Label7.Visible = false;
+            Label9.Visible = false;
+            Btnbusca.Visible = false;
+            buscprods.Visible = false;
+            txtdescricao.Visible = false;
+            txtprecouni.Visible = false;
+            txtquant.Visible = false;
+            txttotal.Visible = false;
+            datalistado.Visible = false;
+            BtnAcrescer.Visible = false;
+            tnExcluir.Visible = false;
+            button2.Visible = false;
+            cbmfmpg.Visible = false;
+            textBox3.Visible = false;
+            TextBox6.Visible = false;
+            TextBox7.Visible = false;
+            TextBox8.Visible = false;
+            txtvalortotal.Visible = false;
+            comboBox2.Visible = false;
+            txtcli.Visible = false;
+            BtnSair.Visible = false;
+            BtnFinalizarVenda.Visible = false;
+            button1.Visible = false;
+            button3.Visible = false;
+            button4.Visible = true;
+        }
+        public void mostrarCampos()
+        {
+            Label1.Visible = true;
+            Label2.Visible = true;
+            label8.Visible = true;
+            label10.Visible = true;
+            Label12.Visible = true;
+            Label11.Visible = true;
+            Label13.Visible = true;
+            Label14.Visible = true;
+            Label15.Visible = true;
+            Label16.Visible = true;
+            label3.Visible = true;
+            label4.Visible = true;
+            Label6.Visible = true;
+            Label5.Visible = true;
+            Label7.Visible = true;
+            Label9.Visible = true;
+            Btnbusca.Visible = true;
+            buscprods.Visible = true;
+            txtdescricao.Visible = true;
+            txtprecouni.Visible = true;
+            txtquant.Visible = true;
+            txttotal.Visible = true;
+            datalistado.Visible = true;
+            BtnAcrescer.Visible = true;
+            tnExcluir.Visible = true;
+            button2.Visible = true;
+            cbmfmpg.Visible = true;
+            textBox3.Visible = true;
+            TextBox6.Visible = true;
+            TextBox7.Visible = true;
+            TextBox8.Visible = true;
+            txtvalortotal.Visible = true;
+            comboBox2.Visible = true;
+            txtcli.Visible = true;
+            BtnSair.Visible = true;
+            BtnFinalizarVenda.Visible = true;
+            button1.Visible = true;
+            button3.Visible = true;
+            List1.Visible = false;
+            button4.Visible = false;
+        }
         public void cupom()
         {
             List1.Visible = true;
@@ -39,7 +122,7 @@ namespace mercado
             DateTime dt = DateTime.Now;
             data = dt.ToString("dd/MM/yyy");
             List1.Height = 400;
-            List1.Width = 400;
+            List1.Width = 250;
             List1.Items.Add("                       RAZÃO SOCIAL");
             List1.Items.Add(data);
             List1.Items.Add("                    CUPOM  NÃO FISCAL");
@@ -69,6 +152,7 @@ namespace mercado
             List1.Items.Add("VALOR TOTAL "+ txtvalortotal.Text);
             List1.Items.Add("VALOR PAGO " + "R$ " + TextBox6.Text);
             List1.Items.Add("TROCO " + "R$ " + TextBox7.Text);
+            esconderCampos();
 
         }
         private void caixapdv_Load(object sender, EventArgs e)
@@ -87,7 +171,8 @@ namespace mercado
 
             // Set up the ToolTip text for the Button and Checkbox.
           
-           // toolTip1.SetToolTip(this.checkBox1, "My checkBox1");
+          toolTip1.SetToolTip(this.button3,"Consulte Cliente");
+          toolTip1.SetToolTip(this.button1, "Consulte Depedentes");
         }
 
 
@@ -112,7 +197,6 @@ namespace mercado
                 {
                     int col1 = Convert.ToInt32(datalistado.Rows[i].Cells[0].Value); //id
                     string col2 = datalistado.Rows[i].Cells[1].Value.ToString(); //marca 
-                    MessageBox.Show(col2);
                     string col3 = datalistado.Rows[i].Cells[2].Value.ToString(); //Descricao 
                     decimal col4 = Convert.ToDecimal(datalistado.Rows[i].Cells[3].Value); //Preco 
                     int col5 = Convert.ToInt32(datalistado.Rows[i].Cells[4].Value); //Quantidade
@@ -133,7 +217,7 @@ namespace mercado
                     try
                     {
                         int ix = cmd.ExecuteNonQuery();
-                        if (ix > 0) { MessageBox.Show("Cadastro realizado com sucesso!");
+                        if (ix > 0) {
                         }
                           
 
@@ -158,7 +242,7 @@ namespace mercado
             txtdescricao.Clear(); txtprecouni.Clear(); txtquant.Clear(); txttotal.Clear(); buscprods.Clear();
             comboBox2.SelectedIndex = -1; txtcli.Clear(); cbmfmpg.SelectedIndex = -1; textBox3.Clear();
             TextBox6.Clear(); TextBox7.Clear(); txtvalortotal.Clear();
-
+            datalistado.Rows.Clear();
         }
         private void BtnAcrescer_Click(object sender, EventArgs e)
         {
@@ -217,7 +301,7 @@ namespace mercado
 
         private void button4_Click(object sender, EventArgs e)
         {
-            SalvarDados();
+            mostrarCampos();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -519,12 +603,12 @@ namespace mercado
                     codcc = dr["codigo_cli"].ToString();
                  
                 }
-              
+                MessageBox.Show("Cliente encontrado!!","AVISO");
 
             }
             else
             {
-                MessageBox.Show("nao encontrado");
+                MessageBox.Show("nao encontrado", "AVISO");
             }
 
             dr.Close();
