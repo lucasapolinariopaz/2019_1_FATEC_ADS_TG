@@ -29,29 +29,32 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(vendas));
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Consultar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cb_pagamento = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cb_data = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.lbl_txtTotal = new System.Windows.Forms.Label();
+            this.lbl_ValorTotal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btn_Consultar
             // 
-            this.button1.Location = new System.Drawing.Point(275, 59);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 23);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "CONSULTAR";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_Consultar.Location = new System.Drawing.Point(275, 59);
+            this.btn_Consultar.Name = "btn_Consultar";
+            this.btn_Consultar.Size = new System.Drawing.Size(148, 23);
+            this.btn_Consultar.TabIndex = 22;
+            this.btn_Consultar.Text = "CONSULTAR";
+            this.btn_Consultar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_Consultar.UseVisualStyleBackColor = true;
+            this.btn_Consultar.Click += new System.EventHandler(this.btn_Consultar_Click);
             // 
             // dataGridView1
             // 
@@ -69,45 +72,6 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(425, 227);
             this.dataGridView1.TabIndex = 21;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Info;
-            this.label1.Location = new System.Drawing.Point(261, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 15);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "FORMA DE PAGAMENTO";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(422, 12);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(152, 21);
-            this.comboBox2.TabIndex = 17;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Info;
-            this.label4.Location = new System.Drawing.Point(2, 14);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 15);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "DATA";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(93, 12);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(152, 21);
-            this.comboBox1.TabIndex = 15;
             // 
             // Column1
             // 
@@ -134,9 +98,52 @@
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Info;
+            this.label1.Location = new System.Drawing.Point(261, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(141, 15);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "FORMA DE PAGAMENTO";
+            // 
+            // cb_pagamento
+            // 
+            this.cb_pagamento.FormattingEnabled = true;
+            this.cb_pagamento.Items.AddRange(new object[] {
+            "DINHEIRO",
+            "CARTÃO",
+            "A PRAZO"});
+            this.cb_pagamento.Location = new System.Drawing.Point(422, 12);
+            this.cb_pagamento.Name = "cb_pagamento";
+            this.cb_pagamento.Size = new System.Drawing.Size(152, 21);
+            this.cb_pagamento.TabIndex = 17;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Info;
+            this.label4.Location = new System.Drawing.Point(51, 17);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 15);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "DATA";
+            // 
+            // cb_data
+            // 
+            this.cb_data.FormattingEnabled = true;
+            this.cb_data.Location = new System.Drawing.Point(93, 12);
+            this.cb_data.Name = "cb_data";
+            this.cb_data.Size = new System.Drawing.Size(152, 21);
+            this.cb_data.TabIndex = 15;
+            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(275, 348);
+            this.button2.Location = new System.Drawing.Point(275, 372);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(148, 23);
             this.button2.TabIndex = 23;
@@ -144,25 +151,49 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // lbl_txtTotal
+            // 
+            this.lbl_txtTotal.AutoSize = true;
+            this.lbl_txtTotal.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_txtTotal.ForeColor = System.Drawing.SystemColors.Info;
+            this.lbl_txtTotal.Location = new System.Drawing.Point(311, 342);
+            this.lbl_txtTotal.Name = "lbl_txtTotal";
+            this.lbl_txtTotal.Size = new System.Drawing.Size(44, 15);
+            this.lbl_txtTotal.TabIndex = 18;
+            this.lbl_txtTotal.Text = "TOTAL";
+            // 
+            // lbl_ValorTotal
+            // 
+            this.lbl_ValorTotal.AutoSize = true;
+            this.lbl_ValorTotal.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ValorTotal.ForeColor = System.Drawing.SystemColors.Info;
+            this.lbl_ValorTotal.Location = new System.Drawing.Point(361, 342);
+            this.lbl_ValorTotal.Name = "lbl_ValorTotal";
+            this.lbl_ValorTotal.Size = new System.Drawing.Size(0, 15);
+            this.lbl_ValorTotal.TabIndex = 18;
+            // 
             // vendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(651, 393);
+            this.ClientSize = new System.Drawing.Size(651, 407);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_Consultar);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.lbl_ValorTotal);
+            this.Controls.Add(this.lbl_txtTotal);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cb_pagamento);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cb_data);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "vendas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GERENCIAR VENDAS";
+            this.Load += new System.EventHandler(this.carregarCombobox);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -171,16 +202,18 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Consultar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cb_pagamento;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cb_data;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lbl_txtTotal;
+        private System.Windows.Forms.Label lbl_ValorTotal;
     }
 }

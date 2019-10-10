@@ -22,11 +22,7 @@ namespace mercado
         {
             InitializeComponent();
         }
-
-
-
-
-
+              
         protected void CarregaImagem()
         {
             try
@@ -72,9 +68,9 @@ namespace mercado
             {
 
                 //Load the image from the file
-          
+
                 Image img = picImagem.Image;
-              
+
 
                 //Adjust the size of the image to the page to print the full image without loosing any part of it
                 Rectangle m = e.MarginBounds;
@@ -101,34 +97,34 @@ namespace mercado
 
         private void SalvarNotas_Load(object sender, EventArgs e)
         {
-           
+
             DateTime dt = DateTime.Now;
             dd = dt.ToString("dd/MM/yyy");
-           
-            
+
+
         }
-      /*  void getImagensSQLServer(SqlConnection conexaoSQLServer)
-        {
-            try
-            {
-                //Inicializar o SQL adapter.
-                SqlDataAdapter ADAP = new SqlDataAdapter("Select Id,descricao,imagem from Imagens", conexaoSQLServer);
+        /*  void getImagensSQLServer(SqlConnection conexaoSQLServer)
+          {
+              try
+              {
+                  //Inicializar o SQL adapter.
+                  SqlDataAdapter ADAP = new SqlDataAdapter("Select Id,descricao,imagem from Imagens", conexaoSQLServer);
 
-                //Inicializa o  Dataset.
-                DataSet DS = new DataSet();
+                  //Inicializa o  Dataset.
+                  DataSet DS = new DataSet();
 
-                //Preenche o dataset com a tabela Imagens
-                ADAP.Fill(DS, "Imagens");
+                  //Preenche o dataset com a tabela Imagens
+                  ADAP.Fill(DS, "Imagens");
 
-                //preenche o datagridviewe com o dataset.
-                gdvImagens.DataSource = DS.Tables["Imagens"];
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
-*/
+                  //preenche o datagridviewe com o dataset.
+                  gdvImagens.DataSource = DS.Tables["Imagens"];
+              }
+              catch (Exception ex)
+              {
+                  MessageBox.Show(ex.ToString());
+              }
+          }
+  */
 
 
         public void dtvgexibir()
@@ -138,8 +134,9 @@ namespace mercado
         private void btnSalvarImagemBD_Click(object sender, EventArgs e)
         {
             try
-            { string sql = "INSERT INTO [notasfiscais](datanota,descricao,imagemnota) values(@datanota,@descricao,@imagem)";
-                 
+            {
+                string sql = "INSERT INTO [notasfiscais](datanota,descricao,imagemnota) values(@datanota,@descricao,@imagem)";
+
                 SqlConnection conn = conexao.obterConexao();
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.Add(new SqlParameter("@datanota", dd));
@@ -215,7 +212,7 @@ namespace mercado
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.Parameters.Add("@ID", SqlDbType.Int, 4);
             cmd.Parameters["@ID"].Value = this.txtCodigoImagem.Text;
-           
+
 
             cmd.CommandType = CommandType.Text;
             conexao.obterConexao();
@@ -236,6 +233,15 @@ namespace mercado
             {
                 conexao.fecharConexao();
             }
+        }
+
+        private void SalvarNotas_Load_1(object sender, EventArgs e)
+        {
+            // TODO: esta linha de código carrega dados na tabela 'mercado_tgDataSet13.notasfiscais'. Você pode movê-la ou removê-la conforme necessário.
+            this.notasfiscaisTableAdapter1.Fill(this.mercado_tgDataSet13.notasfiscais);
+            // TODO: esta linha de código carrega dados na tabela 'mercado_tgDataSet12.notasfiscais'. Você pode movê-la ou removê-la conforme necessário.
+            this.notasfiscaisTableAdapter.Fill(this.mercado_tgDataSet12.notasfiscais);
+
         }
     }
 }

@@ -42,16 +42,15 @@
             this.button1 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.button2 = new System.Windows.Forms.Button();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.mercado_tgDataSet12 = new mercado.mercado_tgDataSet12();
             this.notasfiscaisBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.notasfiscaisTableAdapter = new mercado.mercado_tgDataSet12TableAdapters.notasfiscaisTableAdapter();
             this.mercado_tgDataSet13 = new mercado.mercado_tgDataSet13();
             this.notasfiscaisBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.notasfiscaisTableAdapter1 = new mercado.mercado_tgDataSet13TableAdapters.notasfiscaisTableAdapter();
-            this.btnfornecedor = new System.Windows.Forms.Button();
-            this.idnota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idnotaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datanotaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imagemnotaDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
@@ -71,7 +70,7 @@
             this.gdvImagens.BackgroundColor = System.Drawing.SystemColors.ControlDark;
             this.gdvImagens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gdvImagens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idnota,
+            this.idnotaDataGridViewTextBoxColumn,
             this.datanotaDataGridViewTextBoxColumn,
             this.descricaoDataGridViewTextBoxColumn,
             this.imagemnotaDataGridViewImageColumn});
@@ -83,7 +82,6 @@
             this.gdvImagens.RowTemplate.Height = 24;
             this.gdvImagens.Size = new System.Drawing.Size(432, 131);
             this.gdvImagens.TabIndex = 20;
-            this.gdvImagens.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdvImagens_CellClick);
             // 
             // label3
             // 
@@ -135,7 +133,6 @@
             this.btnRetornarImagemBD.TabIndex = 15;
             this.btnRetornarImagemBD.Text = "Obter Imagem do Banco de dados";
             this.btnRetornarImagemBD.UseVisualStyleBackColor = true;
-            this.btnRetornarImagemBD.Click += new System.EventHandler(this.btnRetornarImagemBD_Click);
             // 
             // btnSalvarImagemBD
             // 
@@ -146,7 +143,6 @@
             this.btnSalvarImagemBD.TabIndex = 14;
             this.btnSalvarImagemBD.Text = "Salvar Imagem no Banco de dados";
             this.btnSalvarImagemBD.UseVisualStyleBackColor = true;
-            this.btnSalvarImagemBD.Click += new System.EventHandler(this.btnSalvarImagemBD_Click);
             // 
             // btnCarregarImagem
             // 
@@ -172,6 +168,7 @@
             // 
             // button1
             // 
+            this.button1.Enabled = false;
             this.button1.Location = new System.Drawing.Point(72, 456);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
@@ -179,7 +176,6 @@
             this.button1.TabIndex = 21;
             this.button1.Text = "Deletar Imagem ";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // openFileDialog1
             // 
@@ -187,6 +183,7 @@
             // 
             // button2
             // 
+            this.button2.Enabled = false;
             this.button2.Location = new System.Drawing.Point(316, 456);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
@@ -194,7 +191,6 @@
             this.button2.TabIndex = 22;
             this.button2.Text = "Imprimir Imagem ";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // printDialog1
             // 
@@ -228,24 +224,12 @@
             // 
             this.notasfiscaisTableAdapter1.ClearBeforeFill = true;
             // 
-            // btnfornecedor
+            // idnotaDataGridViewTextBoxColumn
             // 
-            this.btnfornecedor.BackColor = System.Drawing.Color.Transparent;
-            this.btnfornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnfornecedor.Image = global::mercado.Properties.Resources.atualizar;
-            this.btnfornecedor.Location = new System.Drawing.Point(509, 321);
-            this.btnfornecedor.Name = "btnfornecedor";
-            this.btnfornecedor.Size = new System.Drawing.Size(22, 22);
-            this.btnfornecedor.TabIndex = 39;
-            this.btnfornecedor.UseVisualStyleBackColor = false;
-            this.btnfornecedor.Click += new System.EventHandler(this.btnfornecedor_Click);
-            // 
-            // idnota
-            // 
-            this.idnota.DataPropertyName = "idnota";
-            this.idnota.HeaderText = "idnota";
-            this.idnota.Name = "idnota";
-            this.idnota.ReadOnly = true;
+            this.idnotaDataGridViewTextBoxColumn.DataPropertyName = "idnota";
+            this.idnotaDataGridViewTextBoxColumn.HeaderText = "idnota";
+            this.idnotaDataGridViewTextBoxColumn.Name = "idnotaDataGridViewTextBoxColumn";
+            this.idnotaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // datanotaDataGridViewTextBoxColumn
             // 
@@ -274,7 +258,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(612, 497);
-            this.Controls.Add(this.btnfornecedor);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.gdvImagens);
@@ -292,7 +275,7 @@
             this.Name = "SalvarNotas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Salvar Notas";
-            this.Load += new System.EventHandler(this.SalvarNotas_Load);
+            this.Load += new System.EventHandler(this.SalvarNotas_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.gdvImagens)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImagem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mercado_tgDataSet12)).EndInit();
@@ -318,16 +301,15 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button button2;
-        private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
         private mercado_tgDataSet12 mercado_tgDataSet12;
         private System.Windows.Forms.BindingSource notasfiscaisBindingSource;
         private mercado_tgDataSet12TableAdapters.notasfiscaisTableAdapter notasfiscaisTableAdapter;
         private mercado_tgDataSet13 mercado_tgDataSet13;
         private System.Windows.Forms.BindingSource notasfiscaisBindingSource1;
         private mercado_tgDataSet13TableAdapters.notasfiscaisTableAdapter notasfiscaisTableAdapter1;
-        private System.Windows.Forms.Button btnfornecedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idnota;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idnotaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datanotaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn imagemnotaDataGridViewImageColumn;
