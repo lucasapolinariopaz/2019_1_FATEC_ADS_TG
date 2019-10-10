@@ -202,7 +202,7 @@ namespace mercado
 
         private void btnlogar_Click(object sender, EventArgs e)
         {
-            groupBox1.Visible = true;
+            groupBox1.Visible = true; menuStrip1.Visible = false; btnlogar.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
