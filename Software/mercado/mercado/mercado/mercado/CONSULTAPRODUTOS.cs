@@ -18,10 +18,12 @@ namespace mercado
         string codEst, porc = "0", codPen, Tcodf, valor = "0", valor2 = "0";
         int codestoque, codforn, codentrada;
         string cdbarras;
-        public CONSULTAPRODUTOS(string frm1)
+        public string cddnarra { get; set; }
+        string recbarra;
+        public CONSULTAPRODUTOS()
         {
             InitializeComponent();
-            txtpesqprod.Text = frm1;
+          
         }
 
         bool Verificacodbarras(string cp)
@@ -342,7 +344,11 @@ namespace mercado
 
         private void CONSULTAPRODUTOS_Load(object sender, EventArgs e)
         {
-              if(txtpesqprod.Text.Length==0) { }
+            recbarra = this.cddnarra; 
+            txtpesqprod.Text = recbarra;
+
+
+            if (txtpesqprod.Text.Length==0) { }
             else {
                 SqlConnection conn = conexao.obterConexao();
                 SqlCommand commn = new SqlCommand("select e.codigo_prod,e.codigo_barra, e.descricao_prod , e.categoria_prod , e.marca_prod, e.preco_custo , e.preco_venda , e.estoque_atualprod, e.validade_prod ,e.codprod_fornec, e.data_entrada , e.codprodentrada,f.nome_fornecedor from estoque e,fornecedor f where   codigo_barra='" + txtpesqprod.Text + "' and f.cod_fornecdor=e.codprod_fornec;", conn);

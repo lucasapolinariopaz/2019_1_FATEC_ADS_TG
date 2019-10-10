@@ -112,7 +112,7 @@ namespace mercado
 
         private void pRODUTOSToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            CONSULTAPRODUTOS novo = new CONSULTAPRODUTOS(txtlogcpf.Text);
+            CONSULTAPRODUTOS novo = new CONSULTAPRODUTOS();
             novo.Show();
         }
 
@@ -133,6 +133,72 @@ namespace mercado
         private void aToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fechamentodecaixa novo = new fechamentodecaixa();
+            novo.Show();
+        }
+
+        private void cONSULTAToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ConsultaFornecedores novo = new ConsultaFornecedores();
+            novo.Show();
+        }
+
+        private void gERENCIARToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GerenciarProdutos novo = new GerenciarProdutos();
+            novo.Show();
+        }
+
+        private void cADASTROToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Clientes  novo = new Clientes();
+            novo.Show();
+        }
+
+        private void sALVARNOTASFISCAISToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SalvarNotas novo = new SalvarNotas();
+            novo.Show();
+        }
+
+        private void cONSULTAToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            ConsultaClientes novo = new ConsultaClientes();
+            novo.Show();
+        }
+
+        private void cADASTRAODEDEPENDENTESToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Dependentes novo = new Dependentes();
+            novo.Show();
+        }
+
+        private void cONSULTARDEPENDENTESToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultarDependentes novo = new ConsultarDependentes();
+            novo.Show();
+        }
+
+        private void cONTASARECEBERToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            contasAreceber novo = new contasAreceber();
+            novo.Show();
+        }
+
+        private void aLTERARDADOSDEACESSOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            consultaracesso novo = new consultaracesso();
+            novo.Show();
+        }
+
+        private void vENDASToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            vendas novo = new vendas();
+            novo.Show();
+        }
+
+        private void pRODUTOSMAISVENDIDOSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rankdeprodutos novo = new rankdeprodutos();
             novo.Show();
         }
     }
