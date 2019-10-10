@@ -1,0 +1,535 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CB23326A-E0AA-4BFD-BEFC-CC071ED73770}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>mercado</RootNamespace>
+    <AssemblyName>mercado</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="abertura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="abertura.Designer.cs">
+      <DependentUpon>abertura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cadastro de produtos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastro de produtos.Designer.cs">
+      <DependentUpon>cadastro de produtos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cadastroAcesso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastroAcesso.Designer.cs">
+      <DependentUpon>cadastroAcesso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cadastrodecategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastrodecategoria.Designer.cs">
+      <DependentUpon>cadastrodecategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cadastrodefornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastrodefornecedor.Designer.cs">
+      <DependentUpon>cadastrodefornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cadastromarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastromarcas.Designer.cs">
+      <DependentUpon>cadastromarcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="caixapdv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="caixapdv.Designer.cs">
+      <DependentUpon>caixapdv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes.Designer.cs">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="conexao.cs" />
+    <Compile Include="ConsultaClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaClientes.Designer.cs">
+      <DependentUpon>ConsultaClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaFornecedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaFornecedores.Designer.cs">
+      <DependentUpon>ConsultaFornecedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CONSULTAPRODUTOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONSULTAPRODUTOS.Designer.cs">
+      <DependentUpon>CONSULTAPRODUTOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="consultaracesso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="consultaracesso.Designer.cs">
+      <DependentUpon>consultaracesso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarDependentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarDependentes.Designer.cs">
+      <DependentUpon>ConsultarDependentes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="contasAreceber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="contasAreceber.Designer.cs">
+      <DependentUpon>contasAreceber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dependentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dependentes.Designer.cs">
+      <DependentUpon>Dependentes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="detalhedebitos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="detalhedebitos.Designer.cs">
+      <DependentUpon>detalhedebitos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fechamentodecaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fechamentodecaixa.Designer.cs">
+      <DependentUpon>fechamentodecaixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GerenciarProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GerenciarProdutos.Designer.cs">
+      <DependentUpon>GerenciarProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lembretesenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lembretesenha.Designer.cs">
+      <DependentUpon>lembretesenha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mercado_tgDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mercado_tgDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="mercado_tgDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mercado_tgDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="mercado_tgDataSet101.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mercado_tgDataSet101.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="mercado_tgDataSet111.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mercado_tgDataSet111.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="mercado_tgDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mercado_tgDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="mercado_tgDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mercado_tgDataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="mercado_tgDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mercado_tgDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="mercado_tgDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mercado_tgDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="mercado_tgDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mercado_tgDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="mercado_tgDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mercado_tgDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="mercado_tgDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mercado_tgDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="mercado_tgDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mercado_tgDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="mercado_tgDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mercado_tgDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="mercado_tgDataSet91.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mercado_tgDataSet91.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rankdeprodutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rankdeprodutos.Designer.cs">
+      <DependentUpon>rankdeprodutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalvarNotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalvarNotas.Designer.cs">
+      <DependentUpon>SalvarNotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vendas.Designer.cs">
+      <DependentUpon>vendas.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="abertura.resx">
+      <DependentUpon>abertura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadastro de produtos.resx">
+      <DependentUpon>cadastro de produtos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadastroAcesso.resx">
+      <DependentUpon>cadastroAcesso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadastrodecategoria.resx">
+      <DependentUpon>cadastrodecategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadastrodefornecedor.resx">
+      <DependentUpon>cadastrodefornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadastromarcas.resx">
+      <DependentUpon>cadastromarcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="caixapdv.resx">
+      <DependentUpon>caixapdv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes.resx">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaClientes.resx">
+      <DependentUpon>ConsultaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaFornecedores.resx">
+      <DependentUpon>ConsultaFornecedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONSULTAPRODUTOS.resx">
+      <DependentUpon>CONSULTAPRODUTOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="consultaracesso.resx">
+      <DependentUpon>consultaracesso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarDependentes.resx">
+      <DependentUpon>ConsultarDependentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="contasAreceber.resx">
+      <DependentUpon>contasAreceber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dependentes.resx">
+      <DependentUpon>Dependentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="detalhedebitos.resx">
+      <DependentUpon>detalhedebitos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fechamentodecaixa.resx">
+      <DependentUpon>fechamentodecaixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GerenciarProdutos.resx">
+      <DependentUpon>GerenciarProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lembretesenha.resx">
+      <DependentUpon>lembretesenha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="rankdeprodutos.resx">
+      <DependentUpon>rankdeprodutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalvarNotas.resx">
+      <DependentUpon>SalvarNotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vendas.resx">
+      <DependentUpon>vendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="mercado_tgDataSet.xsc">
+      <DependentUpon>mercado_tgDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mercado_tgDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mercado_tgDataSet.xss">
+      <DependentUpon>mercado_tgDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet1.xsc">
+      <DependentUpon>mercado_tgDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mercado_tgDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mercado_tgDataSet1.xss">
+      <DependentUpon>mercado_tgDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet101.xsc">
+      <DependentUpon>mercado_tgDataSet101.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet101.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mercado_tgDataSet101.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mercado_tgDataSet101.xss">
+      <DependentUpon>mercado_tgDataSet101.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet111.xsc">
+      <DependentUpon>mercado_tgDataSet111.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet111.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mercado_tgDataSet111.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mercado_tgDataSet111.xss">
+      <DependentUpon>mercado_tgDataSet111.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet12.xsc">
+      <DependentUpon>mercado_tgDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mercado_tgDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mercado_tgDataSet12.xss">
+      <DependentUpon>mercado_tgDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet13.xsc">
+      <DependentUpon>mercado_tgDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mercado_tgDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mercado_tgDataSet13.xss">
+      <DependentUpon>mercado_tgDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet2.xsc">
+      <DependentUpon>mercado_tgDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mercado_tgDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mercado_tgDataSet2.xss">
+      <DependentUpon>mercado_tgDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet3.xsc">
+      <DependentUpon>mercado_tgDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mercado_tgDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mercado_tgDataSet3.xss">
+      <DependentUpon>mercado_tgDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet4.xsc">
+      <DependentUpon>mercado_tgDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mercado_tgDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mercado_tgDataSet4.xss">
+      <DependentUpon>mercado_tgDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet5.xsc">
+      <DependentUpon>mercado_tgDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mercado_tgDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mercado_tgDataSet5.xss">
+      <DependentUpon>mercado_tgDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet6.xsc">
+      <DependentUpon>mercado_tgDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mercado_tgDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mercado_tgDataSet6.xss">
+      <DependentUpon>mercado_tgDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet7.xsc">
+      <DependentUpon>mercado_tgDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mercado_tgDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mercado_tgDataSet7.xss">
+      <DependentUpon>mercado_tgDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet8.xsc">
+      <DependentUpon>mercado_tgDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mercado_tgDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mercado_tgDataSet8.xss">
+      <DependentUpon>mercado_tgDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet91.xsc">
+      <DependentUpon>mercado_tgDataSet91.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet91.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mercado_tgDataSet91.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mercado_tgDataSet91.xss">
+      <DependentUpon>mercado_tgDataSet91.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oie_transparent %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\atualizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excluir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salvar %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vassoura.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excluir1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salvar %282%291.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

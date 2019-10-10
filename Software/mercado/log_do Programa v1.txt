@@ -1,0 +1,12 @@
+cadastro de acesso
+verificaçao de cpf( falha ainda quando se coloca numeros iguais)
+checagem se ja existe cpf cadastrado
+acesso ao sistema
+lembrete de senha
+
+cadastro de categorias
+verificaçao de duplicidade de categoria
+cadastro de marcas
+verificaçao de duplicidade de marca ja registrada em uma categoria
+
+nome banco mercado_tg script
