@@ -77,8 +77,6 @@ namespace mercado
             else
             {
 
-
-
                 if (!this.login.Equals(""))
                 {
                     lblfunc.Text = this.login;

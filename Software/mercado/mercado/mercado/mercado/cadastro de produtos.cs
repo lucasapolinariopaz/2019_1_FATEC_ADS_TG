@@ -13,6 +13,8 @@ namespace mercado
         string Tcodf;
         int cod;
         int codv;
+        
+        string envbarra;
         public cadastro_de_produtos()
         {
             InitializeComponent();
@@ -225,7 +227,9 @@ namespace mercado
                 {
 
                     //  MessageBox.Show(" ok clicado");
-                    CONSULTAPRODUTOS novo = new CONSULTAPRODUTOS(maskedTextBox1.Text);
+                    CONSULTAPRODUTOS novo = new CONSULTAPRODUTOS();
+
+                    novo.cddnarra = codbarrasV;
                     novo.Show();
 
                 }

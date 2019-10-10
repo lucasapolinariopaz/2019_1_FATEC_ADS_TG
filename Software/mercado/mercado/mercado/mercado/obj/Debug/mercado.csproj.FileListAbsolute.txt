@@ -17,3 +17,14 @@ C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.CONSULTAPRODUTO
 C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.caixapdv.resources
 C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.abertura.resources
 C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.fechamentodecaixa.resources
+C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.ConsultaFornecedores.resources
+C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.GerenciarProdutos.resources
+C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.Clientes.resources
+C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.SalvarNotas.resources
+C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.ConsultaClientes.resources
+C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.ConsultarDependentes.resources
+C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.Dependentes.resources
+C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.consultaracesso.resources
+C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.contasAreceber.resources
+C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.vendas.resources
+C:\Users\cesar\Desktop\mercado\mercado\mercado\obj\Debug\mercado.rankdeprodutos.resources
