@@ -56,6 +56,7 @@
             this.masktxt_dataNasc = new System.Windows.Forms.MaskedTextBox();
             this.masktxt_CPF = new System.Windows.Forms.MaskedTextBox();
             this.masktxt_PesquisarCPF = new System.Windows.Forms.MaskedTextBox();
+            this.lbl_CPF = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_Fechar
@@ -250,7 +251,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Info;
-            this.label3.Location = new System.Drawing.Point(232, 117);
+            this.label3.Location = new System.Drawing.Point(222, 116);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 19);
             this.label3.TabIndex = 142;
@@ -347,11 +348,12 @@
             // 
             // masktxt_CPF
             // 
-            this.masktxt_CPF.Location = new System.Drawing.Point(277, 116);
+            this.masktxt_CPF.Location = new System.Drawing.Point(262, 115);
             this.masktxt_CPF.Mask = "000.000.000-00";
             this.masktxt_CPF.Name = "masktxt_CPF";
-            this.masktxt_CPF.Size = new System.Drawing.Size(85, 20);
+            this.masktxt_CPF.Size = new System.Drawing.Size(80, 20);
             this.masktxt_CPF.TabIndex = 167;
+            this.masktxt_CPF.KeyUp += new System.Windows.Forms.KeyEventHandler(this.masktxt_CPF_KeyUp);
             // 
             // masktxt_PesquisarCPF
             // 
@@ -361,12 +363,25 @@
             this.masktxt_PesquisarCPF.Size = new System.Drawing.Size(85, 20);
             this.masktxt_PesquisarCPF.TabIndex = 168;
             // 
+            // lbl_CPF
+            // 
+            this.lbl_CPF.AutoSize = true;
+            this.lbl_CPF.BackColor = System.Drawing.SystemColors.Info;
+            this.lbl_CPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CPF.ForeColor = System.Drawing.Color.Red;
+            this.lbl_CPF.Location = new System.Drawing.Point(348, 117);
+            this.lbl_CPF.Name = "lbl_CPF";
+            this.lbl_CPF.Size = new System.Drawing.Size(0, 16);
+            this.lbl_CPF.TabIndex = 170;
+            this.lbl_CPF.Visible = false;
+            // 
             // ConsultaClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(729, 336);
+            this.Controls.Add(this.lbl_CPF);
             this.Controls.Add(this.masktxt_PesquisarCPF);
             this.Controls.Add(this.masktxt_CPF);
             this.Controls.Add(this.masktxt_dataNasc);
@@ -433,5 +448,6 @@
         private System.Windows.Forms.MaskedTextBox masktxt_dataNasc;
         private System.Windows.Forms.MaskedTextBox masktxt_CPF;
         private System.Windows.Forms.MaskedTextBox masktxt_PesquisarCPF;
+        private System.Windows.Forms.Label lbl_CPF;
     }
 }

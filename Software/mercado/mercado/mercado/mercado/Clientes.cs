@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
 using System.Data.SqlClient;
 
 namespace mercado
@@ -233,7 +232,6 @@ namespace mercado
 
                     if (result)
                     {
-                        btn_Salvar.Enabled = false;
                         masktxt_CPF.Focus();
                         MessageBox.Show("CPF já cadastrado no sistema");
                     }

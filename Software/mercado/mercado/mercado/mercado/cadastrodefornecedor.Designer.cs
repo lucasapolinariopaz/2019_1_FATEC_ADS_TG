@@ -238,6 +238,7 @@
             this.btncancelar.TabIndex = 27;
             this.btncancelar.Text = "CANCELAR";
             this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // btnsair
             // 
@@ -248,6 +249,7 @@
             this.btnsair.TabIndex = 28;
             this.btnsair.Text = "SAIR";
             this.btnsair.UseVisualStyleBackColor = true;
+            this.btnsair.Click += new System.EventHandler(this.btnsair_Click);
             // 
             // txtcadcnpjfor
             // 

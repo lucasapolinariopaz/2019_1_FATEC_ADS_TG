@@ -29,72 +29,74 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaFornecedores));
-            this.txtcadcnpjfor = new System.Windows.Forms.MaskedTextBox();
-            this.btnsair = new System.Windows.Forms.Button();
-            this.btncancelar = new System.Windows.Forms.Button();
-            this.btnsalvarcadfor = new System.Windows.Forms.Button();
+            this.masktxt_PesquisarCNPJ = new System.Windows.Forms.MaskedTextBox();
+            this.btn_Sair = new System.Windows.Forms.Button();
+            this.btn_Cancelar = new System.Windows.Forms.Button();
+            this.btn_Salvar = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtcadcelfor = new System.Windows.Forms.TextBox();
+            this.txt_Celular = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtcadtelfor = new System.Windows.Forms.TextBox();
+            this.txt_Telefone = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtcaduffor = new System.Windows.Forms.TextBox();
+            this.txt_UF = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtcadbarfor = new System.Windows.Forms.TextBox();
+            this.txt_Bairro = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtcadcidfor = new System.Windows.Forms.TextBox();
+            this.txt_Cidade = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtcadendfor = new System.Windows.Forms.TextBox();
+            this.txt_Endereco = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtcadiefor = new System.Windows.Forms.TextBox();
+            this.txt_IE = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtcadempfor = new System.Windows.Forms.TextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.txt_RazaoSocial = new System.Windows.Forms.TextBox();
+            this.masktxt_CNPJ = new System.Windows.Forms.MaskedTextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_PesquisarCNPJ = new System.Windows.Forms.Button();
+            this.btn_Excluir = new System.Windows.Forms.Button();
+            this.btn_ViewAll = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // txtcadcnpjfor
+            // masktxt_PesquisarCNPJ
             // 
-            this.txtcadcnpjfor.Location = new System.Drawing.Point(60, 18);
-            this.txtcadcnpjfor.Mask = "00.000.000/0000-00";
-            this.txtcadcnpjfor.Name = "txtcadcnpjfor";
-            this.txtcadcnpjfor.Size = new System.Drawing.Size(135, 20);
-            this.txtcadcnpjfor.TabIndex = 50;
-            this.txtcadcnpjfor.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtcadcnpjfor_MaskInputRejected);
+            this.masktxt_PesquisarCNPJ.Location = new System.Drawing.Point(60, 18);
+            this.masktxt_PesquisarCNPJ.Mask = "00.000.000/0000-00";
+            this.masktxt_PesquisarCNPJ.Name = "masktxt_PesquisarCNPJ";
+            this.masktxt_PesquisarCNPJ.Size = new System.Drawing.Size(135, 20);
+            this.masktxt_PesquisarCNPJ.TabIndex = 50;
             // 
-            // btnsair
+            // btn_Sair
             // 
-            this.btnsair.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnsair.Location = new System.Drawing.Point(464, 189);
-            this.btnsair.Name = "btnsair";
-            this.btnsair.Size = new System.Drawing.Size(75, 23);
-            this.btnsair.TabIndex = 49;
-            this.btnsair.Text = "SAIR";
-            this.btnsair.UseVisualStyleBackColor = true;
+            this.btn_Sair.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_Sair.Location = new System.Drawing.Point(464, 189);
+            this.btn_Sair.Name = "btn_Sair";
+            this.btn_Sair.Size = new System.Drawing.Size(75, 23);
+            this.btn_Sair.TabIndex = 49;
+            this.btn_Sair.Text = "SAIR";
+            this.btn_Sair.UseVisualStyleBackColor = true;
+            this.btn_Sair.Click += new System.EventHandler(this.btn_Sair_Click);
             // 
-            // btncancelar
+            // btn_Cancelar
             // 
-            this.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btncancelar.Location = new System.Drawing.Point(361, 189);
-            this.btncancelar.Name = "btncancelar";
-            this.btncancelar.Size = new System.Drawing.Size(86, 23);
-            this.btncancelar.TabIndex = 48;
-            this.btncancelar.Text = "CANCELAR";
-            this.btncancelar.UseVisualStyleBackColor = true;
+            this.btn_Cancelar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_Cancelar.Location = new System.Drawing.Point(361, 189);
+            this.btn_Cancelar.Name = "btn_Cancelar";
+            this.btn_Cancelar.Size = new System.Drawing.Size(86, 23);
+            this.btn_Cancelar.TabIndex = 48;
+            this.btn_Cancelar.Text = "CANCELAR";
+            this.btn_Cancelar.UseVisualStyleBackColor = true;
+            this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
             // 
-            // btnsalvarcadfor
+            // btn_Salvar
             // 
-            this.btnsalvarcadfor.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnsalvarcadfor.Location = new System.Drawing.Point(271, 189);
-            this.btnsalvarcadfor.Name = "btnsalvarcadfor";
-            this.btnsalvarcadfor.Size = new System.Drawing.Size(75, 23);
-            this.btnsalvarcadfor.TabIndex = 47;
-            this.btnsalvarcadfor.Text = "SALVAR";
-            this.btnsalvarcadfor.UseVisualStyleBackColor = true;
+            this.btn_Salvar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_Salvar.Location = new System.Drawing.Point(271, 189);
+            this.btn_Salvar.Name = "btn_Salvar";
+            this.btn_Salvar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Salvar.TabIndex = 47;
+            this.btn_Salvar.Text = "SALVAR";
+            this.btn_Salvar.UseVisualStyleBackColor = true;
+            this.btn_Salvar.Click += new System.EventHandler(this.btn_Salvar_Click);
             // 
             // label9
             // 
@@ -107,14 +109,14 @@
             this.label9.TabIndex = 46;
             this.label9.Text = "CELULAR";
             // 
-            // txtcadcelfor
+            // txt_Celular
             // 
-            this.txtcadcelfor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtcadcelfor.Location = new System.Drawing.Point(408, 132);
-            this.txtcadcelfor.MaxLength = 15;
-            this.txtcadcelfor.Name = "txtcadcelfor";
-            this.txtcadcelfor.Size = new System.Drawing.Size(125, 20);
-            this.txtcadcelfor.TabIndex = 45;
+            this.txt_Celular.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_Celular.Location = new System.Drawing.Point(408, 132);
+            this.txt_Celular.MaxLength = 15;
+            this.txt_Celular.Name = "txt_Celular";
+            this.txt_Celular.Size = new System.Drawing.Size(125, 20);
+            this.txt_Celular.TabIndex = 45;
             // 
             // label2
             // 
@@ -127,14 +129,14 @@
             this.label2.TabIndex = 44;
             this.label2.Text = "TELEFONE";
             // 
-            // txtcadtelfor
+            // txt_Telefone
             // 
-            this.txtcadtelfor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtcadtelfor.Location = new System.Drawing.Point(163, 129);
-            this.txtcadtelfor.MaxLength = 15;
-            this.txtcadtelfor.Name = "txtcadtelfor";
-            this.txtcadtelfor.Size = new System.Drawing.Size(125, 20);
-            this.txtcadtelfor.TabIndex = 43;
+            this.txt_Telefone.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_Telefone.Location = new System.Drawing.Point(163, 129);
+            this.txt_Telefone.MaxLength = 15;
+            this.txt_Telefone.Name = "txt_Telefone";
+            this.txt_Telefone.Size = new System.Drawing.Size(125, 20);
+            this.txt_Telefone.TabIndex = 43;
             // 
             // label8
             // 
@@ -147,14 +149,14 @@
             this.label8.TabIndex = 42;
             this.label8.Text = "UF";
             // 
-            // txtcaduffor
+            // txt_UF
             // 
-            this.txtcaduffor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtcaduffor.Location = new System.Drawing.Point(35, 134);
-            this.txtcaduffor.MaxLength = 2;
-            this.txtcaduffor.Name = "txtcaduffor";
-            this.txtcaduffor.Size = new System.Drawing.Size(28, 20);
-            this.txtcaduffor.TabIndex = 41;
+            this.txt_UF.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_UF.Location = new System.Drawing.Point(35, 134);
+            this.txt_UF.MaxLength = 2;
+            this.txt_UF.Name = "txt_UF";
+            this.txt_UF.Size = new System.Drawing.Size(28, 20);
+            this.txt_UF.TabIndex = 41;
             // 
             // label7
             // 
@@ -167,13 +169,13 @@
             this.label7.TabIndex = 40;
             this.label7.Text = "BAIRRO";
             // 
-            // txtcadbarfor
+            // txt_Bairro
             // 
-            this.txtcadbarfor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtcadbarfor.Location = new System.Drawing.Point(596, 105);
-            this.txtcadbarfor.Name = "txtcadbarfor";
-            this.txtcadbarfor.Size = new System.Drawing.Size(125, 20);
-            this.txtcadbarfor.TabIndex = 39;
+            this.txt_Bairro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_Bairro.Location = new System.Drawing.Point(596, 105);
+            this.txt_Bairro.Name = "txt_Bairro";
+            this.txt_Bairro.Size = new System.Drawing.Size(125, 20);
+            this.txt_Bairro.TabIndex = 39;
             // 
             // label6
             // 
@@ -186,13 +188,13 @@
             this.label6.TabIndex = 38;
             this.label6.Text = "CIDADE";
             // 
-            // txtcadcidfor
+            // txt_Cidade
             // 
-            this.txtcadcidfor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtcadcidfor.Location = new System.Drawing.Point(409, 105);
-            this.txtcadcidfor.Name = "txtcadcidfor";
-            this.txtcadcidfor.Size = new System.Drawing.Size(125, 20);
-            this.txtcadcidfor.TabIndex = 37;
+            this.txt_Cidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_Cidade.Location = new System.Drawing.Point(409, 105);
+            this.txt_Cidade.Name = "txt_Cidade";
+            this.txt_Cidade.Size = new System.Drawing.Size(125, 20);
+            this.txt_Cidade.TabIndex = 37;
             // 
             // label5
             // 
@@ -205,13 +207,13 @@
             this.label5.TabIndex = 36;
             this.label5.Text = "ENDEREÇO";
             // 
-            // txtcadendfor
+            // txt_Endereco
             // 
-            this.txtcadendfor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtcadendfor.Location = new System.Drawing.Point(100, 101);
-            this.txtcadendfor.Name = "txtcadendfor";
-            this.txtcadendfor.Size = new System.Drawing.Size(248, 20);
-            this.txtcadendfor.TabIndex = 35;
+            this.txt_Endereco.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_Endereco.Location = new System.Drawing.Point(100, 101);
+            this.txt_Endereco.Name = "txt_Endereco";
+            this.txt_Endereco.Size = new System.Drawing.Size(248, 20);
+            this.txt_Endereco.TabIndex = 35;
             // 
             // label3
             // 
@@ -224,13 +226,13 @@
             this.label3.TabIndex = 34;
             this.label3.Text = "IE";
             // 
-            // txtcadiefor
+            // txt_IE
             // 
-            this.txtcadiefor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtcadiefor.Location = new System.Drawing.Point(596, 74);
-            this.txtcadiefor.Name = "txtcadiefor";
-            this.txtcadiefor.Size = new System.Drawing.Size(125, 20);
-            this.txtcadiefor.TabIndex = 33;
+            this.txt_IE.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_IE.Location = new System.Drawing.Point(596, 74);
+            this.txt_IE.Name = "txt_IE";
+            this.txt_IE.Size = new System.Drawing.Size(125, 20);
+            this.txt_IE.TabIndex = 33;
             // 
             // label1
             // 
@@ -242,7 +244,6 @@
             this.label1.Size = new System.Drawing.Size(38, 15);
             this.label1.TabIndex = 32;
             this.label1.Text = "CNPJ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label4
             // 
@@ -255,21 +256,21 @@
             this.label4.TabIndex = 31;
             this.label4.Text = "RAZÃO SOCIAL";
             // 
-            // txtcadempfor
+            // txt_RazaoSocial
             // 
-            this.txtcadempfor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtcadempfor.Location = new System.Drawing.Point(100, 74);
-            this.txtcadempfor.Name = "txtcadempfor";
-            this.txtcadempfor.Size = new System.Drawing.Size(248, 20);
-            this.txtcadempfor.TabIndex = 30;
+            this.txt_RazaoSocial.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_RazaoSocial.Location = new System.Drawing.Point(100, 74);
+            this.txt_RazaoSocial.Name = "txt_RazaoSocial";
+            this.txt_RazaoSocial.Size = new System.Drawing.Size(248, 20);
+            this.txt_RazaoSocial.TabIndex = 30;
             // 
-            // maskedTextBox1
+            // masktxt_CNPJ
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(409, 73);
-            this.maskedTextBox1.Mask = "00.000.000/0000-00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(135, 20);
-            this.maskedTextBox1.TabIndex = 52;
+            this.masktxt_CNPJ.Location = new System.Drawing.Point(409, 73);
+            this.masktxt_CNPJ.Mask = "00.000.000/0000-00";
+            this.masktxt_CNPJ.Name = "masktxt_CNPJ";
+            this.masktxt_CNPJ.Size = new System.Drawing.Size(135, 20);
+            this.masktxt_CNPJ.TabIndex = 52;
             // 
             // label10
             // 
@@ -282,35 +283,39 @@
             this.label10.TabIndex = 51;
             this.label10.Text = "CNPJ";
             // 
-            // button1
+            // btn_PesquisarCNPJ
             // 
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(215, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 23);
-            this.button1.TabIndex = 53;
-            this.button1.Text = "PESQUISAR";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_PesquisarCNPJ.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_PesquisarCNPJ.Location = new System.Drawing.Point(215, 18);
+            this.btn_PesquisarCNPJ.Name = "btn_PesquisarCNPJ";
+            this.btn_PesquisarCNPJ.Size = new System.Drawing.Size(84, 23);
+            this.btn_PesquisarCNPJ.TabIndex = 53;
+            this.btn_PesquisarCNPJ.Text = "PESQUISAR";
+            this.btn_PesquisarCNPJ.UseVisualStyleBackColor = true;
+            this.btn_PesquisarCNPJ.Click += new System.EventHandler(this.btn_PesquisarCNPJ_Click);
             // 
-            // button2
+            // btn_Excluir
             // 
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Location = new System.Drawing.Point(176, 189);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 54;
-            this.button2.Text = "EXCLUIR";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_Excluir.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_Excluir.Location = new System.Drawing.Point(176, 189);
+            this.btn_Excluir.Name = "btn_Excluir";
+            this.btn_Excluir.Size = new System.Drawing.Size(75, 23);
+            this.btn_Excluir.TabIndex = 54;
+            this.btn_Excluir.Text = "EXCLUIR";
+            this.btn_Excluir.UseVisualStyleBackColor = true;
+            this.btn_Excluir.Click += new System.EventHandler(this.btn_Excluir_Click);
             // 
-            // button3
+            // btn_ViewAll
             // 
-            this.button3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button3.Location = new System.Drawing.Point(596, 16);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(123, 23);
-            this.button3.TabIndex = 55;
-            this.button3.Text = "VISUALIZAR TODOS";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_ViewAll.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_ViewAll.Location = new System.Drawing.Point(596, 16);
+            this.btn_ViewAll.Name = "btn_ViewAll";
+            this.btn_ViewAll.Size = new System.Drawing.Size(123, 23);
+            this.btn_ViewAll.TabIndex = 55;
+            this.btn_ViewAll.Text = "VISUALIZAR TODOS";
+            this.btn_ViewAll.UseVisualStyleBackColor = true;
+            this.btn_ViewAll.Visible = false;
+            this.btn_ViewAll.Click += new System.EventHandler(this.btn_ViewAll_Click);
             // 
             // ConsultaFornecedores
             // 
@@ -318,39 +323,38 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(731, 239);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.btn_ViewAll);
+            this.Controls.Add(this.btn_Excluir);
+            this.Controls.Add(this.btn_PesquisarCNPJ);
+            this.Controls.Add(this.masktxt_CNPJ);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.txtcadcnpjfor);
-            this.Controls.Add(this.btnsair);
-            this.Controls.Add(this.btncancelar);
-            this.Controls.Add(this.btnsalvarcadfor);
+            this.Controls.Add(this.masktxt_PesquisarCNPJ);
+            this.Controls.Add(this.btn_Sair);
+            this.Controls.Add(this.btn_Cancelar);
+            this.Controls.Add(this.btn_Salvar);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.txtcadcelfor);
+            this.Controls.Add(this.txt_Celular);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtcadtelfor);
+            this.Controls.Add(this.txt_Telefone);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtcaduffor);
+            this.Controls.Add(this.txt_UF);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtcadbarfor);
+            this.Controls.Add(this.txt_Bairro);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtcadcidfor);
+            this.Controls.Add(this.txt_Cidade);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtcadendfor);
+            this.Controls.Add(this.txt_Endereco);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtcadiefor);
+            this.Controls.Add(this.txt_IE);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtcadempfor);
+            this.Controls.Add(this.txt_RazaoSocial);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ConsultaFornecedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CONSULTA FORNECEDORES";
-            this.Load += new System.EventHandler(this.ConsultaFornecedores_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,31 +362,31 @@
 
         #endregion
 
-        private System.Windows.Forms.MaskedTextBox txtcadcnpjfor;
-        private System.Windows.Forms.Button btnsair;
-        private System.Windows.Forms.Button btncancelar;
-        private System.Windows.Forms.Button btnsalvarcadfor;
+        private System.Windows.Forms.MaskedTextBox masktxt_PesquisarCNPJ;
+        private System.Windows.Forms.Button btn_Sair;
+        private System.Windows.Forms.Button btn_Cancelar;
+        private System.Windows.Forms.Button btn_Salvar;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtcadcelfor;
+        private System.Windows.Forms.TextBox txt_Celular;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtcadtelfor;
+        private System.Windows.Forms.TextBox txt_Telefone;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtcaduffor;
+        private System.Windows.Forms.TextBox txt_UF;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtcadbarfor;
+        private System.Windows.Forms.TextBox txt_Bairro;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtcadcidfor;
+        private System.Windows.Forms.TextBox txt_Cidade;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtcadendfor;
+        private System.Windows.Forms.TextBox txt_Endereco;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtcadiefor;
+        private System.Windows.Forms.TextBox txt_IE;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtcadempfor;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.TextBox txt_RazaoSocial;
+        private System.Windows.Forms.MaskedTextBox masktxt_CNPJ;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_PesquisarCNPJ;
+        private System.Windows.Forms.Button btn_Excluir;
+        private System.Windows.Forms.Button btn_ViewAll;
     }
 }

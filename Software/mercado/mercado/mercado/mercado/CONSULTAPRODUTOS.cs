@@ -274,7 +274,6 @@ namespace mercado
             limparCampos();
         }
             
-
         private void maskedTextBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -370,7 +369,30 @@ namespace mercado
 
         private void button6_Click(object sender, EventArgs e)
         {
-            //limparCampos();
+            string sql = "DELETE FROM estoque WHERE codigo_barra = @codigo_barra;";
+
+            SqlConnection conn = conexao.obterConexao();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            cmd.Parameters.Add(new SqlParameter("@codigo_barra", maskedTextBox1.Text));
+
+            cmd.CommandType = CommandType.Text;
+            conexao.obterConexao();
+            try
+            {
+                int i = cmd.ExecuteNonQuery();
+                if (i > 0)
+                    MessageBox.Show("Cadastro de produto excluído com sucesso!");
+                limparCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.ToString());
+            }
+            finally
+            {
+                conexao.fecharConexao();
+            }
         }
 
         private void txtpdvenda_Leave(object sender, EventArgs e)
