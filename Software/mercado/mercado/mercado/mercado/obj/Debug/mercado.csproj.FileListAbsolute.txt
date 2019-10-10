@@ -89,3 +89,4 @@ C:\Users\cesar\Desktop\mercado1\mercado\mercado\obj\Debug\mercado.vendas.resourc
 C:\Users\cesar\Desktop\mercado1\mercado\mercado\obj\Debug\mercado.csproj.GenerateResource.Cache
 C:\Users\cesar\Desktop\mercado1\mercado\mercado\obj\Debug\mercado.exe
 C:\Users\cesar\Desktop\mercado1\mercado\mercado\obj\Debug\mercado.pdb
+C:\Users\cesar\Desktop\mercado1\mercado\mercado\obj\Debug\mercado.detalhedebitos.resources
