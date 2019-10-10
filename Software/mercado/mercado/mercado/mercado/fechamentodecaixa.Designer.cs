@@ -171,6 +171,7 @@
             this.btnup.TabIndex = 35;
             this.btnup.Text = "ATUALIZAR";
             this.btnup.UseVisualStyleBackColor = true;
+            this.btnup.Click += new System.EventHandler(this.btnup_Click);
             // 
             // btnsair
             // 

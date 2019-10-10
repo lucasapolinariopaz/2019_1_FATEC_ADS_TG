@@ -46,12 +46,14 @@ namespace mercado
             pagamento = pagamento.Replace("R$", "");
             string tr = textBox2.Text;
             tr = tr.Replace("R$", "");
-
+            tr = tr.Replace("-", "");
+            decimal atu = atufecha();
             decimal valpg = Convert.ToDecimal(pagamento);
             decimal trocovl = Convert.ToDecimal(tr);
-            string sql = "UPDATE fechamento SET valoraberturaf=(valoraberturaf+@pg)-@troco  WHERE estatus='ON'";
+            string sql = "UPDATE fechamento SET valoraberturaf=(@valora-@troco)+@pg  WHERE estatus='ON'";
             SqlConnection conn = conexao.obterConexao();
             SqlCommand comm = new SqlCommand(sql, conn);
+            comm.Parameters.Add(new SqlParameter("@valora", atu));
             comm.Parameters.Add(new SqlParameter("@pg", valpg));
             comm.Parameters.Add(new SqlParameter("@troco", trocovl));
 
@@ -171,6 +173,17 @@ namespace mercado
                 else
                     e.Handled = true;
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox2.Clear();
+            textBox1.Clear();
         }
 
         private void textBox1_KeyUp(object sender, KeyEventArgs e)

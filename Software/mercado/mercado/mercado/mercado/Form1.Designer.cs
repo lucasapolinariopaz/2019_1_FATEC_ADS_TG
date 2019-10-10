@@ -69,6 +69,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtlogcpf = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnlogar = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -90,6 +91,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(780, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.Visible = false;
             // 
             // cAIXAToolStripMenuItem
             // 
@@ -286,6 +288,7 @@
             this.aDMINUSTRAÇAOToolStripMenuItem.Name = "aDMINUSTRAÇAOToolStripMenuItem";
             this.aDMINUSTRAÇAOToolStripMenuItem.Size = new System.Drawing.Size(106, 20);
             this.aDMINUSTRAÇAOToolStripMenuItem.Text = "ADMINISTRAÇÃO";
+            this.aDMINUSTRAÇAOToolStripMenuItem.Visible = false;
             // 
             // cADASTRODEACESSOToolStripMenuItem
             // 
@@ -370,6 +373,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "CANCELAR";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnAutenticar
             // 
@@ -421,12 +425,24 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "CPF";
             // 
+            // btnlogar
+            // 
+            this.btnlogar.Location = new System.Drawing.Point(644, 24);
+            this.btnlogar.Name = "btnlogar";
+            this.btnlogar.Size = new System.Drawing.Size(135, 23);
+            this.btnlogar.TabIndex = 3;
+            this.btnlogar.Text = "TROCAR DE USUÁRIO";
+            this.btnlogar.UseVisualStyleBackColor = true;
+            this.btnlogar.Visible = false;
+            this.btnlogar.Click += new System.EventHandler(this.btnlogar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(780, 557);
+            this.Controls.Add(this.btnlogar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -485,6 +501,7 @@
         private System.Windows.Forms.ToolStripMenuItem sALVARNOTASFISCAISToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cADASTRAODEDEPENDENTESToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cONSULTARDEPENDENTESToolStripMenuItem;
+        private System.Windows.Forms.Button btnlogar;
     }
 }
 

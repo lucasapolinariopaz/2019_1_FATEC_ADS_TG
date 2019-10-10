@@ -15,7 +15,7 @@ namespace mercado
 {
     public partial class Form1 : Form
     {
-        string nomefunc;
+        string nomefunc, hierarquia;
         public Form1()
         {
             InitializeComponent();
@@ -33,13 +33,14 @@ namespace mercado
                     SqlCommand cmd = new SqlCommand("Select CPF_usuario,senha_usuario,tipo,nome from acesso where CPF_usuario='" + txtlogcpf.Text + "'and senha_usuario='" + txtsenha.Text + "';", cn);
                     cmd.CommandType = CommandType.Text;
                     cmd.Parameters.Add(new SqlParameter("@nome", "nome"));
+                    cmd.Parameters.Add(new SqlParameter("@tipo", "tipo"));
                     conexao.obterConexao();
                     SqlDataReader dados = cmd.ExecuteReader();
                     result = dados.HasRows;
                     while (dados.Read())
                     {
                         nomefunc = dados["nome"].ToString();
-
+                        hierarquia = dados["tipo"].ToString();
 
                     }
 
@@ -64,13 +65,16 @@ namespace mercado
             if (result)
             {
 
-               // MessageBox.Show("Seja bem vindo!");
-                MessageBox.Show(nomefunc);
+                // MessageBox.Show("Seja bem vindo!");
+                MessageBox.Show(nomefunc, "AVISO");
+                if (hierarquia == "ADMINISTRADOR") { aDMINUSTRAÇAOToolStripMenuItem.Visible = true; }
+                menuStrip1.Visible = true;
                 groupBox1.Visible = false;
+                btnlogar.Visible = true;
             }
             else
             {
-                MessageBox.Show("Usuário ou senha incorreto!");
+                MessageBox.Show("Usuário ou senha incorreto!", "AVISO");
             }
         }
 
@@ -194,6 +198,16 @@ namespace mercado
         {
             vendas novo = new vendas();
             novo.Show();
+        }
+
+        private void btnlogar_Click(object sender, EventArgs e)
+        {
+            groupBox1.Visible = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void pRODUTOSMAISVENDIDOSToolStripMenuItem_Click(object sender, EventArgs e)

@@ -52,7 +52,44 @@ namespace mercado
             }
         }
 
+        public void fechamento()
+        {
 
+            string tr = txtretirada.Text;
+            tr = tr.Replace("R$", "");
+
+
+            decimal trocovl = Convert.ToDecimal(tr);
+            string sql = "UPDATE fechamento SET valoraberturaf=valoraberturaf-@troco  WHERE estatus='ON'";
+            SqlConnection conn = conexao.obterConexao();
+            SqlCommand comm = new SqlCommand(sql, conn);
+            comm.Parameters.Add(new SqlParameter("@troco", trocovl));
+
+            conexao.obterConexao();
+            try
+            {
+                int i = comm.ExecuteNonQuery();
+                if (i > 0)
+                {
+
+                    MessageBox.Show("Confirmação de Retirada", "AVISO");
+                    txtretirada.Clear();
+                    txtpretirar.Clear();
+                    carrega();
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.ToString());
+            }
+            finally
+            {
+                conexao.fecharConexao();
+            }
+        }
 
         private void txtretirada_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -83,8 +120,8 @@ namespace mercado
                 decimal pc = Convert.ToDecimal(pccaracter);
                 string valabertufechamento = lblvaloratual.Text;
                 valabertufechamento = valabertufechamento.Replace("R$", "");
-                decimal pv = Convert.ToDecimal(valabertufechamento);           
-                string sql = "INSERT INTO fechamento ( nomefunc,cpffunc,dataaber,valoraberturaf ,saida,valorsaida,estatus)  VALUES (@nomefunc, @cpffunc, @dataaber, @valoraberturaf, @saida, @valorsaida, @estatus)";
+                decimal pv = Convert.ToDecimal(valabertufechamento);
+                string sql = "UPDATE fechamento SET  nomefunc=@nomefunc,cpffunc=@cpffunc,dataaber=@dataaber,valoraberturaf=@valoraberturaf ,saida=@saida,valorsaida=@valorsaida,estatus=@estatus where estatus='ON'";  
                 SqlConnection conn = conexao.obterConexao();
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.Add(new SqlParameter("@nomefunc", lblfunc.Text));
@@ -124,6 +161,58 @@ namespace mercado
 
 
         }
+        public void carrega()
+        {
+
+            bool result = false;
+            SqlConnection conn = conexao.obterConexao();
+            SqlCommand commn = new SqlCommand("select codAber,nomefunc,cpffunc,dataaber,valoraberturaf  from fechamento where estatus='ON';", conn);
+            commn.CommandType = CommandType.Text;
+            commn.Parameters.Add(new SqlParameter("@codAber", "codAber"));
+            commn.Parameters.Add(new SqlParameter("@nomefunc", "nomefunc"));
+            commn.Parameters.Add(new SqlParameter("@cpffunc", "cpffunc"));
+            commn.Parameters.Add(new SqlParameter("@dataaber", "dataaber"));
+            commn.Parameters.Add(new SqlParameter("@valorabertura", "valoraberturaf"));
+
+
+            conexao.obterConexao();
+            SqlDataReader dr = commn.ExecuteReader();
+            result = dr.HasRows;
+            if (result == true)
+            {
+                while (dr.Read())
+                {
+
+                    //   codforn = int.Parse(dr["codprod_fornec"].ToString());
+                    //   Tcodf = codforn.ToString();
+
+                    lbldata.Text = dr["dataaber"].ToString();
+                    lblfunc.Text = dr["nomefunc"].ToString();
+                    cpffech = dr["cpffunc"].ToString();
+                    lblvaloratual.Text = dr["valoraberturaf"].ToString();
+                    codaberfech = dr["codAber"].ToString();
+
+                }
+                Decimal val, val1;
+                if (Decimal.TryParse(lblvaloratual.Text, out val))
+                    lblvaloratual.Text = val.ToString("C");
+                if (Decimal.TryParse(lblvaloratual.Text, out val1))
+                    lblvaloratual.Text = val1.ToString("C");
+                btnup.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show(" Não há Abertura de caixa no momento!!");
+                this.Close();
+            }
+
+            conexao.fecharConexao();
+
+        }
+        private void btnup_Click(object sender, EventArgs e)
+        {
+            fechamento();
+        }
 
         private void txtretirada_KeyUp(object sender, KeyEventArgs e)
         {
@@ -162,53 +251,7 @@ namespace mercado
 
         private void fechamentodecaixa_Load(object sender, EventArgs e)
         {
-            bool result = false;
-            SqlConnection conn = conexao.obterConexao();
-            SqlCommand commn = new SqlCommand("select codAber,nomefunc,cpffunc,dataaber,valoraberturaf  from fechamento where estatus='ON';", conn);
-            commn.CommandType = CommandType.Text;
-            commn.Parameters.Add(new SqlParameter("@codAber", "codAber"));
-            commn.Parameters.Add(new SqlParameter("@nomefunc", "nomefunc"));
-            commn.Parameters.Add(new SqlParameter("@cpffunc", "cpffunc"));
-            commn.Parameters.Add(new SqlParameter("@dataaber", "dataaber"));
-            commn.Parameters.Add(new SqlParameter("@valorabertura", "valoraberturaf"));
-            
-           
-            conexao.obterConexao();
-            SqlDataReader dr = commn.ExecuteReader();
-            result = dr.HasRows;
-            if (result == true)
-            {
-                while (dr.Read())
-                {
-                
-                 //   codforn = int.Parse(dr["codprod_fornec"].ToString());
-                 //   Tcodf = codforn.ToString();
-             
-                    lbldata.Text = dr["dataaber"].ToString();
-                    lblfunc.Text = dr["nomefunc"].ToString();
-                    cpffech = dr["cpffunc"].ToString();
-                    lblvaloratual.Text = dr["valoraberturaf"].ToString();
-                    codaberfech = dr["codAber"].ToString();
-
-                }
-                Decimal val, val1;
-                if (Decimal.TryParse(lblvaloratual.Text, out val))
-                    lblvaloratual.Text = val.ToString("C");
-                if (Decimal.TryParse(lblvaloratual.Text, out val1))
-                    lblvaloratual.Text = val1.ToString("C");
-                btnup.Enabled = true;
-            }
-            else
-            {
-                MessageBox.Show(" Não há Abertura de caixa no momento!!");
-                //lbldata.Text = ("            ");
-                lblfunc.Text = ("                                 ");
-                cpffech = ("            ");
-                lblvaloratual.Text = ("            ");
-                btnup.Enabled = false;
-            }
-
-            conexao.fecharConexao();
+            carrega();
         }
     }
 

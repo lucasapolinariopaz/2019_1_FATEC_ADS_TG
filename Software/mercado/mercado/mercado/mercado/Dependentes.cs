@@ -117,16 +117,22 @@ namespace mercado
 
         private void btn_Pesquisar_Click(object sender, EventArgs e)
         {
-            if (masktxt_PesquisarCPF.Text.Length == 0) { MessageBox.Show("Informar CPF para consultar cliente"); }
-            else if (contDigitosCPF(masktxt_PesquisarCPF.Text) < 11) { MessageBox.Show("CPF informado para consulta não tem 11 dígitos"); }
-            else if (validarCPF(masktxt_PesquisarCPF.Text).Equals("false")) { MessageBox.Show("CPF informado para consulta é inválido"); }
+            string CPFf = masktxt_PesquisarCPF.Text;
+            CPFf = CPFf.Trim();
+            CPFf = CPFf.Replace(".", "").Replace(",", "");
+            CPFf = CPFf.Replace("-", "");
+            CPFf = CPFf.Replace(" ", "");
+
+            if (CPFf.Length == 0) { MessageBox.Show("Informar CPF para consultar cliente"); }
+            else if (contDigitosCPF(CPFf) < 11) { MessageBox.Show("CPF informado para consulta não tem 11 dígitos"); }
+            else if (validarCPF(CPFf).Equals("false")) { MessageBox.Show("CPF informado para consulta é inválido"); }
             else
             {
                 bool result = false;
 
                 limparCampos();
 
-                string consulta_sql = "SELECT codigo_cli FROM clientes WHERE CPF_cli = '" + masktxt_PesquisarCPF.Text + "';";
+                string consulta_sql = "SELECT codigo_cli FROM clientes WHERE CPF_cli = '" + CPFf + "';";
                 SqlConnection conn = conexao.obterConexao();
                 SqlCommand commn = new SqlCommand(consulta_sql, conn);
                 commn.CommandType = CommandType.Text;
