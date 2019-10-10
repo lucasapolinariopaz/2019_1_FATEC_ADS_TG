@@ -423,7 +423,8 @@ namespace mercado
   //          Form2 novo = new Form2();
           //  novo.Show();
         }
-        private void preencherCBDescricao(string cod)
+
+          private void preencherCBDescricao(string cod)
 
         {
             
