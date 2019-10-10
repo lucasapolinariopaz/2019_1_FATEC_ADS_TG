@@ -18,17 +18,59 @@ namespace mercado
         bool result = false;
         string codprod,marca;
         decimal res1, troco;
-        string dd,codcc, nomedec;
+        string dd,codcc, nomedec,cl1,cl2, cl3,cl4,cl5;
         int codcli;
         int codvendatemp=99999;
         decimal desconto;
-       AutoCompleteStringCollection namesCollection = new AutoCompleteStringCollection();
+   
 
         public caixapdv()
         {
             InitializeComponent();
         }
 
+
+
+
+        public void cupom()
+        {
+            List1.Visible = true;
+            string data;
+            DateTime dt = DateTime.Now;
+            data = dt.ToString("dd/MM/yyy");
+            List1.Height = 400;
+            List1.Width = 400;
+            List1.Items.Add("                       RAZÃO SOCIAL");
+            List1.Items.Add(data);
+            List1.Items.Add("                    CUPOM  NÃO FISCAL");
+            List1.Items.Add(" ITEM   CÓDIGO        DESCRIÇÃO");
+            List1.Items.Add("     QNT.       VL.UNIT(  R$)   ST    VL.ITEM(  R$)");
+            List1.Items.Add("-----------------------------------------------------------------------------------------------");
+            for (int i = 0; i < datalistado.Rows.Count; i++)
+            {
+                DataGridViewCell c1 = datalistado.Rows[i].Cells[0];
+                DataGridViewCell c2 = datalistado.Rows[i].Cells[1];
+                DataGridViewCell c3 = datalistado.Rows[i].Cells[2];
+                DataGridViewCell c4 = datalistado.Rows[i].Cells[3];
+                DataGridViewCell c5 = datalistado.Rows[i].Cells[4];
+                if (c1.Value != null && c2.Value != null && c3.Value != null && c4.Value != null && c5.Value != null)
+                {
+                    // List1.Items.Add(c.Value.ToString());  List1.Items.Add(c2.Value.ToString());
+                    cl1 = c1.Value.ToString();
+                    cl2 = c2.Value.ToString();
+                    cl3 = c3.Value.ToString();
+                    cl4 = c4.Value.ToString();
+                    cl5 = c5.Value.ToString();
+                }
+                List1.Items.Add(("0000") + cl1 + "   " + cl3+" "+cl2);
+                List1.Items.Add("R$"+cl4 + "  " + cl5 + "Un x  ");
+            }
+            List1.Items.Add("CLiENTE " + txtcli.Text);
+            List1.Items.Add("VALOR TOTAL "+ txtvalortotal.Text);
+            List1.Items.Add("VALOR PAGO " + "R$ " + TextBox6.Text);
+            List1.Items.Add("TROCO " + "R$ " + TextBox7.Text);
+
+        }
         private void caixapdv_Load(object sender, EventArgs e)
         {
 
@@ -64,12 +106,13 @@ namespace mercado
         public void SalvarDados()
         {
             
-                if (datalistado.Rows.Count > 1)
+                if (datalistado.Rows.Count > 0)
                 {
                 for (int i = 0; i <= datalistado.Rows.Count - 1; i++)
                 {
                     int col1 = Convert.ToInt32(datalistado.Rows[i].Cells[0].Value); //id
                     string col2 = datalistado.Rows[i].Cells[1].Value.ToString(); //marca 
+                    MessageBox.Show(col2);
                     string col3 = datalistado.Rows[i].Cells[2].Value.ToString(); //Descricao 
                     decimal col4 = Convert.ToDecimal(datalistado.Rows[i].Cells[3].Value); //Preco 
                     int col5 = Convert.ToInt32(datalistado.Rows[i].Cells[4].Value); //Quantidade
@@ -90,7 +133,7 @@ namespace mercado
                     try
                     {
                         int ix = cmd.ExecuteNonQuery();
-                        if (ix > 0) {//  MessageBox.Show("Cadastro realizado com sucesso!");
+                        if (ix > 0) { MessageBox.Show("Cadastro realizado com sucesso!");
                         }
                           
 
@@ -170,6 +213,11 @@ namespace mercado
             datalistado.Rows.Remove(datalistado.CurrentRow);
             somaprodutos();
            
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SalvarDados();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -270,6 +318,7 @@ namespace mercado
                         int i = cmd.ExecuteNonQuery();
                         if (i > 0)
                             MessageBox.Show("Venda realizada com sucesso!","AVISO");
+                            cupom();
                             limpar();
 
                     }
@@ -331,6 +380,7 @@ namespace mercado
                     int i = cmd.ExecuteNonQuery();
                     if (i > 0)
                         MessageBox.Show("Venda realizada com sucesso!", "AVISO");
+                    cupom();
                     limpar();
 
 
@@ -400,6 +450,7 @@ namespace mercado
                         int i = cmd.ExecuteNonQuery();
                         if (i > 0)
                             MessageBox.Show("Venda realizada com sucesso!", "AVISO");
+                        cupom();
                         limpar();
 
                     }

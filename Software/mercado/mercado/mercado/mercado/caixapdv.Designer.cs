@@ -81,6 +81,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.List1 = new System.Windows.Forms.ListBox();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -635,12 +637,34 @@
             this.label4.TabIndex = 112;
             this.label4.Text = "Dependente";
             // 
+            // List1
+            // 
+            this.List1.BackColor = System.Drawing.SystemColors.Info;
+            this.List1.FormattingEnabled = true;
+            this.List1.Location = new System.Drawing.Point(622, 342);
+            this.List1.Name = "List1";
+            this.List1.Size = new System.Drawing.Size(75, 56);
+            this.List1.TabIndex = 148;
+            this.List1.Visible = false;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(703, 343);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 149;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // caixapdv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(886, 504);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.List1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox2);
@@ -743,5 +767,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         internal System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ListBox List1;
+        private System.Windows.Forms.Button button4;
     }
 }
