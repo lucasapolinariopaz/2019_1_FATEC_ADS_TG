@@ -29,72 +29,76 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaClientes));
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.btn_Fechar = new System.Windows.Forms.Button();
+            this.btn_Cancelar = new System.Windows.Forms.Button();
+            this.btn_Salvar = new System.Windows.Forms.Button();
+            this.txt_Celular = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txt_Telefone = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txt_Numero = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txt_Bairro = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txt_Cidade = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txt_Endereco = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_RG = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.buscprods = new System.Windows.Forms.TextBox();
+            this.txt_NomeCliente = new System.Windows.Forms.TextBox();
             this.Label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btn_Pesquisar = new System.Windows.Forms.Button();
+            this.btn_Excluir = new System.Windows.Forms.Button();
+            this.masktxt_dataNasc = new System.Windows.Forms.MaskedTextBox();
+            this.masktxt_CPF = new System.Windows.Forms.MaskedTextBox();
+            this.masktxt_PesquisarCPF = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
-            // button3
+            // btn_Fechar
             // 
-            this.button3.Location = new System.Drawing.Point(506, 267);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 159;
-            this.button3.Text = "FECHAR";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_Fechar.Location = new System.Drawing.Point(506, 267);
+            this.btn_Fechar.Name = "btn_Fechar";
+            this.btn_Fechar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Fechar.TabIndex = 159;
+            this.btn_Fechar.Text = "FECHAR";
+            this.btn_Fechar.UseVisualStyleBackColor = true;
+            this.btn_Fechar.Click += new System.EventHandler(this.btn_Fechar_Click);
             // 
-            // button2
+            // btn_Cancelar
             // 
-            this.button2.Location = new System.Drawing.Point(382, 267);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 158;
-            this.button2.Text = "CANCELAR";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_Cancelar.Location = new System.Drawing.Point(382, 267);
+            this.btn_Cancelar.Name = "btn_Cancelar";
+            this.btn_Cancelar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Cancelar.TabIndex = 158;
+            this.btn_Cancelar.Text = "CANCELAR";
+            this.btn_Cancelar.UseVisualStyleBackColor = true;
+            this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
             // 
-            // button1
+            // btn_Salvar
             // 
-            this.button1.Location = new System.Drawing.Point(262, 267);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 157;
-            this.button1.Text = "SALVAR";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_Salvar.Location = new System.Drawing.Point(262, 267);
+            this.btn_Salvar.Name = "btn_Salvar";
+            this.btn_Salvar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Salvar.TabIndex = 157;
+            this.btn_Salvar.Text = "SALVAR";
+            this.btn_Salvar.UseVisualStyleBackColor = true;
+            this.btn_Salvar.Click += new System.EventHandler(this.btn_Salvar_Click);
             // 
-            // textBox9
+            // txt_Celular
             // 
-            this.textBox9.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.textBox9.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBox9.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(514, 204);
-            this.textBox9.MaxLength = 13;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(117, 22);
-            this.textBox9.TabIndex = 156;
+            this.txt_Celular.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txt_Celular.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txt_Celular.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_Celular.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Celular.Location = new System.Drawing.Point(514, 204);
+            this.txt_Celular.MaxLength = 13;
+            this.txt_Celular.Name = "txt_Celular";
+            this.txt_Celular.Size = new System.Drawing.Size(117, 22);
+            this.txt_Celular.TabIndex = 156;
             // 
             // label10
             // 
@@ -108,17 +112,17 @@
             this.label10.TabIndex = 155;
             this.label10.Text = "CELULAR";
             // 
-            // textBox8
+            // txt_Telefone
             // 
-            this.textBox8.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.textBox8.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBox8.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(118, 201);
-            this.textBox8.MaxLength = 13;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(117, 22);
-            this.textBox8.TabIndex = 154;
+            this.txt_Telefone.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txt_Telefone.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txt_Telefone.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_Telefone.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Telefone.Location = new System.Drawing.Point(118, 201);
+            this.txt_Telefone.MaxLength = 13;
+            this.txt_Telefone.Name = "txt_Telefone";
+            this.txt_Telefone.Size = new System.Drawing.Size(117, 22);
+            this.txt_Telefone.TabIndex = 154;
             // 
             // label9
             // 
@@ -132,17 +136,17 @@
             this.label9.TabIndex = 153;
             this.label9.Text = "TELEFONE";
             // 
-            // textBox7
+            // txt_Numero
             // 
-            this.textBox7.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.textBox7.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBox7.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(514, 172);
-            this.textBox7.MaxLength = 13;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(79, 22);
-            this.textBox7.TabIndex = 152;
+            this.txt_Numero.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txt_Numero.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txt_Numero.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_Numero.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Numero.Location = new System.Drawing.Point(514, 172);
+            this.txt_Numero.MaxLength = 13;
+            this.txt_Numero.Name = "txt_Numero";
+            this.txt_Numero.Size = new System.Drawing.Size(79, 22);
+            this.txt_Numero.TabIndex = 152;
             // 
             // label8
             // 
@@ -156,17 +160,17 @@
             this.label8.TabIndex = 151;
             this.label8.Text = "NÚMERO";
             // 
-            // textBox6
+            // txt_Bairro
             // 
-            this.textBox6.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.textBox6.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBox6.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(118, 172);
-            this.textBox6.MaxLength = 13;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(143, 22);
-            this.textBox6.TabIndex = 150;
+            this.txt_Bairro.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txt_Bairro.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txt_Bairro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_Bairro.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Bairro.Location = new System.Drawing.Point(118, 172);
+            this.txt_Bairro.MaxLength = 13;
+            this.txt_Bairro.Name = "txt_Bairro";
+            this.txt_Bairro.Size = new System.Drawing.Size(143, 22);
+            this.txt_Bairro.TabIndex = 150;
             // 
             // label7
             // 
@@ -180,17 +184,17 @@
             this.label7.TabIndex = 149;
             this.label7.Text = "BAIRRO";
             // 
-            // textBox5
+            // txt_Cidade
             // 
-            this.textBox5.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.textBox5.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBox5.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(514, 143);
-            this.textBox5.MaxLength = 13;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(200, 22);
-            this.textBox5.TabIndex = 148;
+            this.txt_Cidade.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txt_Cidade.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txt_Cidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_Cidade.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Cidade.Location = new System.Drawing.Point(514, 143);
+            this.txt_Cidade.MaxLength = 13;
+            this.txt_Cidade.Name = "txt_Cidade";
+            this.txt_Cidade.Size = new System.Drawing.Size(200, 22);
+            this.txt_Cidade.TabIndex = 148;
             // 
             // label6
             // 
@@ -204,17 +208,17 @@
             this.label6.TabIndex = 147;
             this.label6.Text = "CIDADE";
             // 
-            // textBox4
+            // txt_Endereco
             // 
-            this.textBox4.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.textBox4.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBox4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(118, 144);
-            this.textBox4.MaxLength = 13;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(295, 22);
-            this.textBox4.TabIndex = 146;
+            this.txt_Endereco.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txt_Endereco.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txt_Endereco.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_Endereco.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Endereco.Location = new System.Drawing.Point(118, 144);
+            this.txt_Endereco.MaxLength = 13;
+            this.txt_Endereco.Name = "txt_Endereco";
+            this.txt_Endereco.Size = new System.Drawing.Size(295, 22);
+            this.txt_Endereco.TabIndex = 146;
             // 
             // label5
             // 
@@ -234,23 +238,11 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Info;
-            this.label4.Location = new System.Drawing.Point(407, 119);
+            this.label4.Location = new System.Drawing.Point(453, 115);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(186, 19);
             this.label4.TabIndex = 144;
             this.label4.Text = "DATA DE NASCIMENTO";
-            // 
-            // textBox2
-            // 
-            this.textBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.textBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(257, 117);
-            this.textBox2.MaxLength = 13;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(117, 22);
-            this.textBox2.TabIndex = 143;
             // 
             // label3
             // 
@@ -258,23 +250,23 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Info;
-            this.label3.Location = new System.Drawing.Point(198, 121);
+            this.label3.Location = new System.Drawing.Point(232, 117);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 19);
             this.label3.TabIndex = 142;
             this.label3.Text = "CPF";
             // 
-            // textBox1
+            // txt_RG
             // 
-            this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.textBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(56, 116);
-            this.textBox1.MaxLength = 13;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(117, 22);
-            this.textBox1.TabIndex = 141;
+            this.txt_RG.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txt_RG.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txt_RG.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_RG.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_RG.Location = new System.Drawing.Point(53, 114);
+            this.txt_RG.MaxLength = 13;
+            this.txt_RG.Name = "txt_RG";
+            this.txt_RG.Size = new System.Drawing.Size(148, 22);
+            this.txt_RG.TabIndex = 141;
             // 
             // label2
             // 
@@ -288,17 +280,17 @@
             this.label2.TabIndex = 140;
             this.label2.Text = "RG";
             // 
-            // buscprods
+            // txt_NomeCliente
             // 
-            this.buscprods.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.buscprods.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.buscprods.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.buscprods.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buscprods.Location = new System.Drawing.Point(176, 86);
-            this.buscprods.MaxLength = 13;
-            this.buscprods.Name = "buscprods";
-            this.buscprods.Size = new System.Drawing.Size(457, 22);
-            this.buscprods.TabIndex = 139;
+            this.txt_NomeCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txt_NomeCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txt_NomeCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_NomeCliente.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_NomeCliente.Location = new System.Drawing.Point(176, 86);
+            this.txt_NomeCliente.MaxLength = 13;
+            this.txt_NomeCliente.Name = "txt_NomeCliente";
+            this.txt_NomeCliente.Size = new System.Drawing.Size(538, 22);
+            this.txt_NomeCliente.TabIndex = 139;
             // 
             // Label1
             // 
@@ -312,18 +304,6 @@
             this.Label1.TabIndex = 138;
             this.Label1.Text = "NOME DO CLIENTE";
             // 
-            // textBox3
-            // 
-            this.textBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.textBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(74, 12);
-            this.textBox3.MaxLength = 13;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(117, 22);
-            this.textBox3.TabIndex = 161;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -336,23 +316,50 @@
             this.label11.TabIndex = 160;
             this.label11.Text = "CPF";
             // 
-            // button4
+            // btn_Pesquisar
             // 
-            this.button4.Location = new System.Drawing.Point(202, 11);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(78, 23);
-            this.button4.TabIndex = 162;
-            this.button4.Text = "PESQUISAR";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_Pesquisar.Location = new System.Drawing.Point(157, 11);
+            this.btn_Pesquisar.Name = "btn_Pesquisar";
+            this.btn_Pesquisar.Size = new System.Drawing.Size(78, 23);
+            this.btn_Pesquisar.TabIndex = 162;
+            this.btn_Pesquisar.Text = "PESQUISAR";
+            this.btn_Pesquisar.UseVisualStyleBackColor = true;
+            this.btn_Pesquisar.Click += new System.EventHandler(this.btn_Pesquisar_Click);
             // 
-            // button5
+            // btn_Excluir
             // 
-            this.button5.Location = new System.Drawing.Point(143, 267);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 163;
-            this.button5.Text = "EXCLUIR";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btn_Excluir.Location = new System.Drawing.Point(143, 267);
+            this.btn_Excluir.Name = "btn_Excluir";
+            this.btn_Excluir.Size = new System.Drawing.Size(75, 23);
+            this.btn_Excluir.TabIndex = 163;
+            this.btn_Excluir.Text = "EXCLUIR";
+            this.btn_Excluir.UseVisualStyleBackColor = true;
+            this.btn_Excluir.Click += new System.EventHandler(this.btn_Excluir_Click);
+            // 
+            // masktxt_dataNasc
+            // 
+            this.masktxt_dataNasc.Location = new System.Drawing.Point(645, 115);
+            this.masktxt_dataNasc.Mask = "00/00/0000";
+            this.masktxt_dataNasc.Name = "masktxt_dataNasc";
+            this.masktxt_dataNasc.Size = new System.Drawing.Size(69, 20);
+            this.masktxt_dataNasc.TabIndex = 164;
+            this.masktxt_dataNasc.ValidatingType = typeof(System.DateTime);
+            // 
+            // masktxt_CPF
+            // 
+            this.masktxt_CPF.Location = new System.Drawing.Point(277, 116);
+            this.masktxt_CPF.Mask = "000.000.000-00";
+            this.masktxt_CPF.Name = "masktxt_CPF";
+            this.masktxt_CPF.Size = new System.Drawing.Size(85, 20);
+            this.masktxt_CPF.TabIndex = 167;
+            // 
+            // masktxt_PesquisarCPF
+            // 
+            this.masktxt_PesquisarCPF.Location = new System.Drawing.Point(60, 13);
+            this.masktxt_PesquisarCPF.Mask = "000.000.000-00";
+            this.masktxt_PesquisarCPF.Name = "masktxt_PesquisarCPF";
+            this.masktxt_PesquisarCPF.Size = new System.Drawing.Size(85, 20);
+            this.masktxt_PesquisarCPF.TabIndex = 168;
             // 
             // ConsultaClientes
             // 
@@ -360,31 +367,32 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(729, 336);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.masktxt_PesquisarCPF);
+            this.Controls.Add(this.masktxt_CPF);
+            this.Controls.Add(this.masktxt_dataNasc);
+            this.Controls.Add(this.btn_Excluir);
+            this.Controls.Add(this.btn_Pesquisar);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.btn_Fechar);
+            this.Controls.Add(this.btn_Cancelar);
+            this.Controls.Add(this.btn_Salvar);
+            this.Controls.Add(this.txt_Celular);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.txt_Telefone);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.txt_Numero);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txt_Bairro);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txt_Cidade);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txt_Endereco);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_RG);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.buscprods);
+            this.Controls.Add(this.txt_NomeCliente);
             this.Controls.Add(this.Label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -398,31 +406,32 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        internal System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Button btn_Fechar;
+        private System.Windows.Forms.Button btn_Cancelar;
+        private System.Windows.Forms.Button btn_Salvar;
+        internal System.Windows.Forms.TextBox txt_Celular;
         internal System.Windows.Forms.Label label10;
-        internal System.Windows.Forms.TextBox textBox8;
+        internal System.Windows.Forms.TextBox txt_Telefone;
         internal System.Windows.Forms.Label label9;
-        internal System.Windows.Forms.TextBox textBox7;
+        internal System.Windows.Forms.TextBox txt_Numero;
         internal System.Windows.Forms.Label label8;
-        internal System.Windows.Forms.TextBox textBox6;
+        internal System.Windows.Forms.TextBox txt_Bairro;
         internal System.Windows.Forms.Label label7;
-        internal System.Windows.Forms.TextBox textBox5;
+        internal System.Windows.Forms.TextBox txt_Cidade;
         internal System.Windows.Forms.Label label6;
-        internal System.Windows.Forms.TextBox textBox4;
+        internal System.Windows.Forms.TextBox txt_Endereco;
         internal System.Windows.Forms.Label label5;
         internal System.Windows.Forms.Label label4;
-        internal System.Windows.Forms.TextBox textBox2;
         internal System.Windows.Forms.Label label3;
-        internal System.Windows.Forms.TextBox textBox1;
+        internal System.Windows.Forms.TextBox txt_RG;
         internal System.Windows.Forms.Label label2;
-        internal System.Windows.Forms.TextBox buscprods;
+        internal System.Windows.Forms.TextBox txt_NomeCliente;
         internal System.Windows.Forms.Label Label1;
-        internal System.Windows.Forms.TextBox textBox3;
         internal System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btn_Pesquisar;
+        private System.Windows.Forms.Button btn_Excluir;
+        private System.Windows.Forms.MaskedTextBox masktxt_dataNasc;
+        private System.Windows.Forms.MaskedTextBox masktxt_CPF;
+        private System.Windows.Forms.MaskedTextBox masktxt_PesquisarCPF;
     }
 }

@@ -53,7 +53,7 @@ namespace mercado
             txtporcen.Text = "0";
             // 
             // TODO: This line of code loads data into the 'mercado_tgDataSet8.fornecedor' table. You can move, or remove it, as needed.
-            
+            this.fornecedorTableAdapter1.FillBy(this.mercado_tgDataSet8.fornecedor);
             // TODO: This line of code loads data into the 'mercado_tgDataSet5.categoria' table. You can move, or remove it, as needed.
             this.categoriaTableAdapter.FillBy1(this.mercado_tgDataSet5.categoria);
             // TODO: This line of code loads data into the 'mercado_tgDataSet4.categoria' table. You can move, or remove it, as needed.
@@ -206,44 +206,10 @@ namespace mercado
 
         private void txtcaddescprod_TextChanged(object sender, EventArgs e)
         {
-            maskedTextBox1.Enabled = true;
+            txt_CodBarras.Enabled = true;
         }
 
-        private void maskedTextBox1_TextChanged(object sender, EventArgs e)
-        {
-           
-            string codbarrasV = maskedTextBox1.Text;
-                bool Logado = false;
-                bool result = Verificacodbarras(codbarrasV);
-
-                Logado = result;
-
-                if (result)
-                {
-                cbnmarcas.Enabled = false;
-                cbnfornecedor.Enabled = false;
-                cbncateg.Enabled = false;
-                if (MessageBox.Show("Codigo de Barras ja cadastrado!! Deseja Atualizar", "Aviso", MessageBoxButtons.OKCancel) == DialogResult.OK)
-                {
-
-                    //  MessageBox.Show(" ok clicado");
-                    CONSULTAPRODUTOS novo = new CONSULTAPRODUTOS();
-
-                    novo.cddnarra = codbarrasV;
-                    novo.Show();
-
-                }
-            }
-                else {  cbnmarcas.Enabled = true;
-                cbnfornecedor.Enabled = true;
-                cbncateg.Enabled = true;
-            } 
-
-            
-                
-            }
-
-        
+     
 
         private void cbnmarcas_TextChanged(object sender, EventArgs e)
         {
@@ -269,10 +235,11 @@ namespace mercado
             decimal pv = Convert.ToDecimal(txtpdvenda.Text);
             decimal un = Convert.ToDecimal(txtunidades.Text);
             decimal unat = Convert.ToDecimal(txtunidadesatual.Text);
+            string cb = Convert.ToString(txt_CodBarras.Text);
             string sql = "INSERT INTO produtoentrada (codigo_barra,descricao_prod ,categoria_prod,marca_prod,preco_custo ,preco_venda,estoque_atualprod ,validade_prod ,codprod_fornec ,unidades,data_entrada)  VALUES (@codigo_barra, @descricao_prod, @categoria_prod, @marca_prod, @preco_custo, @preco_venda, @estoque_atualprod, @validade_prod, @codprod_fornec, @unidades, @data_entrada)";
             SqlConnection conn = conexao.obterConexao();
             SqlCommand cmd = new SqlCommand(sql, conn);
-            cmd.Parameters.Add(new SqlParameter("@codigo_barra", maskedTextBox1.Text));
+            cmd.Parameters.Add(new SqlParameter("@codigo_barra", cb));
             cmd.Parameters.Add(new SqlParameter("@descricao_prod", txtcaddescprod.Text));
             cmd.Parameters.Add(new SqlParameter("@categoria_prod", cbncateg.Text));
             cmd.Parameters.Add(new SqlParameter("@marca_prod", cbnmarcas.Text));
@@ -318,7 +285,7 @@ namespace mercado
             txtunidades.Clear();
             txtunidadesatual.Clear();
             maskedTextBox4.Clear();
-            maskedTextBox1.Clear();
+            txt_CodBarras.Clear();
             textBox1.Clear();
             txtporcen.Text="0";
             txtpdvenda.Clear();
@@ -378,6 +345,36 @@ namespace mercado
             this.categoriaTableAdapter.FillBy1(this.mercado_tgDataSet5.categoria);
         }
 
-      
+        private void txt_CodBarras_TextChanged_1(object sender, EventArgs e)
+        {
+            string codbarrasV = Convert.ToString(txt_CodBarras.Text);
+            bool Logado = false;
+            bool result = Verificacodbarras(codbarrasV);
+
+            Logado = result;
+
+            if (result)
+            {
+                cbnmarcas.Enabled = false;
+                cbnfornecedor.Enabled = false;
+                cbncateg.Enabled = false;
+                if (MessageBox.Show("Codigo de Barras ja cadastrado!! Deseja Atualizar", "Aviso", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+
+                    //  MessageBox.Show(" ok clicado");
+                    CONSULTAPRODUTOS novo = new CONSULTAPRODUTOS();
+
+                    novo.cddnarra = codbarrasV;
+                    novo.Show();
+
+                }
+            }
+            else
+            {
+                cbnmarcas.Enabled = true;
+                cbnfornecedor.Enabled = true;
+                cbncateg.Enabled = true;
+            }
+        }
     }
 }

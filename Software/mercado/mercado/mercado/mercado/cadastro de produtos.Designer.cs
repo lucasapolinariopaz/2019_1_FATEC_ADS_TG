@@ -33,7 +33,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtcaddescprod = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.cbnmarcas = new System.Windows.Forms.ComboBox();
             this.marcasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.mercado_tgDataSet7 = new mercado.mercado_tgDataSet7();
@@ -77,6 +76,7 @@
             this.txtpdvenda = new System.Windows.Forms.TextBox();
             this.lbldata = new System.Windows.Forms.Label();
             this.fornecedorTableAdapter1 = new mercado.mercado_tgDataSet8TableAdapters.fornecedorTableAdapter();
+            this.txt_CodBarras = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mercado_tgDataSet7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).BeginInit();
@@ -118,16 +118,6 @@
             this.label1.Size = new System.Drawing.Size(121, 15);
             this.label1.TabIndex = 12;
             this.label1.Text = "CÓDIGO DE BARRAS";
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Enabled = false;
-            this.maskedTextBox1.Location = new System.Drawing.Point(477, 47);
-            this.maskedTextBox1.Mask = "0000000000000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(89, 20);
-            this.maskedTextBox1.TabIndex = 13;
-            this.maskedTextBox1.TextChanged += new System.EventHandler(this.maskedTextBox1_TextChanged);
             // 
             // cbnmarcas
             // 
@@ -513,12 +503,23 @@
             // 
             this.fornecedorTableAdapter1.ClearBeforeFill = true;
             // 
+            // txt_CodBarras
+            // 
+            this.txt_CodBarras.Enabled = false;
+            this.txt_CodBarras.Location = new System.Drawing.Point(478, 45);
+            this.txt_CodBarras.MaxLength = 13;
+            this.txt_CodBarras.Name = "txt_CodBarras";
+            this.txt_CodBarras.Size = new System.Drawing.Size(89, 20);
+            this.txt_CodBarras.TabIndex = 48;
+            this.txt_CodBarras.TextChanged += new System.EventHandler(this.txt_CodBarras_TextChanged_1);
+            // 
             // cadastro_de_produtos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(696, 306);
+            this.Controls.Add(this.txt_CodBarras);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lbldata);
@@ -547,7 +548,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbncateg);
             this.Controls.Add(this.cbnmarcas);
-            this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtcaddescprod);
@@ -576,7 +576,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtcaddescprod;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.ComboBox cbnmarcas;
         private System.Windows.Forms.ComboBox cbncateg;
         private System.Windows.Forms.Label label2;
@@ -620,5 +619,6 @@
         private mercado_tgDataSet8TableAdapters.fornecedorTableAdapter fornecedorTableAdapter1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txt_CodBarras;
     }
 }

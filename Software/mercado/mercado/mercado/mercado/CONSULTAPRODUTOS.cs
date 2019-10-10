@@ -26,6 +26,21 @@ namespace mercado
           
         }
 
+        void limparCampos()
+        {
+            txtpesqprod.Clear();
+            txtcaddescprod.Clear();
+            maskedTextBox1.Clear();
+            cbnfornecedor.SelectedIndex = -1;
+            cbncateg.SelectedIndex = -1;
+            cbnmarcas.SelectedIndex = -1;
+            txtunidadesatual.Clear();
+            maskedTextBox4.Clear();
+            textBox1.Clear();
+            txtporcen.Text = "0";
+            txtpdvenda.Clear();
+        }
+
         bool Verificacodbarras(string cp)
         {
 
@@ -256,64 +271,9 @@ namespace mercado
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = conexao.obterConexao();
-            SqlCommand commn = new SqlCommand("select e.codigo_prod,e.codigo_barra, e.descricao_prod , e.categoria_prod , e.marca_prod, e.preco_custo , e.preco_venda , e.estoque_atualprod, e.validade_prod ,e.codprod_fornec, e.data_entrada , e.codprodentrada,f.nome_fornecedor from estoque e,fornecedor f where   codigo_barra='" + txtpesqprod.Text + "' and f.cod_fornecdor=e.codprod_fornec;", conn);
-            commn.CommandType = CommandType.Text;
-            commn.Parameters.Add(new SqlParameter("@codigo_prod", "codigo_prod"));
-            commn.Parameters.Add(new SqlParameter("@codigo_barra", "codigo_barra"));
-            commn.Parameters.Add(new SqlParameter("@descricao_prod", "descricao_prod"));
-            commn.Parameters.Add(new SqlParameter("@categoria_prod", "categoria_prod"));
-            commn.Parameters.Add(new SqlParameter("@marca_prod", "marca_prod"));
-            commn.Parameters.Add(new SqlParameter("@preco_custo", "preco_custo"));
-            commn.Parameters.Add(new SqlParameter("@preco_venda", "preco_venda"));
-            commn.Parameters.Add(new SqlParameter("@estoque_atualprod", "estoque_atualprod"));
-            commn.Parameters.Add(new SqlParameter("@validade_prod", "validade_prod"));
-            commn.Parameters.Add(new SqlParameter("@codprod_fornec", "codprod_fornec"));
-            commn.Parameters.Add(new SqlParameter("@nome_fornecedor", "nome_fornecedor"));
-            commn.Parameters.Add(new SqlParameter("@codprodentrada", "codprodentrada"));
-            commn.Parameters.Add(new SqlParameter("@data_entrada", "data_entrada"));
-            conexao.obterConexao();
-            SqlDataReader dr = commn.ExecuteReader();
-            result = dr.HasRows;
-            if (result == true)
-            {
-                while (dr.Read())
-                {
-                    //codEst= dr["codigo_prod"].ToString();
-                    codestoque = int.Parse(dr["codigo_prod"].ToString());
-                    // codF = dr["codprod_fornec"].ToString();
-                    codforn = int.Parse(dr["codprod_fornec"].ToString());
-                    Tcodf = codforn.ToString();
-                    codPen = dr["codprodentrada"].ToString();
-                    txtcaddescprod.Text = dr["descricao_prod"].ToString();
-                    maskedTextBox1.Text = dr["codigo_barra"].ToString();
-                    cbncateg.Text = dr["categoria_prod"].ToString();
-                    cbnfornecedor.Text = dr["nome_fornecedor"].ToString();
-                    cbnmarcas.Text = dr["marca_prod"].ToString();
-                    txtpdvenda.Text = dr["preco_venda"].ToString();
-                    textBox1.Text = dr["preco_custo"].ToString();
-                    txtunidadesatual.Text = dr["estoque_atualprod"].ToString();
-                    maskedTextBox4.Text = dr["validade_prod"].ToString();
-                    lbldata.Text = dr["data_entrada"].ToString();
-                    valor = textBox1.Text;
-
-
-                }
-                Decimal val, val1;
-                if (Decimal.TryParse(textBox1.Text, out val))
-                    textBox1.Text = val.ToString("C");
-                if (Decimal.TryParse(txtpdvenda.Text, out val1))
-                    txtpdvenda.Text = val1.ToString("C");
-            }
-            else
-            {
-                MessageBox.Show("Produto não encontrado!!");
-            }
-
-            conexao.fecharConexao();
+            limparCampos();
         }
-
-       
+            
 
         private void maskedTextBox1_TextChanged(object sender, EventArgs e)
         {
@@ -410,28 +370,7 @@ namespace mercado
 
         private void button6_Click(object sender, EventArgs e)
         {
-            string sql = "DELETE FROM estoque WHERE codigo_prod = @codigo_prod";
-            SqlConnection conn = conexao.obterConexao();
-            SqlCommand cmd = new SqlCommand(sql, conn);
-
-            cmd.Parameters.Add(new SqlParameter("@codigo_prod", codestoque));
-
-            cmd.CommandType = CommandType.Text;
-            conexao.obterConexao();
-            try
-            {
-                int i = cmd.ExecuteNonQuery();
-                if (i > 0)
-                    MessageBox.Show("Registro excluído com sucesso!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.ToString());
-            }
-            finally
-            {
-                conexao.fecharConexao();
-            }
+            //limparCampos();
         }
 
         private void txtpdvenda_Leave(object sender, EventArgs e)
