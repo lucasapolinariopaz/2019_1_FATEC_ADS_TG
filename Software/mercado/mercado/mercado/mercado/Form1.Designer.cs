@@ -45,6 +45,8 @@
             this.mARCASToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.gERENCIARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fORNECEDORESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cADASTROToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cONSULTAToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cLIENTESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aDMINUSTRAÇAOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cADASTRODEACESSOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,8 +59,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtlogcpf = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cADASTROToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.cONSULTAToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -132,6 +132,7 @@
             this.pRODUTOSToolStripMenuItem1.Name = "pRODUTOSToolStripMenuItem1";
             this.pRODUTOSToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.pRODUTOSToolStripMenuItem1.Text = "PRODUTOS";
+            this.pRODUTOSToolStripMenuItem1.Click += new System.EventHandler(this.pRODUTOSToolStripMenuItem1_Click);
             // 
             // cATEGORIAToolStripMenuItem
             // 
@@ -189,6 +190,19 @@
             this.fORNECEDORESToolStripMenuItem.Name = "fORNECEDORESToolStripMenuItem";
             this.fORNECEDORESToolStripMenuItem.Size = new System.Drawing.Size(107, 20);
             this.fORNECEDORESToolStripMenuItem.Text = "FORNECEDORES";
+            // 
+            // cADASTROToolStripMenuItem1
+            // 
+            this.cADASTROToolStripMenuItem1.Name = "cADASTROToolStripMenuItem1";
+            this.cADASTROToolStripMenuItem1.Size = new System.Drawing.Size(132, 22);
+            this.cADASTROToolStripMenuItem1.Text = "CADASTRO";
+            this.cADASTROToolStripMenuItem1.Click += new System.EventHandler(this.cADASTROToolStripMenuItem1_Click);
+            // 
+            // cONSULTAToolStripMenuItem1
+            // 
+            this.cONSULTAToolStripMenuItem1.Name = "cONSULTAToolStripMenuItem1";
+            this.cONSULTAToolStripMenuItem1.Size = new System.Drawing.Size(132, 22);
+            this.cONSULTAToolStripMenuItem1.Text = "CONSULTA";
             // 
             // cLIENTESToolStripMenuItem
             // 
@@ -306,19 +320,6 @@
             this.label1.Size = new System.Drawing.Size(30, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "CPF";
-            // 
-            // cADASTROToolStripMenuItem1
-            // 
-            this.cADASTROToolStripMenuItem1.Name = "cADASTROToolStripMenuItem1";
-            this.cADASTROToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.cADASTROToolStripMenuItem1.Text = "CADASTRO";
-            this.cADASTROToolStripMenuItem1.Click += new System.EventHandler(this.cADASTROToolStripMenuItem1_Click);
-            // 
-            // cONSULTAToolStripMenuItem1
-            // 
-            this.cONSULTAToolStripMenuItem1.Name = "cONSULTAToolStripMenuItem1";
-            this.cONSULTAToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.cONSULTAToolStripMenuItem1.Text = "CONSULTA";
             // 
             // Form1
             // 

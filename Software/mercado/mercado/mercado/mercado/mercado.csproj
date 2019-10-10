@@ -104,6 +104,31 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>mercado_tgDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="mercado_tgDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mercado_tgDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="mercado_tgDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mercado_tgDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="mercado_tgDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mercado_tgDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="mercado_tgDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mercado_tgDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="mercado_tgDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mercado_tgDataSet7.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="cadastro de produtos.resx">
@@ -168,6 +193,61 @@
     </None>
     <None Include="mercado_tgDataSet2.xss">
       <DependentUpon>mercado_tgDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet3.xsc">
+      <DependentUpon>mercado_tgDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mercado_tgDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mercado_tgDataSet3.xss">
+      <DependentUpon>mercado_tgDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet4.xsc">
+      <DependentUpon>mercado_tgDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mercado_tgDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mercado_tgDataSet4.xss">
+      <DependentUpon>mercado_tgDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet5.xsc">
+      <DependentUpon>mercado_tgDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mercado_tgDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mercado_tgDataSet5.xss">
+      <DependentUpon>mercado_tgDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet6.xsc">
+      <DependentUpon>mercado_tgDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mercado_tgDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mercado_tgDataSet6.xss">
+      <DependentUpon>mercado_tgDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet7.xsc">
+      <DependentUpon>mercado_tgDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mercado_tgDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mercado_tgDataSet7.xss">
+      <DependentUpon>mercado_tgDataSet7.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

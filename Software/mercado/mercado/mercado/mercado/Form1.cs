@@ -93,5 +93,11 @@ namespace mercado
             cadastrodefornecedor novo = new cadastrodefornecedor();
             novo.Show();
         }
+
+        private void pRODUTOSToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            cadastro_de_produtos novo = new cadastro_de_produtos();
+            novo.Show();
+        }
     }
 }
