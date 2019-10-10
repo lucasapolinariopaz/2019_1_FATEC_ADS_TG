@@ -137,6 +137,12 @@
     <Compile Include="Dependentes.Designer.cs">
       <DependentUpon>Dependentes.cs</DependentUpon>
     </Compile>
+    <Compile Include="detalhedebitos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="detalhedebitos.Designer.cs">
+      <DependentUpon>detalhedebitos.cs</DependentUpon>
+    </Compile>
     <Compile Include="fechamentodecaixa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -295,6 +301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dependentes.resx">
       <DependentUpon>Dependentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="detalhedebitos.resx">
+      <DependentUpon>detalhedebitos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fechamentodecaixa.resx">
       <DependentUpon>fechamentodecaixa.cs</DependentUpon>
