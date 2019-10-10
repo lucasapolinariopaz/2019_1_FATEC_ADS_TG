@@ -77,6 +77,12 @@
       <DependentUpon>cadastromarcas.cs</DependentUpon>
     </Compile>
     <Compile Include="conexao.cs" />
+    <Compile Include="CONSULTAPRODUTOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONSULTAPRODUTOS.Designer.cs">
+      <DependentUpon>CONSULTAPRODUTOS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>mercado_tgDataSet7.xsd</DependentUpon>
     </Compile>
+    <Compile Include="mercado_tgDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mercado_tgDataSet8.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="cadastro de produtos.resx">
@@ -146,6 +157,9 @@
     <EmbeddedResource Include="cadastromarcas.resx">
       <DependentUpon>cadastromarcas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CONSULTAPRODUTOS.resx">
+      <DependentUpon>CONSULTAPRODUTOS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +174,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="mercado_tgDataSet.xsc">
       <DependentUpon>mercado_tgDataSet.xsd</DependentUpon>
@@ -249,6 +264,17 @@
     <None Include="mercado_tgDataSet7.xss">
       <DependentUpon>mercado_tgDataSet7.xsd</DependentUpon>
     </None>
+    <None Include="mercado_tgDataSet8.xsc">
+      <DependentUpon>mercado_tgDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="mercado_tgDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mercado_tgDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mercado_tgDataSet8.xss">
+      <DependentUpon>mercado_tgDataSet8.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -261,6 +287,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oie_transparent %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\atualizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excluir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salvar %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vassoura.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excluir1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

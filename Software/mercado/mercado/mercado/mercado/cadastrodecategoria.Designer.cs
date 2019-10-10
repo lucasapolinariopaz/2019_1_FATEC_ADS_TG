@@ -50,12 +50,12 @@
             this.txtcadcateg.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtcadcateg.Location = new System.Drawing.Point(122, 30);
             this.txtcadcateg.Name = "txtcadcateg";
-            this.txtcadcateg.Size = new System.Drawing.Size(140, 20);
+            this.txtcadcateg.Size = new System.Drawing.Size(180, 20);
             this.txtcadcateg.TabIndex = 6;
             // 
             // btncadcateg
             // 
-            this.btncadcateg.Location = new System.Drawing.Point(67, 86);
+            this.btncadcateg.Location = new System.Drawing.Point(122, 79);
             this.btncadcateg.Name = "btncadcateg";
             this.btncadcateg.Size = new System.Drawing.Size(119, 23);
             this.btncadcateg.TabIndex = 7;
@@ -68,7 +68,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(319, 119);
+            this.ClientSize = new System.Drawing.Size(333, 125);
             this.Controls.Add(this.btncadcateg);
             this.Controls.Add(this.txtcadcateg);
             this.Controls.Add(this.label3);

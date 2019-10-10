@@ -21,7 +21,18 @@
             <Mappings>
               <Mapping SourceColumn="nome_fornecedor" DataSetColumn="nome_fornecedor" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="mercado_tgConnectionString (Settings)" DbObjectName="mercado_tg.dbo.fornecedor" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        nome_fornecedor
+FROM            fornecedor
+ORDER BY nome_fornecedor</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />
@@ -31,7 +42,7 @@
   <xs:element name="mercado_tgDataSet6" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="mercado_tgDataSet6" msprop:Generator_UserDSName="mercado_tgDataSet6">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="fornecedor" msprop:Generator_TableClassName="fornecedorDataTable" msprop:Generator_TableVarName="tablefornecedor" msprop:Generator_TablePropName="fornecedor" msprop:Generator_RowDeletingName="fornecedorRowDeleting" msprop:Generator_RowChangingName="fornecedorRowChanging" msprop:Generator_RowEvHandlerName="fornecedorRowChangeEventHandler" msprop:Generator_RowDeletedName="fornecedorRowDeleted" msprop:Generator_UserTableName="fornecedor" msprop:Generator_RowChangedName="fornecedorRowChanged" msprop:Generator_RowEvArgName="fornecedorRowChangeEvent" msprop:Generator_RowClassName="fornecedorRow">
+        <xs:element name="fornecedor" msprop:Generator_TableClassName="fornecedorDataTable" msprop:Generator_TableVarName="tablefornecedor" msprop:Generator_RowChangedName="fornecedorRowChanged" msprop:Generator_TablePropName="fornecedor" msprop:Generator_RowDeletingName="fornecedorRowDeleting" msprop:Generator_RowChangingName="fornecedorRowChanging" msprop:Generator_RowEvHandlerName="fornecedorRowChangeEventHandler" msprop:Generator_RowDeletedName="fornecedorRowDeleted" msprop:Generator_RowClassName="fornecedorRow" msprop:Generator_UserTableName="fornecedor" msprop:Generator_RowEvArgName="fornecedorRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="nome_fornecedor" msprop:Generator_ColumnVarNameInTable="columnnome_fornecedor" msprop:Generator_ColumnPropNameInRow="nome_fornecedor" msprop:Generator_ColumnPropNameInTable="nome_fornecedorColumn" msprop:Generator_UserColumnName="nome_fornecedor">

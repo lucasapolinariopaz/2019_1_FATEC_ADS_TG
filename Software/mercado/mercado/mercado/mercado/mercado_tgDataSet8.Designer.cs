@@ -20,17 +20,17 @@ namespace mercado {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("mercado_tgDataSet3")]
+    [global::System.Xml.Serialization.XmlRootAttribute("mercado_tgDataSet8")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class mercado_tgDataSet3 : global::System.Data.DataSet {
+    public partial class mercado_tgDataSet8 : global::System.Data.DataSet {
         
-        private marcasDataTable tablemarcas;
+        private fornecedorDataTable tablefornecedor;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public mercado_tgDataSet3() {
+        public mercado_tgDataSet8() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace mercado {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected mercado_tgDataSet3(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected mercado_tgDataSet8(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace mercado {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["marcas"] != null)) {
-                    base.Tables.Add(new marcasDataTable(ds.Tables["marcas"]));
+                if ((ds.Tables["fornecedor"] != null)) {
+                    base.Tables.Add(new fornecedorDataTable(ds.Tables["fornecedor"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace mercado {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public marcasDataTable marcas {
+        public fornecedorDataTable fornecedor {
             get {
-                return this.tablemarcas;
+                return this.tablefornecedor;
             }
         }
         
@@ -127,7 +127,7 @@ namespace mercado {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            mercado_tgDataSet3 cln = ((mercado_tgDataSet3)(base.Clone()));
+            mercado_tgDataSet8 cln = ((mercado_tgDataSet8)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace mercado {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["marcas"] != null)) {
-                    base.Tables.Add(new marcasDataTable(ds.Tables["marcas"]));
+                if ((ds.Tables["fornecedor"] != null)) {
+                    base.Tables.Add(new fornecedorDataTable(ds.Tables["fornecedor"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace mercado {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablemarcas = ((marcasDataTable)(base.Tables["marcas"]));
+            this.tablefornecedor = ((fornecedorDataTable)(base.Tables["fornecedor"]));
             if ((initTable == true)) {
-                if ((this.tablemarcas != null)) {
-                    this.tablemarcas.InitVars();
+                if ((this.tablefornecedor != null)) {
+                    this.tablefornecedor.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace mercado {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "mercado_tgDataSet3";
+            this.DataSetName = "mercado_tgDataSet8";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/mercado_tgDataSet3.xsd";
+            this.Namespace = "http://tempuri.org/mercado_tgDataSet8.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablemarcas = new marcasDataTable();
-            base.Tables.Add(this.tablemarcas);
+            this.tablefornecedor = new fornecedorDataTable();
+            base.Tables.Add(this.tablefornecedor);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializemarcas() {
+        private bool ShouldSerializefornecedor() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace mercado {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            mercado_tgDataSet3 ds = new mercado_tgDataSet3();
+            mercado_tgDataSet8 ds = new mercado_tgDataSet8();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,23 +270,23 @@ namespace mercado {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void marcasRowChangeEventHandler(object sender, marcasRowChangeEvent e);
+        public delegate void fornecedorRowChangeEventHandler(object sender, fornecedorRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class marcasDataTable : global::System.Data.TypedTableBase<marcasRow> {
+        public partial class fornecedorDataTable : global::System.Data.TypedTableBase<fornecedorRow> {
             
-            private global::System.Data.DataColumn columncod_marca;
+            private global::System.Data.DataColumn columncod_fornecdor;
             
-            private global::System.Data.DataColumn columnnome_marcas;
+            private global::System.Data.DataColumn columnnome_fornecedor;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public marcasDataTable() {
-                this.TableName = "marcas";
+            public fornecedorDataTable() {
+                this.TableName = "fornecedor";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -294,7 +294,7 @@ namespace mercado {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal marcasDataTable(global::System.Data.DataTable table) {
+            internal fornecedorDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -311,24 +311,24 @@ namespace mercado {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected marcasDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected fornecedorDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn cod_marcaColumn {
+            public global::System.Data.DataColumn cod_fornecdorColumn {
                 get {
-                    return this.columncod_marca;
+                    return this.columncod_fornecdor;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn nome_marcasColumn {
+            public global::System.Data.DataColumn nome_fornecedorColumn {
                 get {
-                    return this.columnnome_marcas;
+                    return this.columnnome_fornecedor;
                 }
             }
             
@@ -343,53 +343,53 @@ namespace mercado {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public marcasRow this[int index] {
+            public fornecedorRow this[int index] {
                 get {
-                    return ((marcasRow)(this.Rows[index]));
+                    return ((fornecedorRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event marcasRowChangeEventHandler marcasRowChanging;
+            public event fornecedorRowChangeEventHandler fornecedorRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event marcasRowChangeEventHandler marcasRowChanged;
+            public event fornecedorRowChangeEventHandler fornecedorRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event marcasRowChangeEventHandler marcasRowDeleting;
+            public event fornecedorRowChangeEventHandler fornecedorRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event marcasRowChangeEventHandler marcasRowDeleted;
+            public event fornecedorRowChangeEventHandler fornecedorRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddmarcasRow(marcasRow row) {
+            public void AddfornecedorRow(fornecedorRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public marcasRow AddmarcasRow(string nome_marcas) {
-                marcasRow rowmarcasRow = ((marcasRow)(this.NewRow()));
+            public fornecedorRow AddfornecedorRow(int cod_fornecdor, string nome_fornecedor) {
+                fornecedorRow rowfornecedorRow = ((fornecedorRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
-                        nome_marcas};
-                rowmarcasRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowmarcasRow);
-                return rowmarcasRow;
+                        cod_fornecdor,
+                        nome_fornecedor};
+                rowfornecedorRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowfornecedorRow);
+                return rowfornecedorRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public marcasRow FindBycod_marca(int cod_marca) {
-                return ((marcasRow)(this.Rows.Find(new object[] {
-                            cod_marca})));
+            public fornecedorRow FindBycod_fornecdor(int cod_fornecdor) {
+                return ((fornecedorRow)(this.Rows.Find(new object[] {
+                            cod_fornecdor})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                marcasDataTable cln = ((marcasDataTable)(base.Clone()));
+                fornecedorDataTable cln = ((fornecedorDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -397,59 +397,55 @@ namespace mercado {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new marcasDataTable();
+                return new fornecedorDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columncod_marca = base.Columns["cod_marca"];
-                this.columnnome_marcas = base.Columns["nome_marcas"];
+                this.columncod_fornecdor = base.Columns["cod_fornecdor"];
+                this.columnnome_fornecedor = base.Columns["nome_fornecedor"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columncod_marca = new global::System.Data.DataColumn("cod_marca", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncod_marca);
-                this.columnnome_marcas = new global::System.Data.DataColumn("nome_marcas", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnome_marcas);
+                this.columncod_fornecdor = new global::System.Data.DataColumn("cod_fornecdor", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncod_fornecdor);
+                this.columnnome_fornecedor = new global::System.Data.DataColumn("nome_fornecedor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnome_fornecedor);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columncod_marca}, true));
-                this.columncod_marca.AutoIncrement = true;
-                this.columncod_marca.AutoIncrementSeed = -1;
-                this.columncod_marca.AutoIncrementStep = -1;
-                this.columncod_marca.AllowDBNull = false;
-                this.columncod_marca.ReadOnly = true;
-                this.columncod_marca.Unique = true;
-                this.columnnome_marcas.AllowDBNull = false;
-                this.columnnome_marcas.MaxLength = 50;
+                                this.columncod_fornecdor}, true));
+                this.columncod_fornecdor.AllowDBNull = false;
+                this.columncod_fornecdor.Unique = true;
+                this.columnnome_fornecedor.AllowDBNull = false;
+                this.columnnome_fornecedor.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public marcasRow NewmarcasRow() {
-                return ((marcasRow)(this.NewRow()));
+            public fornecedorRow NewfornecedorRow() {
+                return ((fornecedorRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new marcasRow(builder);
+                return new fornecedorRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(marcasRow);
+                return typeof(fornecedorRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.marcasRowChanged != null)) {
-                    this.marcasRowChanged(this, new marcasRowChangeEvent(((marcasRow)(e.Row)), e.Action));
+                if ((this.fornecedorRowChanged != null)) {
+                    this.fornecedorRowChanged(this, new fornecedorRowChangeEvent(((fornecedorRow)(e.Row)), e.Action));
                 }
             }
             
@@ -457,8 +453,8 @@ namespace mercado {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.marcasRowChanging != null)) {
-                    this.marcasRowChanging(this, new marcasRowChangeEvent(((marcasRow)(e.Row)), e.Action));
+                if ((this.fornecedorRowChanging != null)) {
+                    this.fornecedorRowChanging(this, new fornecedorRowChangeEvent(((fornecedorRow)(e.Row)), e.Action));
                 }
             }
             
@@ -466,8 +462,8 @@ namespace mercado {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.marcasRowDeleted != null)) {
-                    this.marcasRowDeleted(this, new marcasRowChangeEvent(((marcasRow)(e.Row)), e.Action));
+                if ((this.fornecedorRowDeleted != null)) {
+                    this.fornecedorRowDeleted(this, new fornecedorRowChangeEvent(((fornecedorRow)(e.Row)), e.Action));
                 }
             }
             
@@ -475,14 +471,14 @@ namespace mercado {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.marcasRowDeleting != null)) {
-                    this.marcasRowDeleting(this, new marcasRowChangeEvent(((marcasRow)(e.Row)), e.Action));
+                if ((this.fornecedorRowDeleting != null)) {
+                    this.fornecedorRowDeleting(this, new fornecedorRowChangeEvent(((fornecedorRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemovemarcasRow(marcasRow row) {
+            public void RemovefornecedorRow(fornecedorRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -491,7 +487,7 @@ namespace mercado {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                mercado_tgDataSet3 ds = new mercado_tgDataSet3();
+                mercado_tgDataSet8 ds = new mercado_tgDataSet8();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -509,7 +505,7 @@ namespace mercado {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "marcasDataTable";
+                attribute2.FixedValue = "fornecedorDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -553,36 +549,36 @@ namespace mercado {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class marcasRow : global::System.Data.DataRow {
+        public partial class fornecedorRow : global::System.Data.DataRow {
             
-            private marcasDataTable tablemarcas;
+            private fornecedorDataTable tablefornecedor;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal marcasRow(global::System.Data.DataRowBuilder rb) : 
+            internal fornecedorRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablemarcas = ((marcasDataTable)(this.Table));
+                this.tablefornecedor = ((fornecedorDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int cod_marca {
+            public int cod_fornecdor {
                 get {
-                    return ((int)(this[this.tablemarcas.cod_marcaColumn]));
+                    return ((int)(this[this.tablefornecedor.cod_fornecdorColumn]));
                 }
                 set {
-                    this[this.tablemarcas.cod_marcaColumn] = value;
+                    this[this.tablefornecedor.cod_fornecdorColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string nome_marcas {
+            public string nome_fornecedor {
                 get {
-                    return ((string)(this[this.tablemarcas.nome_marcasColumn]));
+                    return ((string)(this[this.tablefornecedor.nome_fornecedorColumn]));
                 }
                 set {
-                    this[this.tablemarcas.nome_marcasColumn] = value;
+                    this[this.tablefornecedor.nome_fornecedorColumn] = value;
                 }
             }
         }
@@ -591,22 +587,22 @@ namespace mercado {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class marcasRowChangeEvent : global::System.EventArgs {
+        public class fornecedorRowChangeEvent : global::System.EventArgs {
             
-            private marcasRow eventRow;
+            private fornecedorRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public marcasRowChangeEvent(marcasRow row, global::System.Data.DataRowAction action) {
+            public fornecedorRowChangeEvent(fornecedorRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public marcasRow Row {
+            public fornecedorRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -622,7 +618,7 @@ namespace mercado {
         }
     }
 }
-namespace mercado.mercado_tgDataSet3TableAdapters {
+namespace mercado.mercado_tgDataSet8TableAdapters {
     
     
     /// <summary>
@@ -634,7 +630,7 @@ namespace mercado.mercado_tgDataSet3TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class marcasTableAdapter : global::System.ComponentModel.Component {
+    public partial class fornecedorTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -648,7 +644,7 @@ namespace mercado.mercado_tgDataSet3TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public marcasTableAdapter() {
+        public fornecedorTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -745,33 +741,26 @@ namespace mercado.mercado_tgDataSet3TableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "marcas";
-            tableMapping.ColumnMappings.Add("cod_marca", "cod_marca");
-            tableMapping.ColumnMappings.Add("nome_marcas", "nome_marcas");
+            tableMapping.DataSetTable = "fornecedor";
+            tableMapping.ColumnMappings.Add("cod_fornecdor", "cod_fornecdor");
+            tableMapping.ColumnMappings.Add("nome_fornecedor", "nome_fornecedor");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[marcas] WHERE (([cod_marca] = @Original_cod_marca) AND ([nome_" +
-                "marcas] = @Original_nome_marcas))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[fornecedor] WHERE (([cod_fornecdor] = @Original_cod_fornecdor)" +
+                " AND ([nome_fornecedor] = @Original_nome_fornecedor))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cod_marca", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cod_marca", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nome_marcas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome_marcas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[marcas] ([nome_marcas]) VALUES (@nome_marcas);\r\nSELECT cod_mar" +
-                "ca, nome_marcas FROM marcas WHERE (cod_marca = SCOPE_IDENTITY())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nome_marcas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome_marcas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cod_fornecdor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cod_fornecdor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nome_fornecedor", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome_fornecedor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[marcas] SET [nome_marcas] = @nome_marcas WHERE (([cod_marca] = @Ori" +
-                "ginal_cod_marca) AND ([nome_marcas] = @Original_nome_marcas));\r\nSELECT cod_marca" +
-                ", nome_marcas FROM marcas WHERE (cod_marca = @cod_marca)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[fornecedor] SET [cod_fornecdor] = @cod_fornecdor, [nome_fornecedor] = @nome_fornecedor WHERE (([cod_fornecdor] = @Original_cod_fornecdor) AND ([nome_fornecedor] = @Original_nome_fornecedor));
+SELECT cod_fornecdor, nome_fornecedor FROM fornecedor WHERE (cod_fornecdor = @cod_fornecdor)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nome_marcas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome_marcas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cod_marca", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cod_marca", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nome_marcas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome_marcas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cod_marca", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "cod_marca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cod_fornecdor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cod_fornecdor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nome_fornecedor", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome_fornecedor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cod_fornecdor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cod_fornecdor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nome_fornecedor", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome_fornecedor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -787,7 +776,7 @@ namespace mercado.mercado_tgDataSet3TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT cod_marca, nome_marcas FROM dbo.marcas";
+            this._commandCollection[0].CommandText = "SELECT cod_fornecdor, nome_fornecedor FROM dbo.fornecedor";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -795,7 +784,7 @@ namespace mercado.mercado_tgDataSet3TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(mercado_tgDataSet3.marcasDataTable dataTable) {
+        public virtual int Fill(mercado_tgDataSet8.fornecedorDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -808,9 +797,9 @@ namespace mercado.mercado_tgDataSet3TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual mercado_tgDataSet3.marcasDataTable GetData() {
+        public virtual mercado_tgDataSet8.fornecedorDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            mercado_tgDataSet3.marcasDataTable dataTable = new mercado_tgDataSet3.marcasDataTable();
+            mercado_tgDataSet8.fornecedorDataTable dataTable = new mercado_tgDataSet8.fornecedorDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -818,15 +807,15 @@ namespace mercado.mercado_tgDataSet3TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(mercado_tgDataSet3.marcasDataTable dataTable) {
+        public virtual int Update(mercado_tgDataSet8.fornecedorDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(mercado_tgDataSet3 dataSet) {
-            return this.Adapter.Update(dataSet, "marcas");
+        public virtual int Update(mercado_tgDataSet8 dataSet) {
+            return this.Adapter.Update(dataSet, "fornecedor");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -848,13 +837,13 @@ namespace mercado.mercado_tgDataSet3TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_cod_marca, string Original_nome_marcas) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_cod_marca));
-            if ((Original_nome_marcas == null)) {
-                throw new global::System.ArgumentNullException("Original_nome_marcas");
+        public virtual int Delete(int Original_cod_fornecdor, string Original_nome_fornecedor) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_cod_fornecdor));
+            if ((Original_nome_fornecedor == null)) {
+                throw new global::System.ArgumentNullException("Original_nome_fornecedor");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_nome_marcas));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_nome_fornecedor));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -875,49 +864,22 @@ namespace mercado.mercado_tgDataSet3TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string nome_marcas) {
-            if ((nome_marcas == null)) {
-                throw new global::System.ArgumentNullException("nome_marcas");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(nome_marcas));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string nome_marcas, int Original_cod_marca, string Original_nome_marcas, int cod_marca) {
-            if ((nome_marcas == null)) {
-                throw new global::System.ArgumentNullException("nome_marcas");
+        public virtual int Update(int cod_fornecdor, string nome_fornecedor, int Original_cod_fornecdor, string Original_nome_fornecedor) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(cod_fornecdor));
+            if ((nome_fornecedor == null)) {
+                throw new global::System.ArgumentNullException("nome_fornecedor");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(nome_marcas));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(nome_fornecedor));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_cod_marca));
-            if ((Original_nome_marcas == null)) {
-                throw new global::System.ArgumentNullException("Original_nome_marcas");
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_cod_fornecdor));
+            if ((Original_nome_fornecedor == null)) {
+                throw new global::System.ArgumentNullException("Original_nome_fornecedor");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_nome_marcas));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_nome_fornecedor));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(cod_marca));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -938,8 +900,8 @@ namespace mercado.mercado_tgDataSet3TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string nome_marcas, int Original_cod_marca, string Original_nome_marcas) {
-            return this.Update(nome_marcas, Original_cod_marca, Original_nome_marcas, Original_cod_marca);
+        public virtual int Update(string nome_fornecedor, int Original_cod_fornecdor, string Original_nome_fornecedor) {
+            return this.Update(Original_cod_fornecdor, nome_fornecedor, Original_cod_fornecdor, Original_nome_fornecedor);
         }
     }
     
@@ -955,7 +917,7 @@ namespace mercado.mercado_tgDataSet3TableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private marcasTableAdapter _marcasTableAdapter;
+        private fornecedorTableAdapter _fornecedorTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -977,12 +939,12 @@ namespace mercado.mercado_tgDataSet3TableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public marcasTableAdapter marcasTableAdapter {
+        public fornecedorTableAdapter fornecedorTableAdapter {
             get {
-                return this._marcasTableAdapter;
+                return this._fornecedorTableAdapter;
             }
             set {
-                this._marcasTableAdapter = value;
+                this._fornecedorTableAdapter = value;
             }
         }
         
@@ -1005,9 +967,9 @@ namespace mercado.mercado_tgDataSet3TableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._marcasTableAdapter != null) 
-                            && (this._marcasTableAdapter.Connection != null))) {
-                    return this._marcasTableAdapter.Connection;
+                if (((this._fornecedorTableAdapter != null) 
+                            && (this._fornecedorTableAdapter.Connection != null))) {
+                    return this._fornecedorTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1022,7 +984,7 @@ namespace mercado.mercado_tgDataSet3TableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._marcasTableAdapter != null)) {
+                if ((this._fornecedorTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1034,14 +996,14 @@ namespace mercado.mercado_tgDataSet3TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(mercado_tgDataSet3 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(mercado_tgDataSet8 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._marcasTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.marcas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._fornecedorTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.fornecedor.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._marcasTableAdapter.Update(updatedRows));
+                    result = (result + this._fornecedorTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1053,13 +1015,13 @@ namespace mercado.mercado_tgDataSet3TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(mercado_tgDataSet3 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(mercado_tgDataSet8 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._marcasTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.marcas.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._fornecedorTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.fornecedor.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._marcasTableAdapter.Update(addedRows));
+                    result = (result + this._fornecedorTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1071,13 +1033,13 @@ namespace mercado.mercado_tgDataSet3TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(mercado_tgDataSet3 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(mercado_tgDataSet8 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._marcasTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.marcas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._fornecedorTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.fornecedor.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._marcasTableAdapter.Update(deletedRows));
+                    result = (result + this._fornecedorTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1113,15 +1075,15 @@ namespace mercado.mercado_tgDataSet3TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(mercado_tgDataSet3 dataSet) {
+        public virtual int UpdateAll(mercado_tgDataSet8 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._marcasTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._marcasTableAdapter.Connection) == false))) {
+            if (((this._fornecedorTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._fornecedorTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1157,13 +1119,13 @@ namespace mercado.mercado_tgDataSet3TableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._marcasTableAdapter != null)) {
-                    revertConnections.Add(this._marcasTableAdapter, this._marcasTableAdapter.Connection);
-                    this._marcasTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._marcasTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._marcasTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._marcasTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._marcasTableAdapter.Adapter);
+                if ((this._fornecedorTableAdapter != null)) {
+                    revertConnections.Add(this._fornecedorTableAdapter, this._fornecedorTableAdapter.Connection);
+                    this._fornecedorTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._fornecedorTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._fornecedorTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._fornecedorTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._fornecedorTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1224,9 +1186,9 @@ namespace mercado.mercado_tgDataSet3TableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._marcasTableAdapter != null)) {
-                    this._marcasTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._marcasTableAdapter]));
-                    this._marcasTableAdapter.Transaction = null;
+                if ((this._fornecedorTableAdapter != null)) {
+                    this._fornecedorTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._fornecedorTableAdapter]));
+                    this._fornecedorTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

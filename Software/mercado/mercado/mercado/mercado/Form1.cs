@@ -99,5 +99,11 @@ namespace mercado
             cadastro_de_produtos novo = new cadastro_de_produtos();
             novo.Show();
         }
+
+        private void pRODUTOSToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            CONSULTAPRODUTOS novo = new CONSULTAPRODUTOS();
+            novo.Show();
+        }
     }
 }
